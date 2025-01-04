@@ -178,8 +178,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-medium">Adresse</h3>
                   <p className="text-muted-foreground">
-                    123 Rue de l'Innovation<br />
-                    75000 Paris, France
+                    4 Rue Hubertine Auclert<br />
+                    31400 Toulouse, France
                   </p>
                 </div>
               </div>
@@ -188,7 +188,7 @@ const Contact = () => {
                 <Phone className="w-5 h-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-medium">Téléphone</h3>
-                  <p className="text-muted-foreground">+33 (0)1 23 45 67 89</p>
+                  <p className="text-muted-foreground">+33 (0)7 58 01 11 83</p>
                 </div>
               </div>
 
