@@ -9,7 +9,7 @@ const teamMembers = [
     name: "Fifi ADODO",
     role: "CEO & Teledetection and Data Analyst",
     skills: ["Analyse d'images satellite", "SIG", "Python", "Deep Learning","Gestion de projet"],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+    image: "/public/logoEGEOD1.png"
   },
 
 ];
@@ -48,7 +48,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-8">Notre Histoire</h2>
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <p className="text-lg text-muted-foreground">
-              Fondée en 2020, EGEOD est née de la vision d'experts passionnés par les données géospatiales et l'observation de la Terre. Notre mission est de rendre les données géospatiales accessibles et exploitables pour tous.
+              Fondée en 2025, EGEOD est née de la vision d'experts passionnés par les données géospatiales et l'observation de la Terre. Notre mission est de rendre les données géospatiales accessibles et exploitables pour tous.
             </p>
             <p className="text-lg text-muted-foreground">
               Depuis notre création, nous avons accompagné de nombreuses organisations dans leur transformation numérique et leur compréhension des enjeux territoriaux.
