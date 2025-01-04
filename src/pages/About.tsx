@@ -6,23 +6,12 @@ import { Footer } from "@/components/Footer";
 
 const teamMembers = [
   {
-    name: "Marie Laurent",
-    role: "Experte en Télédétection",
-    skills: ["Analyse d'images satellite", "Deep Learning", "SIG"],
+    name: "Fifi ADODO",
+    role: "CEO & Teledetection and Data Analyst",
+    skills: ["Analyse d'images satellite", "SIG", "Python", "Deep Learning","Gestion de projet"],
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
-  {
-    name: "Thomas Dubois",
-    role: "Ingénieur Géomatique",
-    skills: ["Cartographie", "Développement SIG", "Base de données spatiales"],
-    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"
-  },
-  {
-    name: "Sophie Martin",
-    role: "Cheffe de Projets",
-    skills: ["Gestion de projet", "Analyse des besoins", "Communication"],
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
-  }
+
 ];
 
 const values = [
