@@ -59,6 +59,11 @@ const About = () => {
         {/* Équipe */}
         <section className="space-y-6">
           <h2 className="text-3xl font-bold text-center mb-8">Notre Équipe</h2>
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <p className="text-lg text-muted-foreground">
+              Chez EGEOD, notre force réside dans notre équipe multidisciplinaire, composée d'experts passionnés par la data et l'innovation animés par un objectif commun : transformer les données utilisateurs et les données géospatiales en outils stratégiques au service de nos clients.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
               <Card key={member.name} className="hover:scale-105 transition-transform duration-300">
