@@ -53,6 +53,12 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img src="/logoEGEOD1.png" alt="EGEOD Logo" className="h-8" />
+          {showText && (
+            <div className="flex flex-col">
+              <span className="text-xl font-semibold text-gray-900">EGEOD</span>
+              <span className="text-xs text-gray-600">Expert of Geospatial Data</span>
+            </div>
+        )}
         </Link>
 
         {isMobile ? (
