@@ -1,4 +1,4 @@
-import { Award, Lightbulb, Heart, Users, Globe2 } from "lucide-react";
+import { Award, Lightbulb, Heart, Users, Globe2, Linkedin, Mail } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Navbar } from "@/components/Navbar";
