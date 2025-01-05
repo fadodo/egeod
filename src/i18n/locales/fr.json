@@ -1,0 +1,28 @@
+{
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Besoin d'un conseil ? Discutons de votre projet !",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "service": "Service",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "services": {
+        "acquisition": "Acquisition de données",
+        "traitement": "Traitement et analyse",
+        "cartographie": "Cartographie",
+        "conseil": "Conseil expert"
+      }
+    },
+    "info": {
+      "title": "Informations pratiques",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email"
+    },
+    "success": "Message envoyé !",
+    "successDetail": "Nous vous répondrons dans les plus brefs délais."
+  }
+}

@@ -3,11 +3,11 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
+import { LanguageSelector } from "./LanguageSelector";
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -71,6 +71,7 @@ export const Navbar = () => {
             <SheetContent>
               <div className="flex flex-col gap-4 mt-8">
                 <NavLinks />
+                <LanguageSelector />
               </div>
             </SheetContent>
           </Sheet>
@@ -81,6 +82,7 @@ export const Navbar = () => {
                 <NavLinks />
               </NavigationMenuList>
             </NavigationMenu>
+            <LanguageSelector />
             <Button>Contactez-nous</Button>
           </div>
         )}
