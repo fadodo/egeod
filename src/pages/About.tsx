@@ -9,7 +9,7 @@ const teamMembers = [
     name: "Fifi ADODO",
     role: "CEO & Teledetection and Data Analyst",
     skills: ["Analyse d'images satellite", "SIG", "Python", "Deep Learning","Gestion de projet"],
-    image: "/public/logoEGEOD1.png"
+    image: "/public/avatarFA.png"
   },
 
 ];
