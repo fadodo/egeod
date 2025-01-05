@@ -3,6 +3,14 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 export const Navbar = () => {
   const isMobile = useIsMobile();
@@ -18,6 +26,28 @@ export const Navbar = () => {
       <Link to="/expertise" className="hover:text-primary transition-colors">
         Expertise
       </Link>
+      <NavigationMenuItem>
+        <NavigationMenuTrigger>Actualités</NavigationMenuTrigger>
+        <NavigationMenuContent>
+          <div className="grid gap-3 p-4 w-[400px]">
+            <NavigationMenuLink asChild>
+              <Link to="/blog" className="block p-2 hover:bg-accent rounded-md">
+                Blog
+              </Link>
+            </NavigationMenuLink>
+            <NavigationMenuLink asChild>
+              <Link to="/events" className="block p-2 hover:bg-accent rounded-md">
+                Événements
+              </Link>
+            </NavigationMenuLink>
+            <NavigationMenuLink asChild>
+              <Link to="/resources" className="block p-2 hover:bg-accent rounded-md">
+                Ressources gratuites
+              </Link>
+            </NavigationMenuLink>
+          </div>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
       <Link to="/contact" className="hover:text-primary transition-colors">
         Contact
       </Link>
@@ -27,8 +57,8 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-primary">
-          EGEOD
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logoEGEOD1.png" alt="EGEOD Logo" className="h-8" />
         </Link>
 
         {isMobile ? (
@@ -46,7 +76,11 @@ export const Navbar = () => {
           </Sheet>
         ) : (
           <div className="flex items-center gap-8">
-            <NavLinks />
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavLinks />
+              </NavigationMenuList>
+            </NavigationMenu>
             <Button>Contactez-nous</Button>
           </div>
         )}
