@@ -1,4 +1,4 @@
-import { Award, Lightbulb, Heart, Users, Globe2, Linkedin, Mail } from "lucide-react";
+import { Award, Lightbulb, Heart, Users, Globe2, linkedin, Mail } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Navbar } from "@/components/Navbar";
@@ -9,7 +9,9 @@ const teamMembers = [
     name: "Fifi ADODO",
     role: "CEO & Teledetection and Data Analyst",
     skills: ["Analyse d'images satellite", "SIG", "Python", "Deep Learning","Gestion de projet"],
-    image: "/public/avatarFA.png"
+    image: "/public/avatarFA.png",
+    linkedin?: "string",
+    email: "string"
   },
 
 ];
