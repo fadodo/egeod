@@ -6,7 +6,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
-import { Flag } from "lucide-react";
 
 export const LanguageSelector = () => {
   const { i18n } = useTranslation();
@@ -16,16 +15,26 @@ export const LanguageSelector = () => {
     en: { name: "English", flag: "🇬🇧" },
   };
 
+  // S'assurer que la langue actuelle existe dans notre objet languages
+  const currentLanguage = i18n.language.split('-')[0]; // Gérer les cas comme 'fr-FR'
+  const defaultLanguage = 'fr';
+  
+  const getCurrentLanguage = () => {
+    return languages[currentLanguage as keyof typeof languages] 
+      ? currentLanguage 
+      : defaultLanguage;
+  };
+
   return (
     <Select
-      value={i18n.language}
+      value={getCurrentLanguage()}
       onValueChange={(value) => i18n.changeLanguage(value)}
     >
       <SelectTrigger className="w-[140px] bg-background/50">
         <SelectValue placeholder="Language">
           <span className="flex items-center gap-2">
-            <span>{languages[i18n.language as keyof typeof languages].flag}</span>
-            <span>{languages[i18n.language as keyof typeof languages].name}</span>
+            <span>{languages[getCurrentLanguage() as keyof typeof languages].flag}</span>
+            <span>{languages[getCurrentLanguage() as keyof typeof languages].name}</span>
           </span>
         </SelectValue>
       </SelectTrigger>
