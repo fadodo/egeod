@@ -38,7 +38,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center pt-20 pb-10">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-              Vos données géospatiales,<br />notre expertise
+              Vos données ,<br />notre expertise
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mb-8">
               Nous transformons vos données en informations stratégiques pour des décisions éclairées.
