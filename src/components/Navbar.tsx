@@ -10,6 +10,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 
 export const Navbar = () => {
@@ -30,21 +31,15 @@ export const Navbar = () => {
         <NavigationMenuTrigger>Actualités</NavigationMenuTrigger>
         <NavigationMenuContent>
           <div className="grid gap-3 p-4 w-[400px]">
-            <NavigationMenuLink asChild>
-              <Link to="/blog" className="block p-2 hover:bg-accent rounded-md">
-                Blog
-              </Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link to="/events" className="block p-2 hover:bg-accent rounded-md">
-                Événements
-              </Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link to="/resources" className="block p-2 hover:bg-accent rounded-md">
-                Ressources gratuites
-              </Link>
-            </NavigationMenuLink>
+            <Link to="/blog" className="block p-2 hover:bg-accent rounded-md">
+              Blog
+            </Link>
+            <Link to="/events" className="block p-2 hover:bg-accent rounded-md">
+              Événements
+            </Link>
+            <Link to="/resources" className="block p-2 hover:bg-accent rounded-md">
+              Ressources gratuites
+            </Link>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
