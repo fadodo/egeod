@@ -10,7 +10,6 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 
 export const Navbar = () => {
@@ -28,16 +27,16 @@ export const Navbar = () => {
         Expertise
       </Link>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Actualités</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="bg-transparent">Actualités</NavigationMenuTrigger>
         <NavigationMenuContent>
-          <div className="grid gap-3 p-4 w-[400px]">
-            <Link to="/blog" className="block p-2 hover:bg-accent rounded-md">
+          <div className="grid gap-3 p-4 w-[400px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <Link to="/blog" className="block p-2 hover:bg-accent rounded-md transition-colors">
               Blog
             </Link>
-            <Link to="/events" className="block p-2 hover:bg-accent rounded-md">
+            <Link to="/events" className="block p-2 hover:bg-accent rounded-md transition-colors">
               Événements
             </Link>
-            <Link to="/resources" className="block p-2 hover:bg-accent rounded-md">
+            <Link to="/resources" className="block p-2 hover:bg-accent rounded-md transition-colors">
               Ressources gratuites
             </Link>
           </div>
@@ -50,7 +49,7 @@ export const Navbar = () => {
   );
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
+    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img src="/logoEGEOD1.png" alt="EGEOD Logo" className="h-8" />
@@ -73,12 +72,14 @@ export const Navbar = () => {
         ) : (
           <div className="flex items-center gap-8">
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="gap-6">
                 <NavLinks />
               </NavigationMenuList>
             </NavigationMenu>
             <LanguageSelector />
-            <Button>Contactez-nous</Button>
+            <Button asChild>
+              <Link to="/contact">Contactez-nous</Link>
+            </Button>
           </div>
         )}
       </div>
