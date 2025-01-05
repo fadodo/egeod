@@ -13,6 +13,10 @@ i18n
       en: { translation: en }
     },
     fallbackLng: 'fr',
+    detection: {
+      order: ['navigator', 'htmlTag', 'path', 'subdomain'],
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false
     }
