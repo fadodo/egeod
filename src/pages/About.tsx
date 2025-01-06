@@ -10,8 +10,6 @@ const teamMembers = [
     role: "CEO & Teledetection and Data Analyst",
     skills: ["Analyse d'images satellite", "SIG", "Python", "Deep Learning","Gestion de projet"],
     image: "/public/avatarFA.png",
-    linkedin: "string",
-    email: "string"
   },
 ];
 
