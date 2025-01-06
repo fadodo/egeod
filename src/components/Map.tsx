@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 const Map = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<maplibregl.Map | null>(null);
+  const mapInstance = useRef<maplibregl.Map | null>(null);
 
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    const mapInstance = new maplibregl.Map({
+    // Initialize map
+    mapInstance.current = new maplibregl.Map({
       container: mapContainer.current,
       style: 'https://demotiles.maplibre.org/style.json',
       center: [2.3522, 48.8566],
@@ -17,38 +18,26 @@ const Map = () => {
       pitch: 45,
     });
 
-    mapInstance.addControl(
+    // Add navigation controls
+    mapInstance.current.addControl(
       new maplibregl.NavigationControl({
         visualizePitch: true,
       }),
       'top-right'
     );
 
-    mapInstance.scrollZoom.disable();
-    
-    setMap(mapInstance);
+    // Disable scroll zoom
+    mapInstance.current.scrollZoom.disable();
 
+    // Cleanup function
     return () => {
-      if (mapInstance) {
-        mapInstance.remove();
+      console.log('Cleaning up map instance');
+      if (mapInstance.current) {
+        mapInstance.current.remove();
+        mapInstance.current = null;
       }
     };
   }, []);
-
-  // Prevent the map instance from being cloned
-  useEffect(() => {
-    const cleanup = () => {
-      if (map) {
-        map.remove();
-      }
-    };
-
-    window.addEventListener('beforeunload', cleanup);
-    return () => {
-      window.removeEventListener('beforeunload', cleanup);
-      cleanup();
-    };
-  }, [map]);
 
   return (
     <div className="relative w-full h-[80vh]">
