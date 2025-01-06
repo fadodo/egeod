@@ -1,4 +1,15 @@
 {
+  "nav": {
+    "about": "Qui sommes-nous",
+    "services": "Services",
+    "expertise": "Expertise",
+    "news": "Actualités",
+    "blog": "Blog",
+    "events": "Événements",
+    "resources": "Ressources gratuites",
+    "contact": "Contact",
+    "contactUs": "Contactez-nous"
+  },
   "contact": {
     "title": "Contactez-nous",
     "subtitle": "Besoin d'un conseil ? Discutons de votre projet !",

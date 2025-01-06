@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
 import { LanguageSelector } from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,36 +15,39 @@ import {
 
 export const Navbar = () => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
 
   const NavLinks = () => (
     <>
       <Link to="/about" className="hover:text-primary transition-colors">
-        Qui sommes-nous
+        {t("nav.about")}
       </Link>
       <Link to="/services" className="hover:text-primary transition-colors">
-        Services
+        {t("nav.services")}
       </Link>
       <Link to="/expertise" className="hover:text-primary transition-colors">
-        Expertise
+        {t("nav.expertise")}
       </Link>
       <NavigationMenuItem>
-        <NavigationMenuTrigger className="bg-transparent">Actualités</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="bg-transparent">
+          {t("nav.news")}
+        </NavigationMenuTrigger>
         <NavigationMenuContent>
           <div className="grid gap-3 p-4 w-[400px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <Link to="/blog" className="block p-2 hover:bg-accent rounded-md transition-colors">
-              Blog
+              {t("nav.blog")}
             </Link>
             <Link to="/events" className="block p-2 hover:bg-accent rounded-md transition-colors">
-              Événements
+              {t("nav.events")}
             </Link>
             <Link to="/resources" className="block p-2 hover:bg-accent rounded-md transition-colors">
-              Ressources gratuites
+              {t("nav.resources")}
             </Link>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
       <Link to="/contact" className="hover:text-primary transition-colors">
-        Contact
+        {t("nav.contact")}
       </Link>
     </>
   );
@@ -78,7 +82,7 @@ export const Navbar = () => {
             </NavigationMenu>
             <LanguageSelector />
             <Button asChild>
-              <Link to="/contact">Contactez-nous</Link>
+              <Link to="/contact">{t("nav.contactUs")}</Link>
             </Button>
           </div>
         )}
