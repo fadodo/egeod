@@ -47,9 +47,9 @@ export const Navbar = () => {
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
-      <Link to="/contact" className="hover:text-primary transition-colors">
-        {t("nav.contactUs")}
-      </Link>
+      <Button asChild variant="default">
+        <Link to="/contact">{t("nav.contactUs")}</Link>
+      </Button>
     </>
   );
 
@@ -80,9 +80,6 @@ export const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
             <LanguageSelector />
-            <Button asChild>
-              <Link to="/contact">{t("nav.contactUs")}</Link>
-            </Button>
           </div>
         )}
       </div>
