@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import Map from "@/components/Map";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Building } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NewsSection } from "@/components/NewsSection";
 import { useTranslation } from "react-i18next";
