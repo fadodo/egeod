@@ -5,6 +5,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
 import { LanguageSelector } from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
+import { BrandLogo } from "./BrandLogo";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -47,7 +48,7 @@ export const Navbar = () => {
         </NavigationMenuContent>
       </NavigationMenuItem>
       <Link to="/contact" className="hover:text-primary transition-colors">
-        {t("nav.contact")}
+        {t("nav.contactUs")}
       </Link>
     </>
   );
@@ -55,9 +56,7 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/logoEGEOD1.png" alt="EGEOD Logo" className="h-8" />
-        </Link>
+        <BrandLogo />
 
         {isMobile ? (
           <Sheet>

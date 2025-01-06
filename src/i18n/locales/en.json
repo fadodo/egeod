@@ -10,6 +10,36 @@
     "contact": "Contact",
     "contactUs": "Contact Us"
   },
+  "news": {
+    "title": "News",
+    "blog": {
+      "title": "Blog",
+      "description": "Discover our latest articles and insights",
+      "items": {
+        "trends": "Geomatics trends",
+        "cases": "Case studies",
+        "tutorials": "Practical tutorials"
+      }
+    },
+    "events": {
+      "title": "Events",
+      "description": "Join our exclusive events",
+      "items": {
+        "webinars": "Webinars",
+        "workshops": "Workshops",
+        "conferences": "Conferences"
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "description": "Download our free resources",
+      "items": {
+        "guides": "Practical guides",
+        "templates": "Templates",
+        "tools": "Tools and scripts"
+      }
+    }
+  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Need advice? Let's discuss your project!",
