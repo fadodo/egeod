@@ -5,6 +5,16 @@ export const useLanguage = () => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
+    // Détecte la langue du navigateur
+    const browserLang = navigator.language.split('-')[0];
+    const supportedLangs = ['fr', 'en'];
+    
+    // Si la langue n'est pas déjà définie, utilise celle du navigateur
+    if (!localStorage.getItem('i18nextLng')) {
+      const defaultLang = supportedLangs.includes(browserLang) ? browserLang : 'fr';
+      i18n.changeLanguage(defaultLang);
+    }
+
     // Met à jour la balise lang de l'HTML
     document.documentElement.lang = i18n.language;
     
@@ -15,6 +25,9 @@ export const useLanguage = () => {
         meta.setAttribute('content', meta.getAttribute('content') || '');
       }
     });
+
+    // Met à jour la direction du texte si nécessaire
+    document.dir = i18n.dir();
   }, [i18n.language]);
 
   return {

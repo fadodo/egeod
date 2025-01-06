@@ -6,23 +6,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export const LanguageSelector = () => {
-  const { i18n } = useTranslation();
+  const { currentLanguage, changeLanguage, languages } = useLanguage();
 
-  const languages = {
-    fr: { name: "Français", flag: "🇫🇷" },
-    en: { name: "English", flag: "🇬🇧" },
-  };
-
-  const currentLanguage = i18n.language.split('-')[0];
-  const defaultLanguage = 'fr';
-  
   const getCurrentLanguage = () => {
-    return languages[currentLanguage as keyof typeof languages] 
-      ? currentLanguage 
-      : defaultLanguage;
+    const lang = currentLanguage.split('-')[0];
+    return languages[lang as keyof typeof languages] 
+      ? lang 
+      : 'fr';
   };
 
   return (
@@ -39,7 +32,10 @@ export const LanguageSelector = () => {
         {Object.entries(languages).map(([code, { name, flag }]) => (
           <DropdownMenuItem
             key={code}
-            onClick={() => i18n.changeLanguage(code)}
+            onClick={() => {
+              changeLanguage(code);
+              console.log(`Language changed to: ${code}`);
+            }}
             className="flex items-center gap-2"
           >
             <span>{flag}</span>
