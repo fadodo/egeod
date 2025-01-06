@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import Map from "@/components/Map";
-import { ArrowRight, Award, Rocket, Users, Building2, TreePine, Buildings, Factory, ChartBar } from "lucide-react";
+import { ArrowRight, Award, Rocket, Users, Building2, TreePine, Building, Factory, ChartBar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
@@ -49,7 +49,7 @@ const sectors = [
     projects: "Suivi de la déforestation en Amazonie"
   },
   {
-    icon: Buildings,
+    icon: Building,
     title: "Urbanisme",
     projects: "Cartographie 3D de Paris"
   },
