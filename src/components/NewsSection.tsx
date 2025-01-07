@@ -62,7 +62,7 @@ export const NewsSection = () => {
                   <p className="text-muted-foreground">{category.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="flex flex-wrap space-x-2">
+                  <ul className="space-y-2">
                     {category.items.map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
