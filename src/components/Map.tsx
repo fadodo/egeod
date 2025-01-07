@@ -19,6 +19,7 @@ const MapComponent = () => {
       layers: [
         new TileLayer({
           source: new OSM()
+          opacity: 0.8, // Ajout d'une opacité pour rendre les tuiles semi-transparentes
         })
       ],
       view: new View({
@@ -39,8 +40,15 @@ const MapComponent = () => {
 
   return (
     <div className="relative w-full h-[80vh]">
-      <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" />
+      {/* Conteneur de la carte */}
+      <div 
+       ref={mapRef} 
+       className="absolute inset-0 rounded-lg overflow-hidden" 
+       style={{backgroundColor: "#ffffff00", // Fond transparent pour le conteneur 
+        }}
+      />
+      {/* Effet visuel supplémentaire, tel qu'un dégradé pour améliorer l'apparence */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-gray-200/30 rounded-lg" />
     </div>
   );
 };
