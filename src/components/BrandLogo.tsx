@@ -13,8 +13,8 @@ export const BrandLogo = () => {
         EGEOD
         </span>
         <span className="text-sm text-muted-foreground">
-          Expert of Geospatial Data
-          </span>
+        Expert of Geospatial Data
+        </span>
       )}
     </Link>
   );
