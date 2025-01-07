@@ -10,6 +10,7 @@ export const BrandLogo = () => {
       />
       <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
         EGEOD
+        Expert of Geospatial Data
       </span>
     </Link>
   );
