@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Lightbulb, ShieldCheck, Users, Leaf, Building2, Wheat, Flask, Factory, Car } from "lucide-react";
+import { ArrowRight, Lightbulb, ShieldCheck, Users, Leaf, Building2, Wheat, Beaker, Factory, Car } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const values = [
@@ -63,7 +63,7 @@ const sectors = [
     description: "Cartographie industrielle, gestion d'actifs, optimisation logistique"
   },
   {
-    icon: Flask,
+    icon: Beaker,
     title: "Recherche",
     description: "Projets R&D, analyses spatiales avancées, modélisation"
   },
