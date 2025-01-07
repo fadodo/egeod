@@ -1,53 +1,48 @@
 import React, { useEffect, useRef } from 'react';
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+import 'ol/ol.css';
 
-const Map = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<maplibregl.Map | null>(null);
+const MapComponent = () => {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const map = useRef<Map | null>(null);
 
   useEffect(() => {
-    if (!mapContainer.current) return;
+    if (!mapRef.current) return;
 
-    console.log('Initializing map');
-    
-    // Initialize map only if it hasn't been initialized yet
-    if (!mapRef.current) {
-      mapRef.current = new maplibregl.Map({
-        container: mapContainer.current,
-        style: 'https://demotiles.maplibre.org/style.json', // Free and open source tiles
-        center: [2.3522, 48.8566], // Paris coordinates
-        zoom: 12,
-        pitch: 45,
-      });
+    console.log('Initializing OpenLayers map');
 
-      // Add navigation controls
-      mapRef.current.addControl(
-        new maplibregl.NavigationControl({
-          visualizePitch: true,
-        }),
-        'top-right'
-      );
+    map.current = new Map({
+      target: mapRef.current,
+      layers: [
+        new TileLayer({
+          source: new OSM()
+        })
+      ],
+      view: new View({
+        center: [0, 0],
+        zoom: 2,
+        maxZoom: 18
+      })
+    });
 
-      // Disable scroll zoom
-      mapRef.current.scrollZoom.disable();
-    }
-
-    // Cleanup function
     return () => {
       console.log('Cleaning up map');
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
+      if (map.current) {
+        map.current.setTarget(undefined);
+        map.current = null;
       }
     };
   }, []);
 
   return (
     <div className="relative w-full h-[80vh]">
-      <div ref={mapContainer} className="absolute inset-0" />
+      <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" />
     </div>
   );
 };
 
-export default Map;
+export default MapComponent;

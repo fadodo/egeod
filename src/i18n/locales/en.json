@@ -16,6 +16,44 @@
       "subtitle": "We transform your geospatial data into strategic insights",
       "contact": "Contact our experts",
       "cta": "Discover our solutions"
+    },
+    "services": {
+      "title": "Our Services",
+      "acquisition": {
+        "title": "Data Acquisition",
+        "description": "Collection of geospatial data through satellite, drone and field surveys"
+      },
+      "processing": {
+        "title": "Processing",
+        "description": "Advanced analysis and processing of geospatial data"
+      },
+      "mapping": {
+        "title": "Mapping",
+        "description": "Creation of maps and interactive visualizations"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Support and expertise in geomatics"
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Adoption of latest technologies for optimal solutions"
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Excellence and precision in all our services"
+      },
+      "proximity": {
+        "title": "Proximity",
+        "description": "A trusted relationship with our clients"
+      },
+      "listening": {
+        "title": "Listening",
+        "description": "Deep understanding of your needs"
+      }
     }
   }
 }

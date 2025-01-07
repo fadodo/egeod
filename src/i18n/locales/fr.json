@@ -16,76 +16,44 @@
       "subtitle": "Nous transformons vos données géospatiales en informations stratégiques",
       "contact": "Contactez nos experts",
       "cta": "Découvrez nos solutions"
-    }
-  },
-  "blog": {
-    "title": "Blog",
-    "description": "Découvrez nos derniers articles sur la géomatique, la télédétection et l'innovation technologique.",
-    "readMore": "Lire la suite",
-    "categories": {
-      "technology": "Technologie",
-      "caseStudy": "Étude de cas",
-      "tutorial": "Tutoriel"
     },
-    "posts": {
-      "trends": {
-        "title": "Les dernières tendances en géomatique pour 2024",
-        "description": "Découvrez les innovations technologiques qui façonnent l'avenir de la géomatique."
+    "services": {
+      "title": "Nos Services",
+      "acquisition": {
+        "title": "Acquisition de données",
+        "description": "Collecte de données géospatiales par satellite, drone et relevés terrain"
       },
-      "case": {
-        "title": "Étude de cas : Cartographie urbaine intelligente",
-        "description": "Comment nous avons aidé une métropole à optimiser sa gestion territoriale."
+      "processing": {
+        "title": "Traitement",
+        "description": "Analyse et traitement avancé de données géospatiales"
       },
-      "tutorial": {
-        "title": "Guide pratique : Analyse de données satellite",
-        "description": "Apprenez à exploiter efficacement les données de télédétection."
+      "mapping": {
+        "title": "Cartographie",
+        "description": "Création de cartes et visualisations interactives"
+      },
+      "consulting": {
+        "title": "Conseils",
+        "description": "Accompagnement et expertise en géomatique"
       }
-    }
-  },
-  "events": {
-    "title": "Événements",
-    "description": "Participez à nos événements pour rester à la pointe de l'innovation en géomatique.",
-    "register": "S'inscrire",
-    "online": "En ligne",
-    "maxParticipants": "{{count}} participants max",
-    "types": {
-      "webinar": "Webinaire",
-      "workshop": "Atelier",
-      "conference": "Conférence"
     },
-    "webinar": {
-      "title": "Webinaire : Innovations en télédétection",
-      "description": "Découvrez les dernières avancées en matière d'acquisition et de traitement des données."
-    },
-    "workshop": {
-      "title": "Atelier pratique : SIG et analyse spatiale",
-      "description": "Formation hands-on sur les outils et méthodes d'analyse spatiale."
-    },
-    "conference": {
-      "title": "Conférence annuelle EGEOD",
-      "description": "Rencontrez les experts et découvrez les dernières innovations du secteur."
-    }
-  },
-  "resources": {
-    "title": "Ressources gratuites",
-    "description": "Téléchargez nos guides et documents techniques pour approfondir vos connaissances.",
-    "download": "Télécharger",
-    "types": {
-      "guide": "Guide pratique",
-      "template": "Modèle",
-      "technical": "Fiche technique"
-    },
-    "guide": {
-      "title": "Guide des bonnes pratiques en géomatique",
-      "description": "Un guide complet pour optimiser vos projets de géomatique."
-    },
-    "template": {
-      "title": "Modèle de cahier des charges",
-      "description": "Template pour la rédaction de vos cahiers des charges."
-    },
-    "technical": {
-      "title": "Fiche technique : Traitement des données LiDAR",
-      "description": "Méthodologie détaillée pour le traitement des données LiDAR."
+    "values": {
+      "title": "Nos Valeurs",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Adoption des dernières technologies pour des solutions optimales"
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Excellence et précision dans tous nos services"
+      },
+      "proximity": {
+        "title": "Proximité",
+        "description": "Une relation de confiance avec nos clients"
+      },
+      "listening": {
+        "title": "Écoute",
+        "description": "Compréhension approfondie de vos besoins"
+      }
     }
   }
 }
