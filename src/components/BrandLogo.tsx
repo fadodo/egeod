@@ -8,12 +8,14 @@ export const BrandLogo = () => {
         alt="EGEOD Logo" 
         className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" 
       />
-      <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      {showText && (
+        <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
         EGEOD
-      </span>
-      <span className="text-sm text-muted-foreground">
-        Expert of Geospatial Data
-      </span>
+        </span>
+        <span className="text-sm text-muted-foreground">
+          Expert of Geospatial Data
+          </span>
+      )}
     </Link>
   );
 };
