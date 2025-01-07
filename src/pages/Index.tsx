@@ -43,7 +43,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           {/* Ajout d'un style inline ou via Tailwind pour la transparence */}
-          <div className="h-full w-full" style={{ backgroundColor: "rgba(255, 255, 255, 0)" }}>
+          <div className="h-full w-full" style={{ backgroundColor: "#ffffff00" }}>
             <Map />
           </div>
         </div>
