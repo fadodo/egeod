@@ -22,7 +22,7 @@ const MapComponent = () => {
       layers: [
         new ImageLayer({
           source: new ImageStatic({
-            url: '/public/hero-background.jpg', // Replace with the actual path to your image
+            url: '/public/hero-background.jpg',
             projection: 'EPSG:4326',
             imageExtent: [
               -180,
