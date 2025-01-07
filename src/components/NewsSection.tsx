@@ -48,7 +48,7 @@ export const NewsSection = () => {
         <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
           {t("news.title")}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 flex flex-row items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {newsCategories.map((category) => (
             <Link to={category.link} key={category.title}>
               <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -62,7 +62,7 @@ export const NewsSection = () => {
                   <p className="text-muted-foreground">{category.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="flex flex-wrap space-x-2">
                     {category.items.map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
