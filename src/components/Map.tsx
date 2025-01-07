@@ -15,8 +15,8 @@ const Map = () => {
     if (!mapRef.current) {
       mapRef.current = new maplibregl.Map({
         container: mapContainer.current,
-        style: 'https://demotiles.maplibre.org/style.json',
-        center: [2.3522, 48.8566],
+        style: 'https://demotiles.maplibre.org/style.json', // Free and open source tiles
+        center: [2.3522, 48.8566], // Paris coordinates
         zoom: 12,
         pitch: 45,
       });

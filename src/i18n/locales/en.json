@@ -10,74 +10,12 @@
     "contact": "Contact",
     "contactUs": "Contact Us"
   },
-  "blog": {
-    "title": "Blog",
-    "description": "Discover our latest articles about geomatics, remote sensing, and technological innovation.",
-    "readMore": "Read more",
-    "categories": {
-      "technology": "Technology",
-      "caseStudy": "Case Study",
-      "tutorial": "Tutorial"
-    },
-    "posts": {
-      "trends": {
-        "title": "Latest Geomatics Trends for 2024",
-        "description": "Discover the technological innovations shaping the future of geomatics."
-      },
-      "case": {
-        "title": "Case Study: Smart Urban Mapping",
-        "description": "How we helped a metropolis optimize its territorial management."
-      },
-      "tutorial": {
-        "title": "Practical Guide: Satellite Data Analysis",
-        "description": "Learn how to effectively leverage remote sensing data."
-      }
-    }
-  },
-  "events": {
-    "title": "Events",
-    "description": "Join our events to stay at the forefront of geomatics innovation.",
-    "register": "Register",
-    "online": "Online",
-    "maxParticipants": "{{count}} participants max",
-    "types": {
-      "webinar": "Webinar",
-      "workshop": "Workshop",
-      "conference": "Conference"
-    },
-    "webinar": {
-      "title": "Webinar: Remote Sensing Innovations",
-      "description": "Discover the latest advances in data acquisition and processing."
-    },
-    "workshop": {
-      "title": "Practical Workshop: GIS and Spatial Analysis",
-      "description": "Hands-on training on spatial analysis tools and methods."
-    },
-    "conference": {
-      "title": "EGEOD Annual Conference",
-      "description": "Meet experts and discover the latest industry innovations."
-    }
-  },
-  "resources": {
-    "title": "Free Resources",
-    "description": "Download our guides and technical documents to deepen your knowledge.",
-    "download": "Download",
-    "types": {
-      "guide": "Practical Guide",
-      "template": "Template",
-      "technical": "Technical Sheet"
-    },
-    "guide": {
-      "title": "Geomatics Best Practices Guide",
-      "description": "A comprehensive guide to optimize your geomatics projects."
-    },
-    "template": {
-      "title": "Specifications Template",
-      "description": "Template for writing your specifications."
-    },
-    "technical": {
-      "title": "Technical Sheet: LiDAR Data Processing",
-      "description": "Detailed methodology for LiDAR data processing."
+  "home": {
+    "hero": {
+      "title": "Decode your world with EGEOD",
+      "subtitle": "We transform your geospatial data into strategic insights",
+      "contact": "Contact our experts",
+      "cta": "Discover our solutions"
     }
   }
 }

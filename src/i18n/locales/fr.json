@@ -10,6 +10,14 @@
     "contact": "Contact",
     "contactUs": "Contactez-nous"
   },
+  "home": {
+    "hero": {
+      "title": "Décryptez votre monde avec EGEOD",
+      "subtitle": "Nous transformons vos données géospatiales en informations stratégiques",
+      "contact": "Contactez nos experts",
+      "cta": "Découvrez nos solutions"
+    }
+  },
   "blog": {
     "title": "Blog",
     "description": "Découvrez nos derniers articles sur la géomatique, la télédétection et l'innovation technologique.",
