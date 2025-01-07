@@ -10,7 +10,7 @@ import Map from "@/components/Map";
 const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 0.1, y: 0 }}
+    whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     className="p-6 bg-muted/50 rounded-lg hover:bg-muted/70 transition-colors"
   >
@@ -42,7 +42,10 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Map />
+          {/* Ajout d'un style inline ou via Tailwind pour la transparence */}
+          <div className="h-full w-full" style={{ backgroundColor: "rgba(255, 255, 255, 0)" }}></div>
+           <Map />
+          </div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
