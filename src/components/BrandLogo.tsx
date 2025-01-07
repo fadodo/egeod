@@ -12,12 +12,8 @@ export const BrandLogo = () => {
       />
       {showText && (
         <div className="flex flex-col">
-          <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            EGEOD
-          </span>
-          <span className="text-sm text-muted-foreground">
-            Expert of Geospatial Data
-          </span>
+          <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EGEOD</span>
+          <span className="text-xs text-gray-600">Expert of Geospatial Data</span>
         </div>
       )}
     </Link>
