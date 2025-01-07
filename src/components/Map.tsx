@@ -50,7 +50,7 @@ const MapComponent = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[38vh]">
+    <div className="relative w-full h-[35vh]">
      <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" /> 
     </div>
