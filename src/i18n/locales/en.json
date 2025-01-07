@@ -10,112 +10,74 @@
     "contact": "Contact",
     "contactUs": "Contact Us"
   },
-  "hero": {
-    "title": "Innovative Geospatial Solutions",
-    "subtitle": "Transforming your data into strategic insights",
-    "cta": "Discover our solutions",
-    "contact": "Contact our experts"
-  },
-  "sectors": {
-    "title": "Our fields of intervention",
-    "public": "Public sector",
-    "private": "Private sector",
-    "ngo": "NGO",
-    "university": "Universities",
-    "description": "Expertise serving all sectors"
-  },
-  "services": {
-    "title": "Our key services",
-    "acquisition": {
-      "title": "Data Acquisition",
-      "description": "Satellite, drone and field data collection"
+  "blog": {
+    "title": "Blog",
+    "description": "Discover our latest articles about geomatics, remote sensing, and technological innovation.",
+    "readMore": "Read more",
+    "categories": {
+      "technology": "Technology",
+      "caseStudy": "Case Study",
+      "tutorial": "Tutorial"
     },
-    "processing": {
-      "title": "Processing",
-      "description": "Advanced data analysis and processing"
-    },
-    "mapping": {
-      "title": "Mapping",
-      "description": "Interactive visualization and mapping"
-    },
-    "consulting": {
-      "title": "Consulting",
-      "description": "Expert advice and personalized support"
-    }
-  },
-  "values": {
-    "title": "Our values",
-    "innovation": {
-      "title": "Innovation",
-      "description": "Cutting-edge technologies for your projects"
-    },
-    "quality": {
-      "title": "Quality",
-      "description": "Precise and reliable results"
-    },
-    "proximity": {
-      "title": "Proximity",
-      "description": "A client-centered approach"
-    },
-    "listening": {
-      "title": "Listening",
-      "description": "Understanding and meeting your expectations"
-    }
-  },
-  "news": {
-    "title": "News",
-    "blog": {
-      "title": "Blog",
-      "description": "Discover our latest articles and insights",
-      "items": {
-        "trends": "Geomatics trends",
-        "cases": "Case studies",
-        "tutorials": "Practical tutorials"
-      }
-    },
-    "events": {
-      "title": "Events",
-      "description": "Join our exclusive events",
-      "items": {
-        "webinars": "Webinars",
-        "workshops": "Workshops",
-        "conferences": "Conferences"
-      }
-    },
-    "resources": {
-      "title": "Resources",
-      "description": "Download our free resources",
-      "items": {
-        "guides": "Practical guides",
-        "templates": "Templates",
-        "tools": "Tools and scripts"
+    "posts": {
+      "trends": {
+        "title": "Latest Geomatics Trends for 2024",
+        "description": "Discover the technological innovations shaping the future of geomatics."
+      },
+      "case": {
+        "title": "Case Study: Smart Urban Mapping",
+        "description": "How we helped a metropolis optimize its territorial management."
+      },
+      "tutorial": {
+        "title": "Practical Guide: Satellite Data Analysis",
+        "description": "Learn how to effectively leverage remote sensing data."
       }
     }
   },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Need advice? Let's discuss your project!",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "service": "Service",
-      "subject": "Subject",
-      "message": "Message",
-      "send": "Send",
-      "services": {
-        "acquisition": "Data Acquisition",
-        "traitement": "Processing and Analysis",
-        "cartographie": "Mapping",
-        "conseil": "Expert Consulting"
-      }
+  "events": {
+    "title": "Events",
+    "description": "Join our events to stay at the forefront of geomatics innovation.",
+    "register": "Register",
+    "online": "Online",
+    "maxParticipants": "{{count}} participants max",
+    "types": {
+      "webinar": "Webinar",
+      "workshop": "Workshop",
+      "conference": "Conference"
     },
-    "info": {
-      "title": "Practical Information",
-      "address": "Address",
-      "phone": "Phone",
-      "email": "Email"
+    "webinar": {
+      "title": "Webinar: Remote Sensing Innovations",
+      "description": "Discover the latest advances in data acquisition and processing."
     },
-    "success": "Message sent!",
-    "successDetail": "We will get back to you as soon as possible."
+    "workshop": {
+      "title": "Practical Workshop: GIS and Spatial Analysis",
+      "description": "Hands-on training on spatial analysis tools and methods."
+    },
+    "conference": {
+      "title": "EGEOD Annual Conference",
+      "description": "Meet experts and discover the latest industry innovations."
+    }
+  },
+  "resources": {
+    "title": "Free Resources",
+    "description": "Download our guides and technical documents to deepen your knowledge.",
+    "download": "Download",
+    "types": {
+      "guide": "Practical Guide",
+      "template": "Template",
+      "technical": "Technical Sheet"
+    },
+    "guide": {
+      "title": "Geomatics Best Practices Guide",
+      "description": "A comprehensive guide to optimize your geomatics projects."
+    },
+    "template": {
+      "title": "Specifications Template",
+      "description": "Template for writing your specifications."
+    },
+    "technical": {
+      "title": "Technical Sheet: LiDAR Data Processing",
+      "description": "Detailed methodology for LiDAR data processing."
+    }
   }
 }
