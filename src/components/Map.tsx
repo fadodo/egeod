@@ -18,7 +18,7 @@ const MapComponent = () => {
       target: mapRef.current,
       layers: [
         new TileLayer({
-          source: new OSM()
+          source: new OSM(),
           opacity: 0.8, // Ajout d'une opacité pour rendre les tuiles semi-transparentes
         })
       ],
