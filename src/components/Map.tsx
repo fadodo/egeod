@@ -4,6 +4,9 @@ import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import 'ol/ol.css';
+import ImageLayer from 'ol/layer/Image';
+import ImageStatic from 'ol/source/ImageStatic';
+import { fromLonLat } from 'ol/proj';
 
 const MapComponent = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -17,13 +20,21 @@ const MapComponent = () => {
     map.current = new Map({
       target: mapRef.current,
       layers: [
-        new TileLayer({
-          source: new OSM(),
-          transparent: true
-        })
+        new ImageLayer({
+          source: new ImageStatic({
+            url: '/public/hero-background.jpg', // Replace with the actual path to your image
+            projection: 'EPSG:4326',
+            imageExtent: [
+              -180,
+              -90,
+              180,
+              90, // Adjust these coordinates based on your image extent
+            ],
+          }),
+        }),
       ],
       view: new View({
-        center: [0, 0],
+        center: fromLonLat([0, 0]), // Convert coordinates to map projection
         zoom: 2,
         maxZoom: 18
       })
@@ -40,15 +51,8 @@ const MapComponent = () => {
 
   return (
     <div className="relative w-full h-[80vh]">
-      {/* Conteneur de la carte */}
-      <div 
-       ref={mapRef} 
-       className="absolute inset-0 rounded-lg overflow-hidden" 
-       style={{backgroundColor: "#ffffff00", // Fond transparent pour le conteneur 
-        }}
-      />
-      {/* Effet visuel supplémentaire, tel qu'un dégradé pour améliorer l'apparence */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-gray-200/30 rounded-lg" />
+     <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
+     <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" /> 
     </div>
   );
 };
