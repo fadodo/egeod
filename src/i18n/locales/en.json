@@ -10,6 +10,58 @@
     "contact": "Contact",
     "contactUs": "Contact Us"
   },
+  "hero": {
+    "title": "Innovative Geospatial Solutions",
+    "subtitle": "Transforming your data into strategic insights",
+    "cta": "Discover our solutions",
+    "contact": "Contact our experts"
+  },
+  "sectors": {
+    "title": "Our fields of intervention",
+    "public": "Public sector",
+    "private": "Private sector",
+    "ngo": "NGO",
+    "university": "Universities",
+    "description": "Expertise serving all sectors"
+  },
+  "services": {
+    "title": "Our key services",
+    "acquisition": {
+      "title": "Data Acquisition",
+      "description": "Satellite, drone and field data collection"
+    },
+    "processing": {
+      "title": "Processing",
+      "description": "Advanced data analysis and processing"
+    },
+    "mapping": {
+      "title": "Mapping",
+      "description": "Interactive visualization and mapping"
+    },
+    "consulting": {
+      "title": "Consulting",
+      "description": "Expert advice and personalized support"
+    }
+  },
+  "values": {
+    "title": "Our values",
+    "innovation": {
+      "title": "Innovation",
+      "description": "Cutting-edge technologies for your projects"
+    },
+    "quality": {
+      "title": "Quality",
+      "description": "Precise and reliable results"
+    },
+    "proximity": {
+      "title": "Proximity",
+      "description": "A client-centered approach"
+    },
+    "listening": {
+      "title": "Listening",
+      "description": "Understanding and meeting your expectations"
+    }
+  },
   "news": {
     "title": "News",
     "blog": {
