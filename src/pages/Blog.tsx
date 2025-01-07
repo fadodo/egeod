@@ -4,9 +4,15 @@ import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Calendar, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const Blog = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    // Log when the blog page is mounted to help with debugging
+    console.log("Blog page mounted");
+  }, []);
 
   const blogPosts = [
     {
@@ -33,9 +39,9 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="container mx-auto px-4 pt-24 pb-16">
+      <main className="container mx-auto px-4 pt-24 pb-16 flex-grow">
         <h1 className="text-4xl font-bold mb-8 font-heading">{t("blog.title")}</h1>
         <p className="text-muted-foreground mb-12 max-w-2xl">
           {t("blog.description")}
