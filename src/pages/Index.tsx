@@ -9,8 +9,8 @@ import Map from "@/components/Map";
 
 const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
   <motion.div 
-    initial={{ opacity: 0.5, y: 20 }}
-    whileInView={{ opacity: 0.5, y: 0 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 0.1, y: 0 }}
     transition={{ duration: 0.5 }}
     className="p-6 bg-muted/50 rounded-lg hover:bg-muted/70 transition-colors"
   >
