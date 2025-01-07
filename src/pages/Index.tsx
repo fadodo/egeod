@@ -42,10 +42,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          {/* Ajout d'un style inline ou via Tailwind pour la transparence */}
-          <div className="h-full w-full" style={{ backgroundColor: "#ffffff00" }}>
-            <Map />
-          </div>
+          <Map />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">

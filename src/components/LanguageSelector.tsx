@@ -38,7 +38,6 @@ export const LanguageSelector = () => {
             }}
             className="flex items-center gap-2"
           >
-            <span>{flag}</span>
             <span>{name}</span>
           </DropdownMenuItem>
         ))}
