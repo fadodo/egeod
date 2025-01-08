@@ -10,50 +10,65 @@
     "contact": "Contact",
     "contactUs": "Contactez-nous"
   },
-  "home": {
-    "hero": {
-      "title": "Décryptez votre monde avec EGEOD",
-      "subtitle": "Nous transformons vos données géospatiales en informations stratégiques",
-      "contact": "Contactez nos experts",
-      "cta": "Découvrez nos solutions"
-    },
-    "services": {
-      "title": "Nos Services",
-      "acquisition": {
-        "title": "Acquisition de données",
-        "description": "Collecte de données géospatiales par satellite, drone et relevés terrain"
-      },
-      "processing": {
-        "title": "Traitement",
-        "description": "Analyse et traitement avancé de données géospatiales"
-      },
-      "mapping": {
-        "title": "Cartographie",
-        "description": "Création de cartes et visualisations interactives"
-      },
-      "consulting": {
-        "title": "Conseils",
-        "description": "Accompagnement et expertise en géomatique"
-      }
+  "about": {
+    "title": "Notre Histoire",
+    "description": "Fondée en 2025, EGEOD est née de la vision d'experts passionnés",
+    "team": {
+      "title": "Notre Équipe",
+      "description": "Une équipe d'experts passionnés"
     },
     "values": {
       "title": "Nos Valeurs",
-      "innovation": {
-        "title": "Innovation",
-        "description": "Adoption des dernières technologies pour des solutions optimales"
-      },
-      "quality": {
-        "title": "Qualité",
-        "description": "Excellence et précision dans tous nos services"
-      },
-      "proximity": {
-        "title": "Proximité",
-        "description": "Une relation de confiance avec nos clients"
-      },
-      "listening": {
-        "title": "Écoute",
-        "description": "Compréhension approfondie de vos besoins"
-      }
+      "innovation": "Innovation",
+      "quality": "Qualité",
+      "proximity": "Proximité",
+      "listening": "Écoute"
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions complètes pour vos besoins géospatiaux",
+    "data": {
+      "title": "Acquisition de données",
+      "description": "Collecte de données satellite, drone et terrain"
+    },
+    "processing": {
+      "title": "Traitement",
+      "description": "Analyse et traitement avancé"
+    },
+    "mapping": {
+      "title": "Cartographie",
+      "description": "Création de cartes interactives"
+    },
+    "consulting": {
+      "title": "Conseil",
+      "description": "Expertise et accompagnement"
+    }
+  },
+  "expertise": {
+    "title": "Notre Expertise",
+    "subtitle": "Excellence dans le domaine géospatial",
+    "areas": {
+      "remote": "Télédétection",
+      "gis": "SIG",
+      "data": "Science des données",
+      "dev": "Développement"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Notre équipe est à votre écoute",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer"
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email"
     }
   }
 }
