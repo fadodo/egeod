@@ -12,15 +12,33 @@ export type Database = {
       Contacts: {
         Row: {
           created_at: string
+          email: string
           id: number
+          is_processed: boolean | null
+          message: string
+          name: string
+          service: string
+          subject: string
         }
         Insert: {
           created_at?: string
+          email: string
           id?: number
+          is_processed?: boolean | null
+          message: string
+          name: string
+          service: string
+          subject: string
         }
         Update: {
           created_at?: string
+          email?: string
           id?: number
+          is_processed?: boolean | null
+          message?: string
+          name?: string
+          service?: string
+          subject?: string
         }
         Relationships: []
       }
