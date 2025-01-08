@@ -53,22 +53,37 @@
       "gis": "SIG",
       "data": "Science des données",
       "dev": "Développement"
-    }
-  },
-  "contact": {
-    "title": "Contactez-nous",
-    "subtitle": "Notre équipe est à votre écoute",
-    "form": {
-      "name": "Nom",
-      "email": "Email",
-      "subject": "Sujet",
-      "message": "Message",
-      "send": "Envoyer"
     },
-    "info": {
-      "address": "Adresse",
-      "phone": "Téléphone",
-      "email": "Email"
+    "sectors": {
+      "title": "Nos Secteurs d'Intervention",
+      "environment": {
+        "title": "Environnement",
+        "description": "Études d'impact, surveillance environnementale, gestion des ressources naturelles"
+      },
+      "urban": {
+        "title": "Urbanisme",
+        "description": "Planification urbaine, cadastre, aménagement du territoire"
+      },
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Agriculture de précision, gestion parcellaire, optimisation des cultures"
+      },
+      "training": {
+        "title": "Formations",
+        "description": "Formation professionnelle, ateliers pratiques, accompagnement pédagogique"
+      },
+      "consulting": {
+        "title": "Conseils",
+        "description": "Expertise technique, accompagnement stratégique, audit et recommandations"
+      },
+      "insurance": {
+        "title": "Assurance",
+        "description": "Évaluation des risques, analyse d'impact, solutions géospatiales pour l'assurance"
+      },
+      "climate": {
+        "title": "Changement Climatique",
+        "description": "Modélisation climatique, études d'adaptation, stratégies d'atténuation"
+      }
     }
   }
 }

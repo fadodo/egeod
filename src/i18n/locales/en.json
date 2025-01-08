@@ -53,22 +53,37 @@
       "gis": "GIS",
       "data": "Data Science",
       "dev": "Development"
-    }
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Our team is here to help",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "send": "Send"
     },
-    "info": {
-      "address": "Address",
-      "phone": "Phone",
-      "email": "Email"
+    "sectors": {
+      "title": "Our Intervention Sectors",
+      "environment": {
+        "title": "Environment",
+        "description": "Impact studies, environmental monitoring, natural resource management"
+      },
+      "urban": {
+        "title": "Urban Planning",
+        "description": "Urban planning, cadastre, territorial development"
+      },
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Precision agriculture, plot management, crop optimization"
+      },
+      "training": {
+        "title": "Training",
+        "description": "Professional training, practical workshops, educational support"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Technical expertise, strategic support, audit and recommendations"
+      },
+      "insurance": {
+        "title": "Insurance",
+        "description": "Risk assessment, impact analysis, geospatial solutions for insurance"
+      },
+      "climate": {
+        "title": "Climate Change",
+        "description": "Climate modeling, adaptation studies, mitigation strategies"
+      }
     }
   }
 }
