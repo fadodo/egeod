@@ -5,14 +5,13 @@ import { ArrowRight, Globe2, Database, Map as MapIcon, HeartHandshake } from "lu
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import Map from "@/components/Map";
 
 const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="p-6 bg-muted/50 rounded-lg hover:bg-muted/70 transition-colors"
+    className="p-6 bg-muted/50 backdrop-blur-sm rounded-lg hover:bg-muted/70 transition-colors"
   >
     <Icon className="w-10 h-10 text-primary mb-4" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -25,7 +24,7 @@ const ValueCard = ({ title, description }: { title: string, description: string 
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5 }}
-    className="p-6 border rounded-lg hover:border-primary transition-colors"
+    className="p-6 border rounded-lg hover:border-primary transition-colors backdrop-blur-sm bg-background/50"
   >
     <h3 className="text-lg font-semibold mb-2">{title}</h3>
     <p className="text-muted-foreground text-sm">{description}</p>
@@ -39,10 +38,16 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with Background Image */}
       <section className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <Map />
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url("/hero-background.jpg")',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -50,7 +55,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+            className="text-4xl md:text-6xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           >
             {t("home.hero.title")}
           </motion.h1>
@@ -68,13 +73,13 @@ const Index = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button asChild size="lg" variant="default">
-              <Link to="/contact">
+            <Button asChild size="lg" variant="default" className="bg-primary hover:bg-primary/90">
+              <Link to="/contact" className="flex items-center">
                 {t("home.hero.contact")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" className="bg-secondary hover:bg-secondary/90">
               <Link to="/services">
                 {t("home.hero.cta")}
               </Link>
@@ -83,13 +88,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-background">
+      {/* Services Section with Glassmorphism */}
+      <section className="py-20 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-3xl font-bold text-center mb-12"
+            className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           >
             {t("home.services.title")}
           </motion.h2>
@@ -118,13 +123,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-muted/30">
+      {/* Values Section with Glassmorphism */}
+      <section className="py-20 bg-muted/30 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-3xl font-bold text-center mb-12"
+            className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           >
             {t("home.values.title")}
           </motion.h2>
