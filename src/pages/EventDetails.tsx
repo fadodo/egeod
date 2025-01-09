@@ -64,7 +64,8 @@ const EventDetails = () => {
   const event = getEvent();
 
   if (!event) {
-    return navigate("/events");
+    navigate("/events");
+    return null;
   }
 
   return (

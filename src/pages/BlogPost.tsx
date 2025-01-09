@@ -58,7 +58,8 @@ const BlogPost = () => {
   const post = getBlogPost();
 
   if (!post) {
-    return navigate("/blog");
+    navigate("/blog");
+    return null;
   }
 
   return (

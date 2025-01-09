@@ -58,7 +58,8 @@ const ResourceDetails = () => {
   const resource = getResource();
 
   if (!resource) {
-    return navigate("/resources");
+    navigate("/resources");
+    return null;
   }
 
   return (
