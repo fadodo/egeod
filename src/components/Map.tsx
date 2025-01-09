@@ -28,15 +28,6 @@ const MapComponent = () => {
       geometry: new Point(fromLonLat(coordinates))
     });
 
-    // Style du marqueur
-    marker.setStyle(new Style({
-      image: new Icon({
-        anchor: [0.5, 1],
-        src: '/public/logoEGEOD1.png',
-        scale: 0.5
-      })
-    }));
-
     // Source et couche pour le marqueur
     const vectorSource = new VectorSource({
       features: [marker]
