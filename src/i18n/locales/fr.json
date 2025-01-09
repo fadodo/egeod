@@ -10,6 +10,52 @@
     "contact": "Contact",
     "contactUs": "Contactez-nous"
   },
+  "home": {
+    "hero": {
+      "title": "Excellence dans le domaine géospatial",
+      "subtitle": "Solutions innovantes en géomatique et télédétection",
+      "contact": "Contactez-nous",
+      "cta": "Découvrir nos services"
+    },
+    "services": {
+      "title": "Nos Services",
+      "acquisition": {
+        "title": "Acquisition de données",
+        "description": "Collecte de données satellite, drone et terrain"
+      },
+      "processing": {
+        "title": "Traitement",
+        "description": "Analyse et traitement avancé"
+      },
+      "mapping": {
+        "title": "Cartographie",
+        "description": "Création de cartes interactives"
+      },
+      "consulting": {
+        "title": "Conseil",
+        "description": "Expertise et accompagnement"
+      }
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Nous repoussons constamment les limites de la technologie géospatiale"
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Nous nous engageons à fournir des résultats précis et fiables"
+      },
+      "proximity": {
+        "title": "Proximité",
+        "description": "Nous privilégions une relation étroite avec nos clients"
+      },
+      "listening": {
+        "title": "Écoute",
+        "description": "Nous sommes à l'écoute de vos besoins spécifiques"
+      }
+    }
+  },
   "about": {
     "title": "Notre Histoire",
     "description": "Fondée en 2025, EGEOD est née de la vision d'experts passionnés",
