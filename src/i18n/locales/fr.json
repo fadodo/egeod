@@ -12,8 +12,8 @@
   },
   "home": {
     "hero": {
-      "title": "Excellence dans le domaine géospatial",
-      "subtitle": "Solutions innovantes en géomatique et télédétection",
+      "title": "Vos données, notre expertise",
+      "subtitle": "Transformez vos données en avantage stratégique. De l'analyse prédictive aux solutions géospatiales, nous vous accompagnons dans votre transformation data-driven.",
       "contact": "Contactez-nous",
       "cta": "Découvrir nos services"
     },
@@ -187,9 +187,9 @@
     "info": {
       "title": "Informations de contact",
       "description": "N'hésitez pas à nous contacter pour toute question",
-      "address": "123 Rue de la Géomatique, 75000 Paris",
-      "email": "contact@egeod.com",
-      "phone": "+33 1 23 45 67 89",
+      "address": "Notre addresse",
+      "email": "Email",
+      "phone": "Téléphone",
       "hours": "Lun-Ven: 9h-18h"
     }
   },
