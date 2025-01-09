@@ -20,15 +20,21 @@ export const Navbar = () => {
 
   const NavLinks = () => (
     <>
-      <Link to="/about" className="hover:text-primary transition-colors">
-        {t("nav.about")}
-      </Link>
-      <Link to="/services" className="hover:text-primary transition-colors">
-        {t("nav.services")}
-      </Link>
-      <Link to="/expertise" className="hover:text-primary transition-colors">
-        {t("nav.expertise")}
-      </Link>
+      <NavigationMenuItem>
+        <Link to="/about" className="hover:text-primary transition-colors">
+          {t("nav.about")}
+        </Link>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <Link to="/services" className="hover:text-primary transition-colors">
+          {t("nav.services")}
+        </Link>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <Link to="/expertise" className="hover:text-primary transition-colors">
+          {t("nav.expertise")}
+        </Link>
+      </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuTrigger className="bg-transparent">
           {t("nav.news")}
@@ -47,9 +53,11 @@ export const Navbar = () => {
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
-      <Button asChild variant="default">
-        <Link to="/contact">{t("nav.contactUs")}</Link>
-      </Button>
+      <NavigationMenuItem>
+        <Button asChild variant="default">
+          <Link to="/contact">{t("nav.contactUs")}</Link>
+        </Button>
+      </NavigationMenuItem>
     </>
   );
 
@@ -67,7 +75,11 @@ export const Navbar = () => {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col gap-4 mt-8">
-                <NavLinks />
+                <NavigationMenu>
+                  <NavigationMenuList className="flex-col items-start">
+                    <NavLinks />
+                  </NavigationMenuList>
+                </NavigationMenu>
                 <LanguageSelector />
               </div>
             </SheetContent>
