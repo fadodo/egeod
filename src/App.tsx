@@ -9,8 +9,11 @@ import Services from "./pages/Services";
 import Expertise from "./pages/Expertise";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Events from "./pages/Events";
+import EventDetails from "./pages/EventDetails";
 import Resources from "./pages/Resources";
+import ResourceDetails from "./pages/ResourceDetails";
 
 const queryClient = new QueryClient();
 
@@ -27,8 +30,11 @@ const App = () => (
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/events/:id" element={<EventDetails />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/:id" element={<ResourceDetails />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
