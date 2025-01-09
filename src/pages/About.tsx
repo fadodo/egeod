@@ -47,10 +47,12 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-8">Notre Histoire</h2>
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <p className="text-lg text-muted-foreground">
-              Fondée en 2025, EGEOD est née de la vision d'experts passionnés par les données géospatiales et l'observation de la Terre. Notre mission est de rendre les données géospatiales accessibles et exploitables pour tous.
+              EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et le potentiel qu'offrent les big data et les données géospatiales pour transformer le monde.
+              L'entreprise a été fondée avec une vision claire : mettre à disposition des outils et des solutions innovantes capables de relever les défis environnementaux, économiques et sociaux. 
+              Notre parcours a commencé par la conviction que l'observation de la Terre et l'analyse des données géospatiales pouvaient offrir des réponses précises et impactantes dans un monde de plus en plus connecté et complexe.
             </p>
             <p className="text-lg text-muted-foreground">
-              Depuis notre création, nous avons accompagné de nombreuses organisations dans leur transformation numérique et leur compréhension des enjeux territoriaux.
+              Depuis notre création, EGEOD se forge une réputation d'excellence grâce à une expertise technique pointue et une écoute attentive des besoins de ses clients.
             </p>
           </div>
         </section>
