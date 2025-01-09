@@ -131,5 +131,66 @@
         "description": "Modélisation climatique, études d'adaptation, stratégies d'atténuation"
       }
     }
+  },
+  "news": {
+    "title": "Actualités et Ressources",
+    "blog": {
+      "title": "Blog",
+      "description": "Découvrez nos derniers articles et analyses",
+      "items": {
+        "trends": "Tendances géospatiales",
+        "cases": "Études de cas",
+        "tutorials": "Tutoriels et guides"
+      }
+    },
+    "events": {
+      "title": "Événements",
+      "description": "Participez à nos événements et formations",
+      "items": {
+        "webinars": "Webinaires",
+        "workshops": "Ateliers pratiques",
+        "conferences": "Conférences"
+      }
+    },
+    "resources": {
+      "title": "Ressources",
+      "description": "Accédez à nos ressources gratuites",
+      "items": {
+        "guides": "Guides pratiques",
+        "templates": "Modèles",
+        "tools": "Outils"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Notre équipe est à votre écoute",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "service": "Service",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi en cours...",
+      "services": {
+        "data": "Acquisition de données",
+        "processing": "Traitement",
+        "mapping": "Cartographie",
+        "consulting": "Conseil"
+      }
+    },
+    "success": "Message envoyé",
+    "successDetail": "Nous vous répondrons dans les plus brefs délais",
+    "error": "Erreur",
+    "errorDetail": "Une erreur est survenue, veuillez réessayer",
+    "info": {
+      "title": "Informations de contact",
+      "description": "N'hésitez pas à nous contacter pour toute question",
+      "address": "123 Rue de la Géomatique, 75000 Paris",
+      "email": "contact@egeod.com",
+      "phone": "+33 1 23 45 67 89",
+      "hours": "Lun-Ven: 9h-18h"
+    }
   }
 }

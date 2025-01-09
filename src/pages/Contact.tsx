@@ -14,7 +14,9 @@ const Contact = () => {
       
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">{t("contact.title")}</h1>
+          <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            {t("contact.title")}
+          </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t("contact.subtitle")}
           </p>

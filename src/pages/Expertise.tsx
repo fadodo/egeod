@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Lightbulb, ShieldCheck, Users, Leaf, Building2, Wheat, GraduationCap, HeartHandshake, Shield, CloudRain } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -76,7 +76,6 @@ const Expertise = () => {
       <Navbar />
       
       <main className="container mx-auto px-4 pt-24 pb-12">
-        {/* Values Section */}
         <section className="mb-20">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
@@ -103,8 +102,7 @@ const Expertise = () => {
           </div>
         </section>
 
-        {/* Sectors Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-muted/30 rounded-xl">
           <div className="container mx-auto px-4">
             <motion.h2 
               initial={{ opacity: 0 }}
