@@ -192,5 +192,75 @@
       "phone": "+33 1 23 45 67 89",
       "hours": "Mon-Fri: 9am-6pm"
     }
+  },
+  "blog": {
+    "title": "Our Blog",
+    "description": "Discover our latest articles, news and analyses",
+    "readMore": "Read more",
+    "categories": {
+      "technology": "Technology",
+      "caseStudy": "Case Study",
+      "tutorial": "Tutorial"
+    },
+    "posts": {
+      "trends": {
+        "title": "Geospatial Trends in 2024",
+        "description": "Discover the latest innovations and trends in geomatics"
+      },
+      "case": {
+        "title": "Case Study: Urban Mapping",
+        "description": "How we helped a city optimize its urban planning"
+      },
+      "tutorial": {
+        "title": "Practical Guide: Spatial Data Analysis",
+        "description": "Learn how to effectively analyze your geospatial data"
+      }
+    }
+  },
+  "events": {
+    "title": "Our Events",
+    "description": "Join our events and training sessions to develop your skills",
+    "online": "Online",
+    "register": "Register",
+    "maxParticipants": "{{count}} max participants",
+    "types": {
+      "webinar": "Webinar",
+      "workshop": "Workshop",
+      "conference": "Conference"
+    },
+    "webinar": {
+      "title": "Webinar: Introduction to Remote Sensing",
+      "description": "Discover the fundamentals of remote sensing and its applications"
+    },
+    "workshop": {
+      "title": "Workshop: Mapping with QGIS",
+      "description": "Practical training on using QGIS for mapping"
+    },
+    "conference": {
+      "title": "Conference: Geomatics and Innovation",
+      "description": "A day dedicated to innovations in the field of geomatics"
+    }
+  },
+  "resources": {
+    "title": "Free Resources",
+    "description": "Download our resources to improve your skills",
+    "download": "Download",
+    "types": {
+      "guide": "Guide",
+      "template": "Template",
+      "technical": "Technical Documentation"
+    },
+    "guide": {
+      "title": "Best Practices Guide in Geomatics",
+      "description": "A comprehensive guide to master the fundamentals of geomatics"
+    },
+    "template": {
+      "title": "Thematic Map Templates",
+      "description": "Ready-to-use templates for your mapping projects"
+    },
+    "technical": {
+      "title": "GIS Technical Documentation",
+      "description": "Detailed documentation on geographic information systems"
+    }
   }
 }

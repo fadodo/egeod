@@ -192,5 +192,75 @@
       "phone": "+33 1 23 45 67 89",
       "hours": "Lun-Ven: 9h-18h"
     }
+  },
+  "blog": {
+    "title": "Notre Blog",
+    "description": "Découvrez nos derniers articles, actualités et analyses",
+    "readMore": "Lire la suite",
+    "categories": {
+      "technology": "Technologie",
+      "caseStudy": "Étude de cas",
+      "tutorial": "Tutoriel"
+    },
+    "posts": {
+      "trends": {
+        "title": "Les tendances géospatiales en 2024",
+        "description": "Découvrez les dernières innovations et tendances dans le domaine de la géomatique"
+      },
+      "case": {
+        "title": "Étude de cas : Cartographie urbaine",
+        "description": "Comment nous avons aidé une ville à optimiser sa planification urbaine"
+      },
+      "tutorial": {
+        "title": "Guide pratique : Analyse de données spatiales",
+        "description": "Apprenez à analyser efficacement vos données géospatiales"
+      }
+    }
+  },
+  "events": {
+    "title": "Nos Événements",
+    "description": "Participez à nos événements et formations pour développer vos compétences",
+    "online": "En ligne",
+    "register": "S'inscrire",
+    "maxParticipants": "{{count}} participants max",
+    "types": {
+      "webinar": "Webinaire",
+      "workshop": "Atelier",
+      "conference": "Conférence"
+    },
+    "webinar": {
+      "title": "Webinaire : Introduction à la télédétection",
+      "description": "Découvrez les fondamentaux de la télédétection et ses applications"
+    },
+    "workshop": {
+      "title": "Atelier : Cartographie avec QGIS",
+      "description": "Formation pratique sur l'utilisation de QGIS pour la cartographie"
+    },
+    "conference": {
+      "title": "Conférence : Géomatique et Innovation",
+      "description": "Une journée dédiée aux innovations dans le domaine de la géomatique"
+    }
+  },
+  "resources": {
+    "title": "Ressources Gratuites",
+    "description": "Téléchargez nos ressources pour améliorer vos compétences",
+    "download": "Télécharger",
+    "types": {
+      "guide": "Guide",
+      "template": "Modèle",
+      "technical": "Documentation technique"
+    },
+    "guide": {
+      "title": "Guide des bonnes pratiques en géomatique",
+      "description": "Un guide complet pour maîtriser les fondamentaux de la géomatique"
+    },
+    "template": {
+      "title": "Modèles de cartes thématiques",
+      "description": "Des modèles prêts à l'emploi pour vos projets cartographiques"
+    },
+    "technical": {
+      "title": "Documentation technique SIG",
+      "description": "Documentation détaillée sur les systèmes d'information géographique"
+    }
   }
 }
