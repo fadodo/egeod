@@ -34,29 +34,6 @@ const ValueCard = ({ title, description }: { title: string, description: string 
 const Index = () => {
   const { t } = useTranslation();
 
-  const services = [
-    {
-      icon: Globe2,
-      title: t("home.services.acquisition.title"),
-      description: t("home.services.acquisition.description")
-    },
-    {
-      icon: Database,
-      title: t("home.services.processing.title"),
-      description: t("home.services.processing.description")
-    },
-    {
-      icon: MapIcon,
-      title: t("home.services.mapping.title"),
-      description: t("home.services.mapping.description")
-    },
-    {
-      icon: HeartHandshake,
-      title: t("home.services.consulting.title"),
-      description: t("home.services.consulting.description")
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -122,14 +99,26 @@ const Index = () => {
             {t("home.services.title")}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard 
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
-            ))}
+            <ServiceCard 
+              icon={Globe2}
+              title={t("home.services.acquisition.title")}
+              description={t("home.services.acquisition.description")}
+            />
+            <ServiceCard 
+              icon={Database}
+              title={t("home.services.processing.title")}
+              description={t("home.services.processing.description")}
+            />
+            <ServiceCard 
+              icon={MapIcon}
+              title={t("home.services.mapping.title")}
+              description={t("home.services.mapping.description")}
+            />
+            <ServiceCard 
+              icon={HeartHandshake}
+              title={t("home.services.consulting.title")}
+              description={t("home.services.consulting.description")}
+            />
           </div>
         </div>
       </section>
