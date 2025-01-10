@@ -187,9 +187,9 @@
     "info": {
       "title": "Contact Information",
       "description": "Feel free to reach out with any questions",
-      "address": "123 Geomatics Street, 75000 Paris",
-      "email": "contact@egeod.com",
-      "phone": "+33 1 23 45 67 89",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
       "hours": "Mon-Fri: 9am-6pm"
     }
   },
