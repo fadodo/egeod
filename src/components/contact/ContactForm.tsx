@@ -94,7 +94,7 @@ export const ContactForm = () => {
           <ReCAPTCHA
             ref={recaptchaRef}
             size="invisible"
-            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || "YOUR_RECAPTCHA_SITE_KEY"}
+            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_RECAPTCHA_SITE_KEY"}
           />
 
           <Button 
