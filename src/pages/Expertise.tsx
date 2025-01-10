@@ -55,6 +55,11 @@ const Expertise = () => {
       description: t("expertise.sectors.climate.description")
     },
     {
+      icon: Shield,
+      title: t("expertise.sectors.insurance.title"),
+      description: t("expertise.sectors.insurance.description")
+    },
+    {
       icon: GraduationCap,
       title: t("expertise.sectors.training.title"),
       description: t("expertise.sectors.training.description")
@@ -63,11 +68,6 @@ const Expertise = () => {
       icon: HeartHandshake,
       title: t("expertise.sectors.consulting.title"),
       description: t("expertise.sectors.consulting.description")
-    },
-    {
-      icon: Shield,
-      title: t("expertise.sectors.insurance.title"),
-      description: t("expertise.sectors.insurance.description")
     }
   ];
 
