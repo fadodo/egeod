@@ -28,6 +28,17 @@ const MapComponent = () => {
       geometry: new Point(fromLonLat(coordinates))
     });
 
+    // Style du marqueur
+    const markerStyle = new Style({
+      image: new Icon({
+        anchor: [0.5, 1],
+        src: '/marker.png',
+        scale: 0.5
+      })
+    });
+
+    marker.setStyle(markerStyle);
+
     // Source et couche pour le marqueur
     const vectorSource = new VectorSource({
       features: [marker]
@@ -48,7 +59,9 @@ const MapComponent = () => {
       ],
       view: new View({
         center: fromLonLat(coordinates),
-        zoom: 15
+        zoom: 15,
+        maxZoom: 19,
+        minZoom: 10
       })
     });
 

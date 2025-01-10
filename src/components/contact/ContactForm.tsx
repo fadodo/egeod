@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ContactFormFields } from "./ContactFormFields";
 import { ContactFormData } from "./types";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
@@ -43,7 +44,7 @@ export const ContactForm = () => {
       // Verify reCAPTCHA
       const recaptchaValue = await recaptchaRef.current?.executeAsync();
       if (!recaptchaValue) {
-        throw new Error("Veuillez valider le reCAPTCHA");
+        throw new Error(t("contact.form.recaptchaError"));
       }
 
       // Insert into Supabase
@@ -61,8 +62,8 @@ export const ContactForm = () => {
       if (emailError) throw emailError;
 
       toast({
-        title: t("contact.success"),
-        description: t("contact.successDetail"),
+        title: t("contact.form.success"),
+        description: t("contact.form.successDetail"),
       });
 
       form.reset();
@@ -70,8 +71,8 @@ export const ContactForm = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
-        title: t("contact.error"),
-        description: t("contact.errorDetail"),
+        title: t("contact.form.error"),
+        description: t("contact.form.errorDetail"),
         variant: "destructive",
       });
     } finally {
@@ -80,24 +81,31 @@ export const ContactForm = () => {
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <ContactFormFields form={form} />
-        
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          size="invisible"
-          sitekey="YOUR_RECAPTCHA_SITE_KEY"
-        />
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-card rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+    >
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <ContactFormFields form={form} />
+          
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || "YOUR_RECAPTCHA_SITE_KEY"}
+          />
 
-        <Button 
-          type="submit" 
-          className="w-full"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
-        </Button>
-      </form>
-    </Form>
+          <Button 
+            type="submit" 
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
+          </Button>
+        </form>
+      </Form>
+    </motion.div>
   );
 };

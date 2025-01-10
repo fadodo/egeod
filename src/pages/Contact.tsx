@@ -10,13 +10,14 @@ const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
-      <div className="container mx-auto px-4 pt-24 pb-12">
+      <main className="flex-grow container mx-auto px-4 pt-24 pb-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
@@ -31,7 +32,7 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-8"
           >
             <ContactForm />
@@ -40,16 +41,16 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="space-y-8"
           >
             <ContactInfo />
-            <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
+            <div className="rounded-lg overflow-hidden shadow-lg">
               <Map />
             </div>
           </motion.div>
         </div>
-      </div>
+      </main>
 
       <Footer />
     </div>

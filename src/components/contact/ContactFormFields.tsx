@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { motion } from "framer-motion";
 
 interface ContactFormFieldsProps {
   form: UseFormReturn<ContactFormData>;
@@ -25,93 +26,104 @@ interface ContactFormFieldsProps {
 export const ContactFormFields = ({ form }: ContactFormFieldsProps) => {
   const { t } = useTranslation();
 
+  const formFields = [
+    {
+      name: "name",
+      label: t("contact.form.name"),
+      type: "text",
+    },
+    {
+      name: "email",
+      label: t("contact.form.email"),
+      type: "email",
+    },
+    {
+      name: "subject",
+      label: t("contact.form.subject"),
+      type: "text",
+    },
+  ];
+
   return (
     <>
-      <FormField
-        control={form.control}
-        name="name"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{t("contact.form.name")}</FormLabel>
-            <FormControl>
-              <Input {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
+      {formFields.map((field, index) => (
+        <motion.div
+          key={field.name}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: index * 0.1 }}
+        >
+          <FormField
+            control={form.control}
+            name={field.name as keyof ContactFormData}
+            render={({ field: formField }) => (
+              <FormItem>
+                <FormLabel>{field.label}</FormLabel>
+                <FormControl>
+                  <Input {...formField} type={field.type} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </motion.div>
+      ))}
 
-      <FormField
-        control={form.control}
-        name="email"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{t("contact.form.email")}</FormLabel>
-            <FormControl>
-              <Input {...field} type="email" />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+      >
+        <FormField
+          control={form.control}
+          name="service"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("contact.form.service")}</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t("contact.form.selectService")} />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {Object.entries(t("contact.form.services", { returnObjects: true })).map(
+                    ([key, value]) => (
+                      <SelectItem key={key} value={key}>
+                        {value}
+                      </SelectItem>
+                    )
+                  )}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </motion.div>
 
-      <FormField
-        control={form.control}
-        name="service"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{t("contact.form.service")}</FormLabel>
-            <Select onValueChange={field.onChange} defaultValue={field.value}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
+      >
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("contact.form.message")}</FormLabel>
               <FormControl>
-                <SelectTrigger>
-                  <SelectValue placeholder={t("contact.form.service")} />
-                </SelectTrigger>
+                <Textarea
+                  {...field}
+                  className="min-h-[150px] resize-none"
+                />
               </FormControl>
-              <SelectContent>
-                {Object.entries(t("contact.form.services", { returnObjects: true })).map(
-                  ([key, value]) => (
-                    <SelectItem key={key} value={key}>
-                      {value}
-                    </SelectItem>
-                  )
-                )}
-              </SelectContent>
-            </Select>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
-      <FormField
-        control={form.control}
-        name="subject"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{t("contact.form.subject")}</FormLabel>
-            <FormControl>
-              <Input {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
-      <FormField
-        control={form.control}
-        name="message"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{t("contact.form.message")}</FormLabel>
-            <FormControl>
-              <Textarea
-                {...field}
-                className="min-h-[150px]"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </motion.div>
     </>
   );
 };
