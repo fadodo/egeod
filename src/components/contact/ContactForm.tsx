@@ -87,7 +87,7 @@ export const ContactForm = () => {
         <ReCAPTCHA
           ref={recaptchaRef}
           size="invisible"
-          sitekey="YOUR_RECAPTCHA_SITE_KEY"
+          sitekey="6LfWwEApAAAAAGg5RjpfQZnvBhQ5F-Vg_hHX-7_x"
         />
 
         <Button 
