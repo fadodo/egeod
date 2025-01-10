@@ -68,8 +68,7 @@ const Expertise = () => {
       icon: Shield,
       title: t("expertise.sectors.insurance.title"),
       description: t("expertise.sectors.insurance.description")
-    },
-    
+    }
   ];
 
   return (
