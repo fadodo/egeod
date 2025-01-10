@@ -1,101 +1,127 @@
 {
-  "about": {
-    "title": "Notre Histoire",
-    "description": "EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et le potentiel qu'offrent les big data et les données géospatiales pour transformer le monde.",
-    "mission": "Notre mission est de démocratiser l'accès aux données géospatiales et de les transformer en solutions concrètes pour répondre aux défis environnementaux et sociétaux de demain.",
-    "team": {
-      "title": "Notre Équipe",
-      "description": "Une équipe d'experts passionnés par la data et l'innovation",
-      "role": {
-        "ceo": "CEO & Analyste en Télédétection et Data"
+  "home": {
+    "hero": {
+      "title": "Solutions Géospatiales Innovantes",
+      "subtitle": "Expert en acquisition et analyse de données géospatiales",
+      "contact": "Contactez-nous",
+      "cta": "Découvrir nos services"
+    },
+    "services": {
+      "title": "Nos Services",
+      "acquisition": {
+        "title": "Acquisition de Données",
+        "description": "Collecte de données géospatiales précises via satellites, drones et relevés terrain"
       },
-      "skills": {
-        "satellite": "Analyse d'images satellite",
-        "gis": "SIG",
-        "python": "Python",
-        "deepLearning": "Deep Learning",
-        "projectManagement": "Gestion de projet"
+      "processing": {
+        "title": "Traitement des Données",
+        "description": "Analyse et traitement avancé des données géospatiales"
+      },
+      "mapping": {
+        "title": "Cartographie",
+        "description": "Création de cartes thématiques et visualisations interactives"
+      },
+      "consulting": {
+        "title": "Conseil & Formation",
+        "description": "Accompagnement personnalisé et formation en géomatique"
       }
     },
     "values": {
       "title": "Nos Valeurs",
-      "innovation": "Innovation",
-      "innovationDesc": "Nous repoussons constamment les limites de la technologie géospatiale",
-      "excellence": "Excellence",
-      "excellenceDesc": "Nous visons l'excellence dans chaque projet et livrable",
-      "engagement": "Engagement",
-      "engagementDesc": "Nous sommes dévoués à la réussite de nos clients",
-      "collaboration": "Collaboration",
-      "collaborationDesc": "Nous travaillons en étroite collaboration avec nos clients et partenaires"
-    },
-    "vision": {
-      "title": "Notre Vision",
-      "description": "Chez EGEOD, nous croyons en un monde où les données géospatiales sont au service du développement durable et de l'intelligence territoriale.",
-      "future": "À travers notre expertise et nos innovations, nous contribuons à construire un avenir où la technologie spatiale et l'observation de la Terre sont des leviers essentiels pour la prise de décision et la préservation de notre planète."
+      "innovation": {
+        "title": "Innovation",
+        "description": "Adoption des dernières technologies et méthodes"
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Excellence et précision dans tous nos projets"
+      },
+      "proximity": {
+        "title": "Proximité",
+        "description": "Relation étroite avec nos clients"
+      },
+      "listening": {
+        "title": "Écoute",
+        "description": "Compréhension approfondie des besoins"
+      }
     }
   },
-  "services": {
-    "title": "Nos Services",
-    "subtitle": "Des solutions complètes pour vos besoins géospatiaux",
-    "data": {
-      "title": "Acquisition de données",
-      "description": "Collecte de données satellite, drone et terrain",
-      "details": {
-        "satellite": "Imagerie satellite haute résolution",
-        "drone": "Acquisitions par drone",
-        "field": "Relevés terrain",
-        "temporal": "Données multi-temporelles"
-      }
-    },
-    "processing": {
-      "title": "Traitement et analyse",
-      "description": "Analyse approfondie avec des outils SIG et de télédétection",
-      "details": {
-        "spectral": "Analyse spectrale",
-        "classification": "Classification d'images",
-        "change": "Détection de changements",
-        "modeling": "Modélisation spatiale"
-      }
-    },
-    "mapping": {
-      "title": "Cartographie",
-      "description": "Création de cartes personnalisées",
-      "details": {
-        "thematic": "Cartographie thématique",
-        "visualization": "Visualisation 3D",
-        "webmapping": "Webmapping",
-        "atlas": "Atlas personnalisés"
-      }
-    },
-    "consulting": {
-      "title": "Conseil",
-      "description": "Expertise et accompagnement",
-      "details": {
-        "audit": "Audit et diagnostic",
-        "training": "Formation sur mesure",
-        "support": "Support technique",
-        "monitoring": "Veille technologique"
-      }
-    },
-    "specialized": {
-      "title": "Services spécialisés",
-      "data": {
-        "title": "Gestion de données",
-        "description": "Organisation et structuration de vos données géospatiales"
+  "expertise": {
+    "title": "Notre Expertise",
+    "subtitle": "Une expertise pointue au service de vos projets",
+    "sectors": {
+      "title": "Secteurs d'Intervention",
+      "environment": {
+        "title": "Environnement",
+        "description": "Études d'impact et suivi environnemental"
       },
-      "rd": {
-        "title": "R&D",
-        "description": "Innovation et développement de solutions sur mesure"
+      "urban": {
+        "title": "Urbanisme",
+        "description": "Planification urbaine et aménagement du territoire"
       },
-      "international": {
-        "title": "Expertise internationale",
-        "description": "Intervention sur des projets à l'échelle mondiale"
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Agriculture de précision et suivi des cultures"
+      },
+      "training": {
+        "title": "Formation",
+        "description": "Programmes de formation personnalisés"
+      },
+      "consulting": {
+        "title": "Conseil",
+        "description": "Accompagnement stratégique"
+      },
+      "insurance": {
+        "title": "Assurance",
+        "description": "Évaluation des risques et sinistres"
+      },
+      "climate": {
+        "title": "Climat",
+        "description": "Études climatiques et adaptation"
+      }
+    }
+  },
+  "news": {
+    "title": "Actualités",
+    "blog": {
+      "title": "Blog",
+      "description": "Découvrez nos articles et analyses",
+      "items": {
+        "trends": "Tendances géospatiales",
+        "cases": "Études de cas",
+        "tutorials": "Tutoriels techniques"
       }
     },
-    "cta": {
-      "title": "Prêt à démarrer votre projet ?",
-      "description": "Contactez nos experts pour discuter de vos besoins et découvrir comment nous pouvons vous aider.",
-      "button": "Contactez-nous"
+    "events": {
+      "title": "Événements",
+      "description": "Participez à nos événements",
+      "items": {
+        "webinars": "Webinaires",
+        "workshops": "Ateliers",
+        "conferences": "Conférences"
+      }
+    },
+    "resources": {
+      "title": "Ressources",
+      "description": "Accédez à nos ressources",
+      "items": {
+        "guides": "Guides pratiques",
+        "templates": "Modèles",
+        "tools": "Outils"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Notre équipe est à votre écoute",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "service": "Service",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer",
+      "success": "Message envoyé avec succès",
+      "error": "Une erreur est survenue"
     }
   }
 }
