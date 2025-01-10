@@ -1,74 +1,37 @@
 {
-  "nav": {
-    "about": "Qui sommes-nous",
-    "services": "Services",
-    "expertise": "Expertise",
-    "news": "Actualités",
-    "blog": "Blog",
-    "events": "Événements",
-    "resources": "Ressources gratuites",
-    "contact": "Contact",
-    "contactUs": "Contactez-nous"
-  },
-  "home": {
-    "hero": {
-      "title": "Vos données, notre expertise",
-      "subtitle": "Transformez vos données en avantage stratégique. De l'analyse prédictive aux solutions géospatiales, nous vous accompagnons dans votre transformation data-driven.",
-      "contact": "Contactez-nous",
-      "cta": "Découvrir nos services"
-    },
-    "services": {
-      "title": "Nos Services",
-      "acquisition": {
-        "title": "Acquisition de données",
-        "description": "Collecte de données satellite, drone et terrain"
-      },
-      "processing": {
-        "title": "Traitement",
-        "description": "Analyse et traitement avancé"
-      },
-      "mapping": {
-        "title": "Cartographie",
-        "description": "Création de cartes interactives"
-      },
-      "consulting": {
-        "title": "Conseil",
-        "description": "Expertise et accompagnement"
-      }
-    },
-    "values": {
-      "title": "Nos Valeurs",
-      "innovation": {
-        "title": "Innovation",
-        "description": "Nous repoussons constamment les limites de la technologie géospatiale"
-      },
-      "quality": {
-        "title": "Qualité",
-        "description": "Nous nous engageons à fournir des résultats précis et fiables"
-      },
-      "proximity": {
-        "title": "Proximité",
-        "description": "Nous privilégions une relation étroite avec nos clients"
-      },
-      "listening": {
-        "title": "Écoute",
-        "description": "Nous sommes à l'écoute de vos besoins spécifiques"
-      }
-    }
-  },
   "about": {
     "title": "Notre Histoire",
-    "description": "Fondée en 2025, EGEOD est née de la vision d'experts passionnés",
+    "description": "EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et le potentiel qu'offrent les big data et les données géospatiales pour transformer le monde.",
+    "mission": "Notre mission est de démocratiser l'accès aux données géospatiales et de les transformer en solutions concrètes pour répondre aux défis environnementaux et sociétaux de demain.",
     "team": {
       "title": "Notre Équipe",
-      "description": "Une équipe d'experts passionnés"
+      "description": "Une équipe d'experts passionnés par la data et l'innovation",
+      "role": {
+        "ceo": "CEO & Analyste en Télédétection et Data"
+      },
+      "skills": {
+        "satellite": "Analyse d'images satellite",
+        "gis": "SIG",
+        "python": "Python",
+        "deepLearning": "Deep Learning",
+        "projectManagement": "Gestion de projet"
+      }
     },
     "values": {
       "title": "Nos Valeurs",
       "innovation": "Innovation",
-      "quality": "Qualité",
-      "proximity": "Proximité",
-      "listening": "Écoute"
+      "innovationDesc": "Nous repoussons constamment les limites de la technologie géospatiale",
+      "excellence": "Excellence",
+      "excellenceDesc": "Nous visons l'excellence dans chaque projet et livrable",
+      "engagement": "Engagement",
+      "engagementDesc": "Nous sommes dévoués à la réussite de nos clients",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "Nous travaillons en étroite collaboration avec nos clients et partenaires"
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "description": "Chez EGEOD, nous croyons en un monde où les données géospatiales sont au service du développement durable et de l'intelligence territoriale.",
+      "future": "À travers notre expertise et nos innovations, nous contribuons à construire un avenir où la technologie spatiale et l'observation de la Terre sont des leviers essentiels pour la prise de décision et la préservation de notre planète."
     }
   },
   "services": {
@@ -76,191 +39,63 @@
     "subtitle": "Des solutions complètes pour vos besoins géospatiaux",
     "data": {
       "title": "Acquisition de données",
-      "description": "Collecte de données satellite, drone et terrain"
+      "description": "Collecte de données satellite, drone et terrain",
+      "details": {
+        "satellite": "Imagerie satellite haute résolution",
+        "drone": "Acquisitions par drone",
+        "field": "Relevés terrain",
+        "temporal": "Données multi-temporelles"
+      }
     },
     "processing": {
-      "title": "Traitement",
-      "description": "Analyse et traitement avancé"
+      "title": "Traitement et analyse",
+      "description": "Analyse approfondie avec des outils SIG et de télédétection",
+      "details": {
+        "spectral": "Analyse spectrale",
+        "classification": "Classification d'images",
+        "change": "Détection de changements",
+        "modeling": "Modélisation spatiale"
+      }
     },
     "mapping": {
       "title": "Cartographie",
-      "description": "Création de cartes interactives"
+      "description": "Création de cartes personnalisées",
+      "details": {
+        "thematic": "Cartographie thématique",
+        "visualization": "Visualisation 3D",
+        "webmapping": "Webmapping",
+        "atlas": "Atlas personnalisés"
+      }
     },
     "consulting": {
       "title": "Conseil",
-      "description": "Expertise et accompagnement"
-    }
-  },
-  "expertise": {
-    "title": "Notre Expertise",
-    "subtitle": "Excellence dans le domaine géospatial",
-    "areas": {
-      "remote": "Télédétection",
-      "gis": "SIG",
-      "data": "Science des données",
-      "dev": "Développement"
-    },
-    "sectors": {
-      "title": "Nos Secteurs d'Intervention",
-      "environment": {
-        "title": "Environnement",
-        "description": "Études d'impact, surveillance environnementale, gestion des ressources naturelles"
-      },
-      "urban": {
-        "title": "Urbanisme",
-        "description": "Planification urbaine, cadastre, aménagement du territoire"
-      },
-      "agriculture": {
-        "title": "Agriculture",
-        "description": "Agriculture de précision, gestion parcellaire, optimisation des cultures"
-      },
-      "training": {
-        "title": "Formations",
-        "description": "Formation professionnelle, ateliers pratiques, accompagnement pédagogique"
-      },
-      "consulting": {
-        "title": "Conseils",
-        "description": "Expertise technique, accompagnement stratégique, audit et recommandations"
-      },
-      "insurance": {
-        "title": "Assurance",
-        "description": "Évaluation des risques, analyse d'impact, solutions géospatiales pour l'assurance"
-      },
-      "climate": {
-        "title": "Changement Climatique",
-        "description": "Modélisation climatique, études d'adaptation, stratégies d'atténuation"
-      }
-    }
-  },
-  "news": {
-    "title": "Actualités et Ressources",
-    "blog": {
-      "title": "Blog",
-      "description": "Découvrez nos derniers articles et analyses",
-      "items": {
-        "trends": "Tendances géospatiales",
-        "cases": "Études de cas",
-        "tutorials": "Tutoriels et guides"
+      "description": "Expertise et accompagnement",
+      "details": {
+        "audit": "Audit et diagnostic",
+        "training": "Formation sur mesure",
+        "support": "Support technique",
+        "monitoring": "Veille technologique"
       }
     },
-    "events": {
-      "title": "Événements",
-      "description": "Participez à nos événements et formations",
-      "items": {
-        "webinars": "Webinaires",
-        "workshops": "Ateliers pratiques",
-        "conferences": "Conférences"
-      }
-    },
-    "resources": {
-      "title": "Ressources",
-      "description": "Accédez à nos ressources gratuites",
-      "items": {
-        "guides": "Guides pratiques",
-        "templates": "Modèles",
-        "tools": "Outils"
-      }
-    }
-  },
-  "contact": {
-    "title": "Contactez-nous",
-    "subtitle": "Notre équipe est à votre écoute",
-    "form": {
-      "name": "Nom",
-      "email": "Email",
-      "service": "Service",
-      "subject": "Sujet",
-      "message": "Message",
-      "send": "Envoyer",
-      "sending": "Envoi en cours...",
-      "services": {
-        "data": "Acquisition de données",
-        "processing": "Traitement",
-        "mapping": "Cartographie",
-        "consulting": "Conseil"
-      }
-    },
-    "success": "Message envoyé",
-    "successDetail": "Nous vous répondrons dans les plus brefs délais",
-    "error": "Erreur",
-    "errorDetail": "Une erreur est survenue, veuillez réessayer",
-    "info": {
-      "title": "Informations de contact",
-      "description": "N'hésitez pas à nous contacter pour toute question",
-      "address": "Notre addresse",
-      "email": "Email",
-      "phone": "Téléphone",
-      "hours": "Lun-Ven: 9h-18h"
-    }
-  },
-  "blog": {
-    "title": "Notre Blog",
-    "description": "Découvrez nos derniers articles, actualités et analyses",
-    "readMore": "Lire la suite",
-    "categories": {
-      "technology": "Technologie",
-      "caseStudy": "Étude de cas",
-      "tutorial": "Tutoriel"
-    },
-    "posts": {
-      "trends": {
-        "title": "Les tendances géospatiales en 2024",
-        "description": "Découvrez les dernières innovations et tendances dans le domaine de la géomatique"
+    "specialized": {
+      "title": "Services spécialisés",
+      "data": {
+        "title": "Gestion de données",
+        "description": "Organisation et structuration de vos données géospatiales"
       },
-      "case": {
-        "title": "Étude de cas : Cartographie urbaine",
-        "description": "Comment nous avons aidé une ville à optimiser sa planification urbaine"
+      "rd": {
+        "title": "R&D",
+        "description": "Innovation et développement de solutions sur mesure"
       },
-      "tutorial": {
-        "title": "Guide pratique : Analyse de données spatiales",
-        "description": "Apprenez à analyser efficacement vos données géospatiales"
+      "international": {
+        "title": "Expertise internationale",
+        "description": "Intervention sur des projets à l'échelle mondiale"
       }
-    }
-  },
-  "events": {
-    "title": "Nos Événements",
-    "description": "Participez à nos événements et formations pour développer vos compétences",
-    "online": "En ligne",
-    "register": "S'inscrire",
-    "maxParticipants": "{{count}} participants max",
-    "types": {
-      "webinar": "Webinaire",
-      "workshop": "Atelier",
-      "conference": "Conférence"
     },
-    "webinar": {
-      "title": "Webinaire : Introduction à la télédétection",
-      "description": "Découvrez les fondamentaux de la télédétection et ses applications"
-    },
-    "workshop": {
-      "title": "Atelier : Cartographie avec QGIS",
-      "description": "Formation pratique sur l'utilisation de QGIS pour la cartographie"
-    },
-    "conference": {
-      "title": "Conférence : Géomatique et Innovation",
-      "description": "Une journée dédiée aux innovations dans le domaine de la géomatique"
-    }
-  },
-  "resources": {
-    "title": "Ressources Gratuites",
-    "description": "Téléchargez nos ressources pour améliorer vos compétences",
-    "download": "Télécharger",
-    "types": {
-      "guide": "Guide",
-      "template": "Modèle",
-      "technical": "Documentation technique"
-    },
-    "guide": {
-      "title": "Guide des bonnes pratiques en géomatique",
-      "description": "Un guide complet pour maîtriser les fondamentaux de la géomatique"
-    },
-    "template": {
-      "title": "Modèles de cartes thématiques",
-      "description": "Des modèles prêts à l'emploi pour vos projets cartographiques"
-    },
-    "technical": {
-      "title": "Documentation technique SIG",
-      "description": "Documentation détaillée sur les systèmes d'information géographique"
+    "cta": {
+      "title": "Prêt à démarrer votre projet ?",
+      "description": "Contactez nos experts pour discuter de vos besoins et découvrir comment nous pouvons vous aider.",
+      "button": "Contactez-nous"
     }
   }
 }

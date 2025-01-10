@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,72 +6,74 @@ import { Satellite, LineChart, Map, Globe2, ArrowRight, Database, Microscope, Us
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const services = [
-  {
-    icon: Satellite,
-    title: "Acquisition de données",
-    description: "Collecte de données satellite, drone et terrain adaptée à vos besoins spécifiques.",
-    details: [
-      "Imagerie satellite haute résolution",
-      "Acquisitions par drone",
-      "Relevés terrain",
-      "Données multi-temporelles"
-    ]
-  },
-  {
-    icon: LineChart,
-    title: "Traitement et analyse",
-    description: "Analyse approfondie avec des outils SIG et de télédétection avancés.",
-    details: [
-      "Analyse spectrale",
-      "Classification d'images",
-      "Détection de changements",
-      "Modélisation spatiale"
-    ]
-  },
-  {
-    icon: Map,
-    title: "Cartographie",
-    description: "Création de cartes personnalisées et visualisations interactives.",
-    details: [
-      "Cartographie thématique",
-      "Visualisation 3D",
-      "Webmapping",
-      "Atlas personnalisés"
-    ]
-  },
-  {
-    icon: Users2,
-    title: "Conseils experts",
-    description: "Accompagnement personnalisé dans vos projets géospatiaux.",
-    details: [
-      "Audit et diagnostic",
-      "Formation sur mesure",
-      "Support technique",
-      "Veille technologique"
-    ]
-  }
-];
-
-const specializedServices = [
-  {
-    icon: Database,
-    title: "Gestion de données",
-    description: "Organisation et structuration de vos données géospatiales."
-  },
-  {
-    icon: Microscope,
-    title: "R&D",
-    description: "Innovation et développement de solutions sur mesure."
-  },
-  {
-    icon: Globe2,
-    title: "Expertise internationale",
-    description: "Intervention sur des projets à l'échelle mondiale."
-  }
-];
-
 const Services = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: Satellite,
+      title: t("services.data.title"),
+      description: t("services.data.description"),
+      details: [
+        t("services.data.details.satellite"),
+        t("services.data.details.drone"),
+        t("services.data.details.field"),
+        t("services.data.details.temporal")
+      ]
+    },
+    {
+      icon: LineChart,
+      title: t("services.processing.title"),
+      description: t("services.processing.description"),
+      details: [
+        t("services.processing.details.spectral"),
+        t("services.processing.details.classification"),
+        t("services.processing.details.change"),
+        t("services.processing.details.modeling")
+      ]
+    },
+    {
+      icon: Map,
+      title: t("services.mapping.title"),
+      description: t("services.mapping.description"),
+      details: [
+        t("services.mapping.details.thematic"),
+        t("services.mapping.details.visualization"),
+        t("services.mapping.details.webmapping"),
+        t("services.mapping.details.atlas")
+      ]
+    },
+    {
+      icon: Users2,
+      title: t("services.consulting.title"),
+      description: t("services.consulting.description"),
+      details: [
+        t("services.consulting.details.audit"),
+        t("services.consulting.details.training"),
+        t("services.consulting.details.support"),
+        t("services.consulting.details.monitoring")
+      ]
+    }
+  ];
+
+  const specializedServices = [
+    {
+      icon: Database,
+      title: t("services.specialized.data.title"),
+      description: t("services.specialized.data.description")
+    },
+    {
+      icon: Microscope,
+      title: t("services.specialized.rd.title"),
+      description: t("services.specialized.rd.description")
+    },
+    {
+      icon: Globe2,
+      title: t("services.specialized.international.title"),
+      description: t("services.specialized.international.description")
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -79,10 +82,10 @@ const Services = () => {
       <section className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-            Nos Services
+            {t("services.title")}
           </h1>
           <p className="text-xl text-center text-muted-foreground max-w-3xl mx-auto mb-8">
-            Des solutions complètes pour l'acquisition, le traitement et l'analyse de données géospatiales
+            {t("services.subtitle")}
           </p>
         </div>
       </section>
@@ -92,7 +95,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <Card key={service.title} className="group hover:shadow-lg transition-shadow">
+              <Card key={service.title} className="group hover:shadow-lg transition-all duration-300 animate-fade-in">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <service.icon className="h-8 w-8 text-primary" />
@@ -121,10 +124,10 @@ const Services = () => {
       {/* Services spécialisés */}
       <section className="py-12 bg-accent/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Services spécialisés</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t("services.specialized.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {specializedServices.map((service) => (
-              <Card key={service.title} className="text-center group hover:shadow-lg transition-shadow">
+              <Card key={service.title} className="text-center group hover:shadow-lg transition-all duration-300 animate-fade-in">
                 <CardHeader>
                   <div className="flex flex-col items-center gap-4">
                     <service.icon className="h-12 w-12 text-primary" />
@@ -143,13 +146,13 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-b from-background to-accent/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Prêt à démarrer votre projet ?</h2>
+          <h2 className="text-3xl font-bold mb-6">{t("services.cta.title")}</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contactez nos experts pour discuter de vos besoins et découvrir comment nous pouvons vous aider.
+            {t("services.cta.description")}
           </p>
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="animate-fade-in">
             <Link to="/contact">
-              Contactez-nous
+              {t("services.cta.button")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

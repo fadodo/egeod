@@ -58,17 +58,37 @@
   },
   "about": {
     "title": "Our Story",
-    "description": "Founded in 2025, EGEOD was born from the vision of passionate experts",
+    "description": "EGEOD (Expert of Geospatial and Earth Observation Data) was born in 2025 from a passion for cutting-edge technologies and the potential of big data and geospatial data to transform the world.",
+    "mission": "Our mission is to democratize access to geospatial data and transform it into concrete solutions to address tomorrow's environmental and societal challenges.",
     "team": {
       "title": "Our Team",
-      "description": "A team of passionate experts"
+      "description": "A team of experts passionate about data and innovation",
+      "role": {
+        "ceo": "CEO & Remote Sensing and Data Analyst"
+      },
+      "skills": {
+        "satellite": "Satellite Image Analysis",
+        "gis": "GIS",
+        "python": "Python",
+        "deepLearning": "Deep Learning",
+        "projectManagement": "Project Management"
+      }
     },
     "values": {
       "title": "Our Values",
       "innovation": "Innovation",
-      "quality": "Quality",
-      "proximity": "Proximity",
-      "listening": "Listening"
+      "innovationDesc": "We constantly push the boundaries of geospatial technology",
+      "excellence": "Excellence",
+      "excellenceDesc": "We strive for excellence in every project and deliverable",
+      "engagement": "Commitment",
+      "engagementDesc": "We are dedicated to our clients' success",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "We work closely with our clients and partners"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "At EGEOD, we believe in a world where geospatial data serves sustainable development and territorial intelligence.",
+      "future": "Through our expertise and innovations, we contribute to building a future where space technology and Earth observation are essential levers for decision-making and preserving our planet."
     }
   },
   "services": {
@@ -76,191 +96,63 @@
     "subtitle": "Comprehensive solutions for your geospatial needs",
     "data": {
       "title": "Data Acquisition",
-      "description": "Satellite, drone and field data collection"
+      "description": "Satellite, drone and field data collection",
+      "details": {
+        "satellite": "High-resolution satellite imagery",
+        "drone": "Drone acquisitions",
+        "field": "Field surveys",
+        "temporal": "Multi-temporal data"
+      }
     },
     "processing": {
-      "title": "Processing",
-      "description": "Advanced analysis and processing"
+      "title": "Processing and Analysis",
+      "description": "In-depth analysis with GIS and remote sensing tools",
+      "details": {
+        "spectral": "Spectral analysis",
+        "classification": "Image classification",
+        "change": "Change detection",
+        "modeling": "Spatial modeling"
+      }
     },
     "mapping": {
       "title": "Mapping",
-      "description": "Interactive map creation"
+      "description": "Custom map creation",
+      "details": {
+        "thematic": "Thematic mapping",
+        "visualization": "3D visualization",
+        "webmapping": "Webmapping",
+        "atlas": "Custom atlases"
+      }
     },
     "consulting": {
       "title": "Consulting",
-      "description": "Expertise and support"
-    }
-  },
-  "expertise": {
-    "title": "Our Expertise",
-    "subtitle": "Excellence in geospatial domain",
-    "areas": {
-      "remote": "Remote Sensing",
-      "gis": "GIS",
-      "data": "Data Science",
-      "dev": "Development"
-    },
-    "sectors": {
-      "title": "Our Intervention Sectors",
-      "environment": {
-        "title": "Environment",
-        "description": "Impact studies, environmental monitoring, natural resource management"
-      },
-      "urban": {
-        "title": "Urban Planning",
-        "description": "Urban planning, cadastre, territorial development"
-      },
-      "agriculture": {
-        "title": "Agriculture",
-        "description": "Precision agriculture, plot management, crop optimization"
-      },
-      "training": {
-        "title": "Training",
-        "description": "Professional training, practical workshops, educational support"
-      },
-      "consulting": {
-        "title": "Consulting",
-        "description": "Technical expertise, strategic support, audit and recommendations"
-      },
-      "insurance": {
-        "title": "Insurance",
-        "description": "Risk assessment, impact analysis, geospatial solutions for insurance"
-      },
-      "climate": {
-        "title": "Climate Change",
-        "description": "Climate modeling, adaptation studies, mitigation strategies"
-      }
-    }
-  },
-  "news": {
-    "title": "News and Resources",
-    "blog": {
-      "title": "Blog",
-      "description": "Discover our latest articles and analyses",
-      "items": {
-        "trends": "Geospatial trends",
-        "cases": "Case studies",
-        "tutorials": "Tutorials and guides"
+      "description": "Expertise and support",
+      "details": {
+        "audit": "Audit and diagnosis",
+        "training": "Custom training",
+        "support": "Technical support",
+        "monitoring": "Technology watch"
       }
     },
-    "events": {
-      "title": "Events",
-      "description": "Join our events and training sessions",
-      "items": {
-        "webinars": "Webinars",
-        "workshops": "Practical workshops",
-        "conferences": "Conferences"
-      }
-    },
-    "resources": {
-      "title": "Resources",
-      "description": "Access our free resources",
-      "items": {
-        "guides": "Practical guides",
-        "templates": "Templates",
-        "tools": "Tools"
-      }
-    }
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Our team is here to help",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "service": "Service",
-      "subject": "Subject",
-      "message": "Message",
-      "send": "Send",
-      "sending": "Sending...",
-      "services": {
-        "data": "Data Acquisition",
-        "processing": "Processing",
-        "mapping": "Mapping",
-        "consulting": "Consulting"
-      }
-    },
-    "success": "Message sent",
-    "successDetail": "We will get back to you shortly",
-    "error": "Error",
-    "errorDetail": "An error occurred, please try again",
-    "info": {
-      "title": "Contact Information",
-      "description": "Feel free to reach out with any questions",
-      "address": "Address",
-      "email": "Email",
-      "phone": "Phone",
-      "hours": "Mon-Fri: 9am-6pm"
-    }
-  },
-  "blog": {
-    "title": "Our Blog",
-    "description": "Discover our latest articles, news and analyses",
-    "readMore": "Read more",
-    "categories": {
-      "technology": "Technology",
-      "caseStudy": "Case Study",
-      "tutorial": "Tutorial"
-    },
-    "posts": {
-      "trends": {
-        "title": "Geospatial Trends in 2024",
-        "description": "Discover the latest innovations and trends in geomatics"
+    "specialized": {
+      "title": "Specialized Services",
+      "data": {
+        "title": "Data Management",
+        "description": "Organization and structuring of your geospatial data"
       },
-      "case": {
-        "title": "Case Study: Urban Mapping",
-        "description": "How we helped a city optimize its urban planning"
+      "rd": {
+        "title": "R&D",
+        "description": "Innovation and development of custom solutions"
       },
-      "tutorial": {
-        "title": "Practical Guide: Spatial Data Analysis",
-        "description": "Learn how to effectively analyze your geospatial data"
+      "international": {
+        "title": "International Expertise",
+        "description": "Intervention on worldwide projects"
       }
-    }
-  },
-  "events": {
-    "title": "Our Events",
-    "description": "Join our events and training sessions to develop your skills",
-    "online": "Online",
-    "register": "Register",
-    "maxParticipants": "{{count}} max participants",
-    "types": {
-      "webinar": "Webinar",
-      "workshop": "Workshop",
-      "conference": "Conference"
     },
-    "webinar": {
-      "title": "Webinar: Introduction to Remote Sensing",
-      "description": "Discover the fundamentals of remote sensing and its applications"
-    },
-    "workshop": {
-      "title": "Workshop: Mapping with QGIS",
-      "description": "Practical training on using QGIS for mapping"
-    },
-    "conference": {
-      "title": "Conference: Geomatics and Innovation",
-      "description": "A day dedicated to innovations in the field of geomatics"
-    }
-  },
-  "resources": {
-    "title": "Free Resources",
-    "description": "Download our resources to improve your skills",
-    "download": "Download",
-    "types": {
-      "guide": "Guide",
-      "template": "Template",
-      "technical": "Technical Documentation"
-    },
-    "guide": {
-      "title": "Best Practices Guide in Geomatics",
-      "description": "A comprehensive guide to master the fundamentals of geomatics"
-    },
-    "template": {
-      "title": "Thematic Map Templates",
-      "description": "Ready-to-use templates for your mapping projects"
-    },
-    "technical": {
-      "title": "GIS Technical Documentation",
-      "description": "Detailed documentation on geographic information systems"
+    "cta": {
+      "title": "Ready to start your project?",
+      "description": "Contact our experts to discuss your needs and discover how we can help you.",
+      "button": "Contact Us"
     }
   }
 }
