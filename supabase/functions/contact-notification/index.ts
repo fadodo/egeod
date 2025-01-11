@@ -1,4 +1,3 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
 const YAHOO_APP_PASSWORD = Deno.env.get('YAHOO_APP_PASSWORD')
@@ -24,18 +23,20 @@ serve(async (req) => {
   }
 
   try {
+    console.log('Starting contact notification function...');
     const formData: ContactFormData = await req.json()
     console.log('Received contact form data:', formData)
 
     const client = new SmtpClient();
 
-    // Configuration SMTP Yahoo
+    console.log('Connecting to SMTP server...');
     await client.connectTLS({
       hostname: "smtp.mail.yahoo.com",
       port: 465,
       username: YAHOO_EMAIL,
       password: YAHOO_APP_PASSWORD!,
     });
+    console.log('Successfully connected to SMTP server');
 
     // Email pour l'administrateur
     const adminEmailHtml = `
@@ -48,7 +49,7 @@ serve(async (req) => {
       <p>${formData.message}</p>
     `;
 
-    // Envoi de l'email à l'administrateur
+    console.log('Sending admin notification email...');
     await client.send({
       from: YAHOO_EMAIL,
       to: YAHOO_EMAIL,
@@ -56,6 +57,7 @@ serve(async (req) => {
       content: adminEmailHtml,
       html: adminEmailHtml,
     });
+    console.log('Admin notification email sent successfully');
 
     // Email de confirmation pour l'utilisateur
     const userEmailHtml = `
@@ -71,7 +73,7 @@ serve(async (req) => {
       <p>Cordialement,<br>L'équipe EGEOD</p>
     `;
 
-    // Envoi de l'email de confirmation à l'utilisateur
+    console.log('Sending confirmation email to user...');
     await client.send({
       from: YAHOO_EMAIL,
       to: formData.email,
@@ -79,10 +81,10 @@ serve(async (req) => {
       content: userEmailHtml,
       html: userEmailHtml,
     });
+    console.log('User confirmation email sent successfully');
 
     await client.close();
-
-    console.log('Emails sent successfully');
+    console.log('SMTP connection closed');
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

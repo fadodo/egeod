@@ -81,7 +81,7 @@ export const ContactForm = () => {
 
       // Send email notification
       console.log("Sending email notification...");
-      const { error: emailError } = await supabase.functions.invoke('contact-notification', {
+      const { data, error: emailError } = await supabase.functions.invoke('contact-notification', {
         body: values
       });
 
@@ -89,7 +89,7 @@ export const ContactForm = () => {
         console.error("Email notification error:", emailError);
         throw emailError;
       }
-      console.log("Email notification sent successfully");
+      console.log("Email notification response:", data);
 
       // Show success message
       setIsSuccess(true);
