@@ -103,11 +103,11 @@ export const ContactForm = () => {
         navigate("/");
       }, 5000);
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("Form submission error:", error);
       toast({
-        title: t("contact.error"),
-        description: error.message || t("contact.errorDetail"),
+        title: "Erreur lors de l'envoi",
+        description: error.message || "Une erreur est survenue lors de l'envoi du message",
         variant: "destructive",
       });
     } finally {
