@@ -51,39 +51,63 @@ export const ContactForm = () => {
   const onSubmit = async (values: ContactFormData) => {
     try {
       setIsSubmitting(true);
-      console.log("Starting form submission...");
+      console.log("Starting form submission with values:", values);
       
+      // Validate reCAPTCHA
       const recaptchaValue = await recaptchaRef.current?.executeAsync();
+      console.log("reCAPTCHA response:", recaptchaValue);
+      
       if (!recaptchaValue) {
-        throw new Error("Veuillez valider le reCAPTCHA");
+        console.error("reCAPTCHA validation failed");
+        toast({
+          title: "Erreur de validation",
+          description: "Veuillez valider le reCAPTCHA",
+          variant: "destructive",
+        });
+        return;
       }
-      console.log("reCAPTCHA validated");
 
+      // Save to Supabase
+      console.log("Saving to Supabase...");
       const { error: supabaseError } = await supabase
         .from("Contacts")
         .insert(values);
 
-      if (supabaseError) throw supabaseError;
-      console.log("Data saved to Supabase");
+      if (supabaseError) {
+        console.error("Supabase error:", supabaseError);
+        throw supabaseError;
+      }
+      console.log("Successfully saved to Supabase");
 
+      // Send email notification
+      console.log("Sending email notification...");
       const { error: emailError } = await supabase.functions.invoke('contact-notification', {
         body: values
       });
 
-      if (emailError) throw emailError;
-      console.log("Email notification sent");
+      if (emailError) {
+        console.error("Email notification error:", emailError);
+        throw emailError;
+      }
+      console.log("Email notification sent successfully");
 
+      // Show success message
       setIsSuccess(true);
+      toast({
+        title: "Message envoyé !",
+        description: "Nous vous répondrons dans les plus brefs délais.",
+      });
       
+      // Redirect after delay
       setTimeout(() => {
         navigate("/");
       }, 5000);
 
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Form submission error:", error);
       toast({
         title: t("contact.error"),
-        description: t("contact.errorDetail"),
+        description: error.message || t("contact.errorDetail"),
         variant: "destructive",
       });
     } finally {
