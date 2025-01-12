@@ -20,6 +20,9 @@ declare global {
   }
 }
 
+const TURNSTILE_SCRIPT_ID = 'turnstile-script';
+const TURNSTILE_SITE_KEY = "0x4AAAAAAA5IwiG-gmX6v_mh";
+
 const formSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
   email: z.string().email("Email invalide"),
@@ -42,49 +45,59 @@ export const ContactForm = () => {
     console.log("Mounting ContactForm component...");
     setMounted(true);
 
-    // Load Turnstile script
-    const script = document.createElement("script");
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
+    // Check if script already exists
+    if (!document.getElementById(TURNSTILE_SCRIPT_ID)) {
+      const script = document.createElement("script");
+      script.id = TURNSTILE_SCRIPT_ID;
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      script.async = true;
+      script.defer = true;
 
-    script.onload = () => {
-      console.log("Turnstile script loaded successfully");
-    };
+      script.onload = () => {
+        console.log("Turnstile script loaded successfully");
+        if (window.turnstile && mounted) {
+          initializeTurnstile();
+        }
+      };
 
-    script.onerror = () => {
-      console.error("Failed to load Turnstile script");
-    };
+      script.onerror = () => {
+        console.error("Failed to load Turnstile script");
+      };
+
+      document.head.appendChild(script);
+    } else if (window.turnstile && mounted) {
+      initializeTurnstile();
+    }
 
     return () => {
       console.log("Unmounting ContactForm component...");
-      setMounted(false);
       if (turnstileWidgetId.current) {
         window.turnstile?.remove(turnstileWidgetId.current);
       }
-      document.head.removeChild(script);
+      setMounted(false);
     };
   }, []);
 
-  useEffect(() => {
-    if (window.turnstile && mounted) {
-      console.log("Initializing Turnstile widget...");
-      try {
-        turnstileWidgetId.current = window.turnstile.render('#turnstile-widget', {
-          sitekey: "0x4AAAAAAA5IwiG-gmX6v_mh",
-          theme: "light",
-          callback: function(token: string) {
-            console.log("Turnstile token received");
-            setTurnstileToken(token);
-          },
-        });
-        console.log("Turnstile widget rendered successfully");
-      } catch (error) {
-        console.error("Error rendering Turnstile widget:", error);
+  const initializeTurnstile = () => {
+    console.log("Initializing Turnstile widget...");
+    try {
+      if (turnstileWidgetId.current) {
+        window.turnstile?.remove(turnstileWidgetId.current);
       }
+      
+      turnstileWidgetId.current = window.turnstile.render('#turnstile-widget', {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: "light",
+        callback: function(token: string) {
+          console.log("Turnstile token received");
+          setTurnstileToken(token);
+        },
+      });
+      console.log("Turnstile widget rendered successfully");
+    } catch (error) {
+      console.error("Error rendering Turnstile widget:", error);
     }
-  }, [mounted]);
+  };
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
