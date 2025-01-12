@@ -54,6 +54,7 @@ export const ContactForm = () => {
         script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
         script.async = true;
         script.defer = true;
+        script.crossOrigin = "anonymous";
 
         script.onload = () => {
           console.log("Turnstile script loaded successfully");
@@ -84,7 +85,7 @@ export const ContactForm = () => {
       }
       setMounted(false);
     };
-  }, []);
+  }, [mounted]);
 
   const initializeTurnstile = () => {
     console.log("Initializing Turnstile widget...");
@@ -154,7 +155,7 @@ export const ContactForm = () => {
 
       console.log("Sending email notification...");
       const { data, error: emailError } = await supabase.functions.invoke('contact-notification', {
-        body: { ...values, turnstileToken }
+        body: JSON.stringify({ ...values, turnstileToken })
       });
 
       if (emailError) {

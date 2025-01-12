@@ -53,8 +53,17 @@ serve(async (req) => {
       throw new Error('Configuration manquante');
     }
 
-    const formData: ContactFormData = await req.json();
-    console.log('Received contact form data:', { ...formData, turnstileToken: '[REDACTED]' });
+    const requestBody = await req.text();
+    console.log('Raw request body:', requestBody);
+    
+    let formData: ContactFormData;
+    try {
+      formData = JSON.parse(requestBody);
+      console.log('Parsed form data:', { ...formData, turnstileToken: '[REDACTED]' });
+    } catch (error) {
+      console.error('Error parsing request body:', error);
+      throw new Error('Invalid request body format');
+    }
 
     // Verify Turnstile token
     const isTokenValid = await verifyTurnstileToken(formData.turnstileToken);
