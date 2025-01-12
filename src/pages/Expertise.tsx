@@ -35,14 +35,14 @@ const Expertise = () => {
 
   const sectors = [
     {
+      icon: CloudRain,
+      title: t("expertise.sectors.climate.title"),
+      description: t("expertise.sectors.climate.description")
+    },
+    {
       icon: Leaf,
       title: t("expertise.sectors.environment.title"),
       description: t("expertise.sectors.environment.description")
-    },
-    {
-      icon: Building2,
-      title: t("expertise.sectors.urban.title"),
-      description: t("expertise.sectors.urban.description")
     },
     {
       icon: Wheat,
@@ -50,9 +50,9 @@ const Expertise = () => {
       description: t("expertise.sectors.agriculture.description")
     },
     {
-      icon: CloudRain,
-      title: t("expertise.sectors.climate.title"),
-      description: t("expertise.sectors.climate.description")
+      icon: Building2,
+      title: t("expertise.sectors.urban.title"),
+      description: t("expertise.sectors.urban.description")
     },
     {
       icon: Shield,
