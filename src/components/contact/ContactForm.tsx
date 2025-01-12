@@ -112,6 +112,8 @@ export const ContactForm = () => {
       });
     } finally {
       setIsSubmitting(false);
+      // Reset reCAPTCHA
+      recaptchaRef.current?.reset();
     }
   };
 
@@ -157,11 +159,13 @@ export const ContactForm = () => {
             >
               <ContactFormFields form={form} />
               
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                size="invisible"
-                sitekey="6LfWwEApAAAAAGg5RjpfQZnvBhQ5F-Vg_hHX-7_x"
-              />
+              <div className="flex justify-center my-4">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  size="normal"
+                  sitekey="6LfWwEApAAAAAGg5RjpfQZnvBhQ5F-Vg_hHX-7_x"
+                />
+              </div>
 
               <Button 
                 type="submit" 
