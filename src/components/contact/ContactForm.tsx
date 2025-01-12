@@ -3,7 +3,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState, useEffect } from "react";
 import { Form } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
@@ -14,6 +13,12 @@ import { useNavigate } from "react-router-dom";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+declare global {
+  interface Window {
+    turnstile: any;
+  }
+}
 
 const formSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
@@ -27,15 +32,43 @@ export const ContactForm = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
   const navigate = useNavigate();
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
-    return () => setMounted(false);
+
+    // Load Turnstile script
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+
+    return () => {
+      setMounted(false);
+      if (turnstileWidgetId.current) {
+        window.turnstile?.remove(turnstileWidgetId.current);
+      }
+      document.head.removeChild(script);
+    };
   }, []);
+
+  useEffect(() => {
+    if (window.turnstile && mounted) {
+      console.log("Rendering Turnstile widget...");
+      turnstileWidgetId.current = window.turnstile.render('#turnstile-widget', {
+        sitekey: "0x4AAAAAAA5IwiG-gmX6v_mh",
+        callback: function(token: string) {
+          console.log("Turnstile token received:", token);
+          setTurnstileToken(token);
+        },
+      });
+    }
+  }, [mounted]);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
@@ -53,15 +86,12 @@ export const ContactForm = () => {
       setIsSubmitting(true);
       console.log("Starting form submission with values:", values);
       
-      // Validate reCAPTCHA
-      const recaptchaValue = await recaptchaRef.current?.executeAsync();
-      console.log("reCAPTCHA response:", recaptchaValue);
-      
-      if (!recaptchaValue) {
-        console.error("reCAPTCHA validation failed");
+      // Validate Turnstile
+      if (!turnstileToken) {
+        console.error("Turnstile validation required");
         toast({
           title: "Erreur de validation",
-          description: "Veuillez valider le reCAPTCHA",
+          description: "Veuillez compléter la validation de sécurité",
           variant: "destructive",
         });
         return;
@@ -79,10 +109,10 @@ export const ContactForm = () => {
       }
       console.log("Successfully saved to Supabase");
 
-      // Send email notification
+      // Send email notification with Turnstile token
       console.log("Sending email notification...");
       const { data, error: emailError } = await supabase.functions.invoke('contact-notification', {
-        body: values
+        body: { ...values, turnstileToken }
       });
 
       if (emailError) {
@@ -112,8 +142,11 @@ export const ContactForm = () => {
       });
     } finally {
       setIsSubmitting(false);
-      // Reset reCAPTCHA
-      recaptchaRef.current?.reset();
+      // Reset Turnstile
+      if (turnstileWidgetId.current) {
+        window.turnstile?.reset(turnstileWidgetId.current);
+      }
+      setTurnstileToken(null);
     }
   };
 
@@ -160,17 +193,13 @@ export const ContactForm = () => {
               <ContactFormFields form={form} />
               
               <div className="flex justify-center my-4">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  size="normal"
-                  sitekey="6LfWwEApAAAAAGg5RjpfQZnvBhQ5F-Vg_hHX-7_x"
-                />
+                <div id="turnstile-widget"></div>
               </div>
 
               <Button 
                 type="submit" 
                 className="w-full transition-all duration-200 hover:scale-[1.02]"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !turnstileToken}
               >
                 {isSubmitting ? (
                   <>

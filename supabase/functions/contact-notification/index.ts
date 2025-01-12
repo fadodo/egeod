@@ -3,6 +3,7 @@ import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
 const YAHOO_APP_PASSWORD = Deno.env.get('YAHOO_APP_PASSWORD');
 const YAHOO_EMAIL = 'fidel999@yahoo.fr';
+const TURNSTILE_SECRET_KEY = Deno.env.get('TURNSTILE_SECRET_KEY');
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -15,10 +16,31 @@ interface ContactFormData {
   service: string;
   subject: string;
   message: string;
+  turnstileToken: string;
+}
+
+async function verifyTurnstileToken(token: string): Promise<boolean> {
+  console.log("Verifying Turnstile token...");
+  const formData = new FormData();
+  formData.append('secret', TURNSTILE_SECRET_KEY || '');
+  formData.append('response', token);
+
+  try {
+    const result = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const outcome = await result.json();
+    console.log("Turnstile verification result:", outcome);
+    return outcome.success === true;
+  } catch (error) {
+    console.error("Turnstile verification error:", error);
+    return false;
+  }
 }
 
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -26,14 +48,20 @@ serve(async (req) => {
   try {
     console.log('Starting contact notification function...');
     
-    // Verify SMTP credentials
-    if (!YAHOO_APP_PASSWORD) {
-      console.error('YAHOO_APP_PASSWORD is not set');
-      throw new Error('Configuration SMTP manquante');
+    if (!YAHOO_APP_PASSWORD || !TURNSTILE_SECRET_KEY) {
+      console.error('Missing required environment variables');
+      throw new Error('Configuration manquante');
     }
 
     const formData: ContactFormData = await req.json();
-    console.log('Received contact form data:', formData);
+    console.log('Received contact form data:', { ...formData, turnstileToken: '[REDACTED]' });
+
+    // Verify Turnstile token
+    const isTokenValid = await verifyTurnstileToken(formData.turnstileToken);
+    if (!isTokenValid) {
+      console.error('Invalid Turnstile token');
+      throw new Error('Validation de sécurité échouée');
+    }
 
     const client = new SmtpClient();
 
