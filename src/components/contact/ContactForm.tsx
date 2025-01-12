@@ -11,7 +11,7 @@ import { ContactFormFields } from "./ContactFormFields";
 import { ContactFormData } from "./types";
 import { useNavigate } from "react-router-dom";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Loader2 } from "lucide-react";
+import { Loader2, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 declare global {
@@ -39,39 +39,47 @@ export const ContactForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileError, setTurnstileError] = useState<string | null>(null);
   const turnstileWidgetId = useRef<string | null>(null);
 
   useEffect(() => {
     console.log("Mounting ContactForm component...");
     setMounted(true);
 
-    // Check if script already exists
-    if (!document.getElementById(TURNSTILE_SCRIPT_ID)) {
-      const script = document.createElement("script");
-      script.id = TURNSTILE_SCRIPT_ID;
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-      script.async = true;
-      script.defer = true;
+    const loadTurnstile = () => {
+      if (!document.getElementById(TURNSTILE_SCRIPT_ID)) {
+        console.log("Creating new Turnstile script...");
+        const script = document.createElement("script");
+        script.id = TURNSTILE_SCRIPT_ID;
+        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+        script.async = true;
+        script.defer = true;
 
-      script.onload = () => {
-        console.log("Turnstile script loaded successfully");
-        if (window.turnstile && mounted) {
-          initializeTurnstile();
-        }
-      };
+        script.onload = () => {
+          console.log("Turnstile script loaded successfully");
+          if (window.turnstile && mounted) {
+            initializeTurnstile();
+          }
+        };
 
-      script.onerror = () => {
-        console.error("Failed to load Turnstile script");
-      };
+        script.onerror = (error) => {
+          console.error("Failed to load Turnstile script:", error);
+          setTurnstileError("Erreur lors du chargement du widget de sécurité");
+        };
 
-      document.head.appendChild(script);
-    } else if (window.turnstile && mounted) {
-      initializeTurnstile();
-    }
+        document.head.appendChild(script);
+      } else if (window.turnstile && mounted) {
+        console.log("Turnstile script already exists, initializing widget...");
+        initializeTurnstile();
+      }
+    };
+
+    loadTurnstile();
 
     return () => {
       console.log("Unmounting ContactForm component...");
       if (turnstileWidgetId.current) {
+        console.log("Removing Turnstile widget...");
         window.turnstile?.remove(turnstileWidgetId.current);
       }
       setMounted(false);
@@ -91,11 +99,23 @@ export const ContactForm = () => {
         callback: function(token: string) {
           console.log("Turnstile token received");
           setTurnstileToken(token);
+          setTurnstileError(null);
         },
+        "error-callback": function() {
+          console.error("Turnstile widget error");
+          setTurnstileError("Erreur de validation, veuillez réessayer");
+          setTurnstileToken(null);
+        },
+        "expired-callback": function() {
+          console.log("Turnstile token expired");
+          setTurnstileToken(null);
+          setTurnstileError("La validation a expiré, veuillez réessayer");
+        }
       });
       console.log("Turnstile widget rendered successfully");
     } catch (error) {
       console.error("Error rendering Turnstile widget:", error);
+      setTurnstileError("Erreur lors de l'initialisation du widget de sécurité");
     }
   };
 
@@ -115,18 +135,12 @@ export const ContactForm = () => {
       setIsSubmitting(true);
       console.log("Starting form submission with values:", values);
       
-      // Validate Turnstile
       if (!turnstileToken) {
         console.error("Turnstile validation required");
-        toast({
-          title: "Erreur de validation",
-          description: "Veuillez compléter la validation de sécurité",
-          variant: "destructive",
-        });
+        setTurnstileError("Veuillez compléter la validation de sécurité");
         return;
       }
 
-      // Save to Supabase
       console.log("Saving to Supabase...");
       const { error: supabaseError } = await supabase
         .from("Contacts")
@@ -138,7 +152,6 @@ export const ContactForm = () => {
       }
       console.log("Successfully saved to Supabase");
 
-      // Send email notification with Turnstile token
       console.log("Sending email notification...");
       const { data, error: emailError } = await supabase.functions.invoke('contact-notification', {
         body: { ...values, turnstileToken }
@@ -150,14 +163,12 @@ export const ContactForm = () => {
       }
       console.log("Email notification response:", data);
 
-      // Show success message
       setIsSuccess(true);
       toast({
         title: "Message envoyé !",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
       
-      // Redirect after delay
       setTimeout(() => {
         navigate("/");
       }, 5000);
@@ -165,13 +176,12 @@ export const ContactForm = () => {
     } catch (error: any) {
       console.error("Form submission error:", error);
       toast({
+        variant: "destructive",
         title: "Erreur lors de l'envoi",
         description: error.message || "Une erreur est survenue lors de l'envoi du message",
-        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
-      // Reset Turnstile
       if (turnstileWidgetId.current) {
         window.turnstile?.reset(turnstileWidgetId.current);
       }
@@ -212,6 +222,7 @@ export const ContactForm = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
+          className="relative"
         >
           <Form {...form}>
             <form 
@@ -221,12 +232,19 @@ export const ContactForm = () => {
             >
               <ContactFormFields form={form} />
               
-              <div className="flex justify-center my-4">
+              <div className="flex flex-col items-center gap-4">
                 <div 
                   id="turnstile-widget" 
-                  className="overflow-hidden rounded-lg shadow-sm"
-                  style={{ minHeight: '65px' }}
+                  className="overflow-hidden rounded-lg shadow-sm min-h-[65px] w-full max-w-[300px] mx-auto"
                 ></div>
+                
+                {turnstileError && (
+                  <Alert variant="destructive" className="mt-2">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Erreur de validation</AlertTitle>
+                    <AlertDescription>{turnstileError}</AlertDescription>
+                  </Alert>
+                )}
               </div>
 
               <Button 
