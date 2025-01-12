@@ -1,13 +1,13 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
-const YAHOO_APP_PASSWORD = Deno.env.get('YAHOO_APP_PASSWORD')
-const YAHOO_EMAIL = 'fidel999@yahoo.fr'
+const YAHOO_APP_PASSWORD = Deno.env.get('YAHOO_APP_PASSWORD');
+const YAHOO_EMAIL = 'fidel999@yahoo.fr';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-}
+};
 
 interface ContactFormData {
   name: string;
@@ -20,7 +20,7 @@ interface ContactFormData {
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders })
+    return new Response(null, { headers: corsHeaders });
   }
 
   try {
@@ -32,7 +32,7 @@ serve(async (req) => {
       throw new Error('Configuration SMTP manquante');
     }
 
-    const formData: ContactFormData = await req.json()
+    const formData: ContactFormData = await req.json();
     console.log('Received contact form data:', formData);
 
     const client = new SmtpClient();
@@ -92,6 +92,11 @@ serve(async (req) => {
       });
       console.log('User confirmation email sent successfully');
 
+      return new Response(JSON.stringify({ success: true }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 200,
+      });
+
     } catch (smtpError) {
       console.error('SMTP Error:', smtpError);
       throw new Error(`Erreur d'envoi d'email: ${smtpError.message}`);
@@ -100,18 +105,13 @@ serve(async (req) => {
       console.log('SMTP connection closed');
     }
 
-    return new Response(JSON.stringify({ success: true }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      status: 200,
-    })
-
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in contact-notification function:', error);
     return new Response(JSON.stringify({ 
       error: error.message || "Une erreur est survenue lors de l'envoi du message" 
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 500,
-    })
+    });
   }
 });

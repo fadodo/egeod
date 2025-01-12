@@ -75,7 +75,7 @@ export const ContactForm = () => {
 
       if (supabaseError) {
         console.error("Supabase error:", supabaseError);
-        throw supabaseError;
+        throw new Error(`Erreur lors de l'enregistrement: ${supabaseError.message}`);
       }
       console.log("Successfully saved to Supabase");
 
@@ -87,7 +87,7 @@ export const ContactForm = () => {
 
       if (emailError) {
         console.error("Email notification error:", emailError);
-        throw emailError;
+        throw new Error(`Erreur lors de l'envoi de l'email: ${emailError.message}`);
       }
       console.log("Email notification response:", data);
 
