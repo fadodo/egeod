@@ -39,6 +39,7 @@ export const ContactForm = () => {
   const turnstileWidgetId = useRef<string | null>(null);
 
   useEffect(() => {
+    console.log("Mounting ContactForm component...");
     setMounted(true);
 
     // Load Turnstile script
@@ -48,7 +49,16 @@ export const ContactForm = () => {
     script.defer = true;
     document.head.appendChild(script);
 
+    script.onload = () => {
+      console.log("Turnstile script loaded successfully");
+    };
+
+    script.onerror = () => {
+      console.error("Failed to load Turnstile script");
+    };
+
     return () => {
+      console.log("Unmounting ContactForm component...");
       setMounted(false);
       if (turnstileWidgetId.current) {
         window.turnstile?.remove(turnstileWidgetId.current);
@@ -59,14 +69,20 @@ export const ContactForm = () => {
 
   useEffect(() => {
     if (window.turnstile && mounted) {
-      console.log("Rendering Turnstile widget...");
-      turnstileWidgetId.current = window.turnstile.render('#turnstile-widget', {
-        sitekey: "0x4AAAAAAA5IwiG-gmX6v_mh",
-        callback: function(token: string) {
-          console.log("Turnstile token received:", token);
-          setTurnstileToken(token);
-        },
-      });
+      console.log("Initializing Turnstile widget...");
+      try {
+        turnstileWidgetId.current = window.turnstile.render('#turnstile-widget', {
+          sitekey: "0x4AAAAAAA5IwiG-gmX6v_mh",
+          theme: "light",
+          callback: function(token: string) {
+            console.log("Turnstile token received");
+            setTurnstileToken(token);
+          },
+        });
+        console.log("Turnstile widget rendered successfully");
+      } catch (error) {
+        console.error("Error rendering Turnstile widget:", error);
+      }
     }
   }, [mounted]);
 
@@ -193,7 +209,11 @@ export const ContactForm = () => {
               <ContactFormFields form={form} />
               
               <div className="flex justify-center my-4">
-                <div id="turnstile-widget"></div>
+                <div 
+                  id="turnstile-widget" 
+                  className="overflow-hidden rounded-lg shadow-sm"
+                  style={{ minHeight: '65px' }}
+                ></div>
               </div>
 
               <Button 
