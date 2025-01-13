@@ -1,53 +1,41 @@
-import { Share2, Linkedin, Twitter } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { useTranslation } from "react-i18next";
 
-interface BlogShareButtonsProps {
+export interface BlogShareButtonsProps {
   title: string;
   url: string;
 }
 
 export const BlogShareButtons = ({ title, url }: BlogShareButtonsProps) => {
-  const { t } = useTranslation();
+  const shareUrl = new URL(url).toString(); // This will properly format the URL
 
-  const shareOnLinkedIn = () => {
-    window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
-      "_blank"
-    );
-  };
-
-  const shareOnTwitter = () => {
-    window.open(
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-      "_blank"
-    );
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title,
+          url: shareUrl,
+        });
+        console.log("Content shared successfully");
+      } else {
+        // Fallback for browsers that don't support the Web Share API
+        await navigator.clipboard.writeText(shareUrl);
+        console.log("URL copied to clipboard");
+      }
+    } catch (error) {
+      console.error("Error sharing content:", error);
+    }
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <Share2 className="h-4 w-4" />
-          {t("blog.share")}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuItem onClick={shareOnLinkedIn} className="gap-2 cursor-pointer">
-          <Linkedin className="h-4 w-4" />
-          LinkedIn
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={shareOnTwitter} className="gap-2 cursor-pointer">
-          <Twitter className="h-4 w-4" />
-          Twitter
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      variant="outline"
+      size="sm"
+      className="flex items-center gap-2"
+      onClick={handleShare}
+    >
+      <Share2 className="h-4 w-4" />
+      <span>Share</span>
+    </Button>
   );
 };
