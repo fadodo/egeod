@@ -15,7 +15,6 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Get blog posts from translations
   const posts = Object.entries(t("blog.posts", { returnObjects: true })).map(
     ([id, post]: [string, any]) => ({
       id,
@@ -23,7 +22,6 @@ const Blog = () => {
     })
   );
 
-  // Filter posts based on search query and selected category
   const filteredPosts = posts.filter((post) => {
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
