@@ -5,9 +5,12 @@ import { BlogShareButtons } from "@/components/BlogShareButtons";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 const Blog = () => {
   const { t } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
   // Mock blog posts data
   const posts = [
@@ -78,8 +81,14 @@ const Blog = () => {
           </div>
 
           <aside className="space-y-8">
-            <BlogSearch />
-            <BlogCategories />
+            <BlogSearch 
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+            />
+            <BlogCategories 
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
           </aside>
         </div>
       </main>
