@@ -28,7 +28,7 @@ const slides: Slide[] = [
   },
   {
     type: "image",
-    src: "/boat-6572384_1280.jpg",
+    src: "/hero-background.jpg",
     caption: "Navigation maritime",
   },
   {
