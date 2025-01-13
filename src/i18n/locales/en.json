@@ -69,5 +69,86 @@
       "phone": "Phone",
       "email": "Email"
     }
+  },
+  "home": {
+    "hero": {
+      "title": "Innovative Geospatial Solutions",
+      "subtitle": "Expert in geospatial data acquisition and analysis for sustainable solutions",
+      "contact": "Contact Us",
+      "cta": "Discover Our Services"
+    },
+    "services": {
+      "title": "Our Services",
+      "acquisition": {
+        "title": "Data Acquisition",
+        "description": "Collection of precise geospatial data using cutting-edge technologies"
+      },
+      "processing": {
+        "title": "Data Processing",
+        "description": "Advanced data analysis and processing for relevant insights"
+      },
+      "mapping": {
+        "title": "Mapping",
+        "description": "Creation of interactive geospatial maps and visualizations"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Expert guidance for your geospatial projects"
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Adoption of latest technologies for optimal solutions"
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Commitment to excellence and precision"
+      },
+      "proximity": {
+        "title": "Proximity",
+        "description": "Personalized approach and attentive customer service"
+      },
+      "listening": {
+        "title": "Listening",
+        "description": "Deep understanding of your specific needs"
+      }
+    }
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "subtitle": "Geospatial solutions tailored to your specific needs",
+    "sectors": {
+      "title": "Our Areas of Intervention",
+      "climate": {
+        "title": "Climate & Weather",
+        "description": "Analysis and forecasting of climate phenomena"
+      },
+      "environment": {
+        "title": "Environment",
+        "description": "Ecosystem monitoring and protection"
+      },
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Optimization of agricultural practices"
+      },
+      "urban": {
+        "title": "Urban Planning",
+        "description": "Sustainable urban development and planning"
+      },
+      "insurance": {
+        "title": "Insurance",
+        "description": "Risk assessment and management"
+      },
+      "training": {
+        "title": "Training",
+        "description": "Skills transfer and expertise"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Personalized strategic guidance"
+      }
+    }
   }
 }

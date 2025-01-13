@@ -19,17 +19,17 @@
       "climateChange": {
         "title": "Les données géospatiales dans la lutte contre le changement climatique",
         "description": "Comment les technologies de télédétection aident à surveiller et à combattre le changement climatique.",
-        "category": "sustainability"
+        "category": "durabilité"
       },
       "droneInnovation": {
         "title": "Les drones révolutionnent la collecte de données géospatiales",
         "description": "Découvrez comment les drones transforment la cartographie et l'analyse du territoire.",
-        "category": "technology"
+        "category": "technologie"
       },
       "urbanPlanning": {
         "title": "La cartographie au service du développement urbain durable",
         "description": "Étude de cas : Comment EGEOD accompagne les collectivités dans leur planification urbaine.",
-        "category": "caseStudies"
+        "category": "études de cas"
       }
     }
   },
@@ -68,6 +68,87 @@
       "address": "Adresse",
       "phone": "Téléphone",
       "email": "Email"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Solutions Géospatiales Innovantes",
+      "subtitle": "Expert en acquisition et analyse de données géospatiales pour des solutions durables",
+      "contact": "Nous contacter",
+      "cta": "Découvrir nos services"
+    },
+    "services": {
+      "title": "Nos Services",
+      "acquisition": {
+        "title": "Acquisition de Données",
+        "description": "Collecte de données géospatiales précises avec des technologies de pointe"
+      },
+      "processing": {
+        "title": "Traitement des Données",
+        "description": "Analyse et traitement avancé des données pour des insights pertinents"
+      },
+      "mapping": {
+        "title": "Cartographie",
+        "description": "Création de cartes et visualisations géospatiales interactives"
+      },
+      "consulting": {
+        "title": "Conseil",
+        "description": "Accompagnement expert pour vos projets géospatiaux"
+      }
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Adoption des dernières technologies pour des solutions optimales"
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Engagement envers l'excellence et la précision"
+      },
+      "proximity": {
+        "title": "Proximité",
+        "description": "Une approche personnalisée et un service client attentif"
+      },
+      "listening": {
+        "title": "Écoute",
+        "description": "Compréhension approfondie de vos besoins spécifiques"
+      }
+    }
+  },
+  "expertise": {
+    "title": "Notre Expertise",
+    "subtitle": "Des solutions géospatiales adaptées à vos besoins spécifiques",
+    "sectors": {
+      "title": "Nos Secteurs d'Intervention",
+      "climate": {
+        "title": "Climat et Météo",
+        "description": "Analyse et prévision des phénomènes climatiques"
+      },
+      "environment": {
+        "title": "Environnement",
+        "description": "Surveillance et protection des écosystèmes"
+      },
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Optimisation des pratiques agricoles"
+      },
+      "urban": {
+        "title": "Urbanisme",
+        "description": "Planification et développement urbain durable"
+      },
+      "insurance": {
+        "title": "Assurance",
+        "description": "Évaluation et gestion des risques"
+      },
+      "training": {
+        "title": "Formation",
+        "description": "Transfert de compétences et expertise"
+      },
+      "consulting": {
+        "title": "Conseil",
+        "description": "Accompagnement stratégique personnalisé"
+      }
     }
   }
 }
