@@ -38,13 +38,13 @@ const MapComponent = () => {
       geometry: new Point(fromLonLat(coordinates))
     });
 
-    // Style for the marker
+    // Style for the marker - Using hex color instead of CSS variable
     const markerStyle = new Style({
       image: new CircleStyle({
         radius: 8,
-        fill: new Fill({ color: 'hsl(var(--primary))' }),
+        fill: new Fill({ color: '#22c55e' }), // Using a specific green hex color
         stroke: new Stroke({
-          color: 'white',
+          color: '#ffffff',
           width: 2,
         }),
       }),
