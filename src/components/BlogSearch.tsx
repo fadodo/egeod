@@ -1,18 +1,22 @@
-import { Search } from "lucide-react";
-import { Input } from "./ui/input";
+import { Input } from "@/components/ui/input";
+import { useTranslation } from "react-i18next";
 
 interface BlogSearchProps {
-  onSearch: (query: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
-export const BlogSearch = ({ onSearch }: BlogSearchProps) => {
+export const BlogSearch = ({ searchQuery, setSearchQuery }: BlogSearchProps) => {
+  const { t } = useTranslation();
+
   return (
-    <div className="relative">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+    <div className="w-full max-w-md mx-auto mb-8">
       <Input
-        placeholder="Rechercher des articles..."
-        className="pl-10"
-        onChange={(e) => onSearch(e.target.value)}
+        type="text"
+        placeholder={t("blog.searchPlaceholder")}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full"
       />
     </div>
   );

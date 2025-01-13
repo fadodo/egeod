@@ -6,6 +6,7 @@
     "readMore": "Lire la suite",
     "share": "Partager",
     "noResults": "Aucun article ne correspond à votre recherche",
+    "searchPlaceholder": "Rechercher un article...",
     "categories": {
       "technology": "Technologie",
       "sustainability": "Durabilité",
@@ -17,16 +18,56 @@
     "posts": {
       "climateChange": {
         "title": "Les données géospatiales dans la lutte contre le changement climatique",
-        "description": "Comment les technologies de télédétection aident à surveiller et à combattre le changement climatique."
+        "description": "Comment les technologies de télédétection aident à surveiller et à combattre le changement climatique.",
+        "category": "sustainability"
       },
       "droneInnovation": {
         "title": "Les drones révolutionnent la collecte de données géospatiales",
-        "description": "Découvrez comment les drones transforment la cartographie et l'analyse du territoire."
+        "description": "Découvrez comment les drones transforment la cartographie et l'analyse du territoire.",
+        "category": "technology"
       },
       "urbanPlanning": {
         "title": "La cartographie au service du développement urbain durable",
-        "description": "Étude de cas : Comment EGEOD accompagne les collectivités dans leur planification urbaine."
+        "description": "Étude de cas : Comment EGEOD accompagne les collectivités dans leur planification urbaine.",
+        "category": "caseStudies"
       }
+    }
+  },
+  "nav": {
+    "about": "À propos",
+    "services": "Services",
+    "expertise": "Expertise",
+    "news": "Actualités",
+    "blog": "Blog",
+    "events": "Événements",
+    "resources": "Ressources",
+    "contactUs": "Nous contacter"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Nous sommes là pour vous aider. Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "service": "Service",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer",
+      "success": "Message envoyé avec succès",
+      "error": "Une erreur est survenue",
+      "services": {
+        "consulting": "Conseil",
+        "development": "Développement",
+        "training": "Formation",
+        "support": "Support"
+      }
+    },
+    "info": {
+      "title": "Informations de contact",
+      "description": "N'hésitez pas à nous contacter par téléphone, email ou en personne.",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email"
     }
   }
 }

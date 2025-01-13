@@ -6,6 +6,7 @@
     "readMore": "Read More",
     "share": "Share",
     "noResults": "No articles match your search",
+    "searchPlaceholder": "Search articles...",
     "categories": {
       "technology": "Technology",
       "sustainability": "Sustainability",
@@ -17,16 +18,56 @@
     "posts": {
       "climateChange": {
         "title": "Geospatial Data in the Fight Against Climate Change",
-        "description": "How remote sensing technologies help monitor and combat climate change."
+        "description": "How remote sensing technologies help monitor and combat climate change.",
+        "category": "sustainability"
       },
       "droneInnovation": {
         "title": "Drones Revolutionize Geospatial Data Collection",
-        "description": "Discover how drones are transforming mapping and territory analysis."
+        "description": "Discover how drones are transforming mapping and territory analysis.",
+        "category": "technology"
       },
       "urbanPlanning": {
         "title": "Mapping for Sustainable Urban Development",
-        "description": "Case study: How EGEOD supports communities in their urban planning."
+        "description": "Case study: How EGEOD supports communities in their urban planning.",
+        "category": "caseStudies"
       }
+    }
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "expertise": "Expertise",
+    "news": "News",
+    "blog": "Blog",
+    "events": "Events",
+    "resources": "Resources",
+    "contactUs": "Contact Us"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "We're here to help. Send us a message and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "service": "Service",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send",
+      "success": "Message sent successfully",
+      "error": "An error occurred",
+      "services": {
+        "consulting": "Consulting",
+        "development": "Development",
+        "training": "Training",
+        "support": "Support"
+      }
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "Feel free to reach out to us by phone, email, or in person.",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
     }
   }
 }
