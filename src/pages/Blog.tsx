@@ -48,6 +48,9 @@ const Blog = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Get the current base URL for sharing
+  const baseUrl = window.location.origin;
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -108,7 +111,10 @@ const Blog = () => {
                         <Badge variant="outline">
                           {t(`blog.categories.${post.category}`)}
                         </Badge>
-                        <BlogShareButtons title={post.title} />
+                        <BlogShareButtons 
+                          title={post.title} 
+                          url={`${baseUrl}/blog/${post.id}`}
+                        />
                       </div>
                       <CardTitle className="line-clamp-2">{post.title}</CardTitle>
                     </CardHeader>
