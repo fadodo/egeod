@@ -34,14 +34,14 @@
     }
   },
   "nav": {
-    "about": "À propos",
+    "about": "Qui sommes-nous",
     "services": "Services",
     "expertise": "Expertise",
     "news": "Actualités",
     "blog": "Blog",
     "events": "Événements",
     "resources": "Ressources",
-    "contactUs": "Nous contacter"
+    "contactUs": "Contactez-nous"
   },
   "contact": {
     "title": "Contactez-nous",
@@ -72,16 +72,16 @@
   },
   "home": {
     "hero": {
-      "title": "Solutions Géospatiales Innovantes",
-      "subtitle": "Expert en acquisition et analyse de données géospatiales pour des solutions durables",
-      "contact": "Nous contacter",
+      "title": "Vos données, notre expertise",
+      "subtitle": "Transformez vos données en avantage stratégique. De l'analyse prédictive aux solutions géospatiales, nous vous accompagnons dans votre transformation data-driven.",
+      "contact": "Contactez-nous",
       "cta": "Découvrir nos services"
     },
     "services": {
       "title": "Nos Services",
       "acquisition": {
         "title": "Acquisition de Données",
-        "description": "Collecte de données géospatiales précises avec des technologies de pointe"
+        "description": "Collecte de données satellite, drone et terrain"
       },
       "processing": {
         "title": "Traitement des Données",
