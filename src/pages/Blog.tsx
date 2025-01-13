@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { BlogSearch } from "@/components/BlogSearch";
 import { BlogCategories } from "@/components/BlogCategories";
 import { BlogShareButtons } from "@/components/BlogShareButtons";
+import { Badge } from "@/components/ui/badge";
 
 const Blog = () => {
   const { t } = useTranslation();
