@@ -18,6 +18,11 @@ interface Slide {
 const slides: Slide[] = [
   {
     type: 'image',
+    src: '/world.jpg',
+    caption: 'Cartographie mondiale'
+  },
+  {
+    type: 'image',
     src: '/data.jpg',
     caption: 'Analyse de données géospatiales'
   },
@@ -30,11 +35,6 @@ const slides: Slide[] = [
     type: 'video',
     src: '/hurricane.jpg', // This could be replaced with an actual video file
     caption: 'Suivi des phénomènes météorologiques'
-  },
-  {
-    type: 'image',
-    src: '/world.jpg',
-    caption: 'Cartographie mondiale'
   }
 ];
 
