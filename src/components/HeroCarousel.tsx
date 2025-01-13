@@ -23,8 +23,8 @@ const slides: Slide[] = [
   },
   {
     type: "image",
-    src: "/data.jpg",
-    caption: "Analyse de données géospatiales",
+    src: "/hurricane.jpg",
+    caption: "Suivi des phénomènes météorologiques",
   },
   {
     type: "image",
@@ -33,8 +33,8 @@ const slides: Slide[] = [
   },
   {
     type: "image",
-    src: "/hurricane.jpg",
-    caption: "Suivi des phénomènes météorologiques",
+    src: "/data.jpg",
+    caption: "Analyse de données géospatiales",
   },
   {
     type: "video",
