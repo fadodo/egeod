@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import 'ol/ol.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -8,61 +9,45 @@ import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
-import { Style, Icon, Fill, Stroke, Circle as CircleStyle } from 'ol/style';
-import Overlay from 'ol/Overlay';
-import 'ol/ol.css';
+import { Style, Icon } from 'ol/style';
 
 const MapComponent = () => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const map = useRef<Map | null>(null);
-  const popupRef = useRef<HTMLDivElement>(null);
-
-  // Coordonnées de Toulouse (4 Rue Hubertine Auclert)
-  const coordinates = [1.4603, 43.5880];
+  const mapInstanceRef = useRef<Map | null>(null);
 
   useEffect(() => {
-    if (!mapRef.current || !popupRef.current) return;
+    console.log("Initializing OpenLayers map");
+    
+    if (!mapRef.current) return;
 
-    console.log('Initializing OpenLayers map');
+    // Toulouse coordinates
+    const toulouse = fromLonLat([1.444209, 43.604652]);
 
-    // Create popup overlay
-    const popup = new Overlay({
-      element: popupRef.current,
-      positioning: 'bottom-center',
-      stopEvent: false,
-      offset: [0, -10],
-    });
-
-    // Créer le point pour le marqueur
+    // Create marker feature
     const marker = new Feature({
-      geometry: new Point(fromLonLat(coordinates))
+      geometry: new Point(toulouse)
     });
 
-    // Style for the marker - Using hex color instead of CSS variable
+    // Style for the marker
     const markerStyle = new Style({
-      image: new CircleStyle({
-        radius: 8,
-        fill: new Fill({ color: '#22c55e' }), // Using a specific green hex color
-        stroke: new Stroke({
-          color: '#ffffff',
-          width: 2,
-        }),
-      }),
+      image: new Icon({
+        anchor: [0.5, 1],
+        src: '/placeholder.svg',
+        scale: 0.5
+      })
     });
 
     marker.setStyle(markerStyle);
 
-    // Source et couche pour le marqueur
-    const vectorSource = new VectorSource({
-      features: [marker]
-    });
-
+    // Vector layer for marker
     const vectorLayer = new VectorLayer({
-      source: vectorSource
+      source: new VectorSource({
+        features: [marker]
+      })
     });
 
-    // Créer la carte
-    map.current = new Map({
+    // Create map instance
+    const mapInstance = new Map({
       target: mapRef.current,
       layers: [
         new TileLayer({
@@ -70,53 +55,49 @@ const MapComponent = () => {
         }),
         vectorLayer
       ],
-      overlays: [popup],
       view: new View({
-        center: fromLonLat(coordinates),
+        center: toulouse,
         zoom: 15
       })
     });
 
-    // Add hover interaction
-    map.current.on('pointermove', function (e) {
-      const pixel = map.current!.getEventPixel(e.originalEvent);
-      const hit = map.current!.hasFeatureAtPixel(pixel);
-      map.current!.getTargetElement().style.cursor = hit ? 'pointer' : '';
-    });
+    mapInstanceRef.current = mapInstance;
 
-    // Add click interaction
-    map.current.on('click', function (e) {
-      const feature = map.current!.forEachFeatureAtPixel(e.pixel, function (feature) {
-        return feature;
-      });
-
-      if (feature) {
-        const coordinates = (feature.getGeometry() as Point).getCoordinates();
-        popup.setPosition(coordinates);
-        popupRef.current!.style.display = 'block';
-      } else {
-        popupRef.current!.style.display = 'none';
-      }
-    });
+    // Force map to update its size after mounting
+    setTimeout(() => {
+      mapInstance.updateSize();
+    }, 100);
 
     return () => {
-      console.log('Cleaning up map');
-      if (map.current) {
-        map.current.setTarget(undefined);
-        map.current = null;
+      console.log("Cleaning up map");
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.setTarget(undefined);
+        mapInstanceRef.current = null;
       }
     };
   }, []);
 
+  // Handle resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.updateSize();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className="relative w-full h-[400px]">
-      <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
-      <div ref={popupRef} className="absolute bg-white p-3 rounded-lg shadow-lg z-10 hidden">
-        <h3 className="font-medium">EGEOD</h3>
-        <p className="text-sm text-muted-foreground">4 Rue Hubertine Auclert<br />31400 Toulouse</p>
-      </div>
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" />
-    </div>
+    <div 
+      ref={mapRef} 
+      className="w-full h-[300px] rounded-lg overflow-hidden"
+      style={{ position: 'relative' }}
+    />
   );
 };
 
