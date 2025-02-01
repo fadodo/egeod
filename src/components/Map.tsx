@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import 'ol/ol.css';
+import React, { useEffect, useRef } from 'react';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -10,44 +9,36 @@ import Point from 'ol/geom/Point';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Style, Icon } from 'ol/style';
+import 'ol/ol.css';
 
 const MapComponent = () => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<Map | null>(null);
+  const map = useRef<Map | null>(null);
+
+  // Coordonnées de Toulouse (4 Rue Hubertine Auclert)
+  const coordinates = [1.4603, 43.5880];
 
   useEffect(() => {
-    console.log("Initializing OpenLayers map");
-    
     if (!mapRef.current) return;
 
-    // Toulouse coordinates
-    const toulouse = fromLonLat([1.444209, 43.604652]);
+    console.log('Initializing OpenLayers map');
 
-    // Create marker feature
+    // Créer le point pour le marqueur
     const marker = new Feature({
-      geometry: new Point(toulouse)
+      geometry: new Point(fromLonLat(coordinates))
     });
 
-    // Style for the marker
-    const markerStyle = new Style({
-      image: new Icon({
-        anchor: [0.5, 1],
-        src: '/placeholder.svg',
-        scale: 0.5
-      })
+    // Source et couche pour le marqueur
+    const vectorSource = new VectorSource({
+      features: [marker]
     });
 
-    marker.setStyle(markerStyle);
-
-    // Vector layer for marker
     const vectorLayer = new VectorLayer({
-      source: new VectorSource({
-        features: [marker]
-      })
+      source: vectorSource
     });
 
-    // Create map instance
-    const mapInstance = new Map({
+    // Créer la carte
+    map.current = new Map({
       target: mapRef.current,
       layers: [
         new TileLayer({
@@ -56,48 +47,25 @@ const MapComponent = () => {
         vectorLayer
       ],
       view: new View({
-        center: toulouse,
+        center: fromLonLat(coordinates),
         zoom: 15
       })
     });
 
-    mapInstanceRef.current = mapInstance;
-
-    // Force map to update its size after mounting
-    setTimeout(() => {
-      mapInstance.updateSize();
-    }, 100);
-
     return () => {
-      console.log("Cleaning up map");
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.setTarget(undefined);
-        mapInstanceRef.current = null;
+      console.log('Cleaning up map');
+      if (map.current) {
+        map.current.setTarget(undefined);
+        map.current = null;
       }
-    };
-  }, []);
-
-  // Handle resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.updateSize();
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <div 
-      ref={mapRef} 
-      className="w-full h-[300px] rounded-lg overflow-hidden"
-      style={{ position: 'relative' }}
-    />
+    <div className="relative w-full h-[400px]">
+      <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" />
+    </div>
   );
 };
 
