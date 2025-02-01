@@ -38,7 +38,7 @@ const slides: Slide[] = [
   },
   {
     type: "video",
-    src: "/ocean_small.mp4",
+    src: "/data.jpg",
     caption: "Océan large",
   },
 ];
