@@ -1,116 +1,72 @@
 import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+import { fromLonLat } from 'ol/proj';
+import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+import { Vector as VectorLayer } from 'ol/layer';
+import { Vector as VectorSource } from 'ol/source';
+import { Style, Icon } from 'ol/style';
+import 'ol/ol.css';
 
-const Map = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-  const [token, setToken] = React.useState<string>("");
+const MapComponent = () => {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const map = useRef<Map | null>(null);
+
+  // Coordonnées de Toulouse (4 Rue Hubertine Auclert)
+  const coordinates = [1.4603, 43.5880];
 
   useEffect(() => {
-    if (!mapContainer.current || !token) return;
+    if (!mapRef.current) return;
 
-    mapboxgl.accessToken = token;
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/dark-v11',
-      projection: 'globe',
-      zoom: 1.5,
-      center: [2.3522, 48.8566], // Paris
-      pitch: 45,
+    console.log('Initializing OpenLayers map');
+
+    // Créer le point pour le marqueur
+    const marker = new Feature({
+      geometry: new Point(fromLonLat(coordinates))
     });
 
-    map.current.addControl(
-      new mapboxgl.NavigationControl({
-        visualizePitch: true,
-      }),
-      'top-right'
-    );
-
-    map.current.scrollZoom.disable();
-
-    map.current.on('style.load', () => {
-      map.current?.setFog({
-        color: 'rgb(23, 25, 35)',
-        'high-color': 'rgb(36, 37, 49)',
-        'horizon-blend': 0.4,
-      });
+    // Source et couche pour le marqueur
+    const vectorSource = new VectorSource({
+      features: [marker]
     });
 
-    const secondsPerRevolution = 240;
-    const maxSpinZoom = 5;
-    const slowSpinZoom = 3;
-    let userInteracting = false;
-    let spinEnabled = true;
-
-    function spinGlobe() {
-      if (!map.current) return;
-      
-      const zoom = map.current.getZoom();
-      if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
-        let distancePerSecond = 360 / secondsPerRevolution;
-        if (zoom > slowSpinZoom) {
-          const zoomDif = (maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
-          distancePerSecond *= zoomDif;
-        }
-        const center = map.current.getCenter();
-        center.lng -= distancePerSecond;
-        map.current.easeTo({ center, duration: 1000, easing: (n) => n });
-      }
-    }
-
-    map.current.on('mousedown', () => {
-      userInteracting = true;
-    });
-    
-    map.current.on('dragstart', () => {
-      userInteracting = true;
-    });
-    
-    map.current.on('mouseup', () => {
-      userInteracting = false;
-      spinGlobe();
-    });
-    
-    map.current.on('touchend', () => {
-      userInteracting = false;
-      spinGlobe();
+    const vectorLayer = new VectorLayer({
+      source: vectorSource
     });
 
-    map.current.on('moveend', () => {
-      spinGlobe();
+    // Créer la carte
+    map.current = new Map({
+      target: mapRef.current,
+      layers: [
+        new TileLayer({
+          source: new OSM()
+        }),
+        vectorLayer
+      ],
+      view: new View({
+        center: fromLonLat(coordinates),
+        zoom: 15
+      })
     });
-
-    spinGlobe();
 
     return () => {
-      map.current?.remove();
+      console.log('Cleaning up map');
+      if (map.current) {
+        map.current.setTarget(undefined);
+        map.current = null;
+      }
     };
-  }, [token]);
-
-  if (!token) {
-    return (
-      <div className="flex flex-col items-center justify-center gap-4 p-4">
-        <p className="text-sm text-muted-foreground">
-          Pour voir la carte, veuillez entrer votre token Mapbox public:
-        </p>
-        <input
-          type="text"
-          className="w-full max-w-md p-2 rounded border bg-background"
-          placeholder="pk.eyJ1..."
-          onChange={(e) => setToken(e.target.value)}
-        />
-      </div>
-    );
-  }
+  }, []);
 
   return (
-    <div className="relative w-full h-[80vh]">
-      <div ref={mapContainer} className="absolute inset-0 rounded-lg shadow-lg" />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/90 rounded-lg" />
+    <div className="relative w-full h-[400px]">
+      <div ref={mapRef} className="absolute inset-0 rounded-lg overflow-hidden" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/10 rounded-lg" />
     </div>
   );
 };
 
-export default Map;
+export default MapComponent;

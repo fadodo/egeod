@@ -18,15 +18,15 @@ export const Footer = () => {
             <div className="space-y-2">
               <p className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>Paris, France</span>
+                <span>Toulouse, France</span>
               </p>
               <p className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+33 1 23 45 67 89</span>
+                <span>+33 7 58 01 11 83</span>
               </p>
               <p className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>contact@egeod.com</span>
+                <span>fidel999@yahoo.fr</span>
               </p>
             </div>
           </div>
