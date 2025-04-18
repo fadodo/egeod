@@ -91,9 +91,11 @@ const BlogPost = () => {
         date: "2024-01-15",
         author: "EGEOD Team",
         category: t("blog.categories.technology"),
-        image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+        image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+        relatedPosts: ["case", "tutorial"]
       },
       "case": {
+        id: "case",
         title: t("blog.posts.case.title"),
         description: t("blog.posts.case.description"),
         content: `
@@ -103,9 +105,11 @@ const BlogPost = () => {
         date: "2024-01-10",
         author: "EGEOD Team",
         category: t("blog.categories.caseStudy"),
-        image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833"
+        image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
+        relatedPosts: ["trends", "tutorial"]
       },
       "tutorial": {
+        id: "tutorial",
         title: t("blog.posts.tutorial.title"),
         description: t("blog.posts.tutorial.description"),
         content: `
@@ -176,26 +180,7 @@ const BlogPost = () => {
     return null;
   }
 
-  const formatContent = (content: string) => {
-    // Simple markdown-like processing
-    return content.split('###').map((section, index) => {
-      if (index === 0) return <div key={index} dangerouslySetInnerHTML={{ __html: section.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '<br/><br/>').replace(/\n-\s(.*)/g, '<br/>• $1') }} />;
-      
-      const [title, ...contentParts] = section.split('\n');
-      const sectionContent = contentParts.join('\n');
-      
-      return (
-        <div key={index} className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">{title.trim()}</h3>
-          <div dangerouslySetInnerHTML={{ 
-            __html: sectionContent.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-              .replace(/\n\n/g, '<br/><br/>')
-              .replace(/\n-\s(.*)/g, '<br/>• $1')
-          }} />
-        </div>
-      );
-    });
-  };
+  // ... keep existing code (formatContent function)
 
   // Get the related posts for the navigation
   const allPosts = {
@@ -204,11 +189,7 @@ const BlogPost = () => {
     "tutorial": t("blog.posts.tutorial.title")
   };
 
-  // Determine next and previous post
-  const postKeys = Object.keys(allPosts);
-  const currentIndex = postKeys.findIndex(key => key === id);
-  const prevPost = currentIndex > 0 ? postKeys[currentIndex - 1] : null;
-  const nextPost = currentIndex < postKeys.length - 1 ? postKeys[currentIndex + 1] : null;
+  // ... keep existing code (determine next and previous post logic)
 
   return (
     <div className="min-h-screen bg-gray-50">
