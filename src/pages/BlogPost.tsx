@@ -30,12 +30,95 @@ const BlogPost = () => {
   const getBlogPost = () => {
     const posts = {
       "trends": {
+        id: "trends",
         title: t("blog.posts.trends.title"),
         description: t("blog.posts.trends.description"),
         content: `
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        `,
+          ## Les Tendances Géospatiales en 2024
+          L'année 2024 marque un tournant décisif dans le domaine de la géomatique et de l'analyse spatiale. Voici les principales tendances qui façonnent notre industrie :
+
+          ### 1. Intelligence Artificielle et Analyse Spatiale
+
+          L'IA révolutionne l'analyse des données géospatiales :
+          - Détection automatique des changements dans les images satellites
+          - Prédiction des phénomènes environnementaux
+          - Classification automatique de l'occupation des sols
+          - Optimisation des itinéraires et de la logistique urbaine
+
+          ### 2. Technologies 3D et Jumeaux Numériques
+
+          La modélisation 3D devient incontournable :
+          - Création de jumeaux numériques urbains
+          - Simulation des impacts environnementaux
+          - Planification urbaine interactive
+          - Gestion des infrastructures en temps réel
+
+          ### 3. Données Temps Réel et IoT
+
+          L'intégration des capteurs connectés transforme la collecte de données :
+          - Surveillance environnementale en continu
+          - Gestion intelligente du trafic urbain
+          - Optimisation des ressources naturelles
+          - Alertes précoces pour les risques naturels
+
+          ### 4. Cloud Computing et Edge Computing
+
+          L'évolution des infrastructures de traitement :
+          - Analyse distribuée des données massives
+          - Traitement en périphérie pour les applications critiques
+          - Plateformes SaaS pour la géomatique
+          - Interopérabilité accrue des services
+
+          ### 5. Blockchain et Données Géospatiales
+
+          Sécurisation et traçabilité des données :
+          - Certification des données cadastrales
+          - Traçabilité des chaînes d'approvisionnement
+          - Gestion des droits d'accès aux données
+          - Smart contracts géolocalisés
+
+          ### Perspectives d'Avenir
+
+          Ces innovations ouvrent de nouvelles perspectives :
+          - Démocratisation des outils d'analyse spatiale
+          - Amélioration de la prise de décision
+          - Développement de solutions durables
+          - Renforcement de la résilience urbaine
+
+          L'intégration de ces technologies transforme rapidement nos métiers et crée de nouvelles opportunités pour les organisations et les territoires.
+                `,
+      date: "2024-01-15",
+      author: "EGEOD Team",
+      category: t("blog.categories.technology"),
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      relatedPosts: ["case", "tutorial"]
+    },
+    "case": {
+      id: "case",
+      title: t("blog.posts.case.title"),
+      description: t("blog.posts.case.description"),
+      content: `
+        // ... keep existing code (case study content)
+      `,
+      date: "2024-01-10",
+      author: "EGEOD Team",
+      category: t("blog.categories.caseStudy"),
+      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
+      relatedPosts: ["trends", "tutorial"]
+    },
+    "tutorial": {
+      id: "tutorial",
+      title: t("blog.posts.tutorial.title"),
+      description: t("blog.posts.tutorial.description"),
+      content: `
+        // ... keep existing code (tutorial content)
+      `,
+      date: "2024-01-05",
+      author: "EGEOD Team",
+      category: t("blog.categories.tutorial"),
+      image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67",
+      relatedPosts: ["trends", "case"]
+    }
         date: "2024-01-15",
         author: "EGEOD Team",
         category: t("blog.categories.technology"),
