@@ -35,6 +35,7 @@ const BlogPost = () => {
         description: t("blog.posts.trends.description"),
         content: `
           ## Les Tendances Géospatiales en 2024
+
           L'année 2024 marque un tournant décisif dans le domaine de la géomatique et de l'analyse spatiale. Voici les principales tendances qui façonnent notre industrie :
 
           ### 1. Intelligence Artificielle et Analyse Spatiale
@@ -86,39 +87,7 @@ const BlogPost = () => {
           - Renforcement de la résilience urbaine
 
           L'intégration de ces technologies transforme rapidement nos métiers et crée de nouvelles opportunités pour les organisations et les territoires.
-                `,
-      date: "2024-01-15",
-      author: "EGEOD Team",
-      category: t("blog.categories.technology"),
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      relatedPosts: ["case", "tutorial"]
-    },
-    "case": {
-      id: "case",
-      title: t("blog.posts.case.title"),
-      description: t("blog.posts.case.description"),
-      content: `
-        // ... keep existing code (case study content)
-      `,
-      date: "2024-01-10",
-      author: "EGEOD Team",
-      category: t("blog.categories.caseStudy"),
-      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
-      relatedPosts: ["trends", "tutorial"]
-    },
-    "tutorial": {
-      id: "tutorial",
-      title: t("blog.posts.tutorial.title"),
-      description: t("blog.posts.tutorial.description"),
-      content: `
-        // ... keep existing code (tutorial content)
-      `,
-      date: "2024-01-05",
-      author: "EGEOD Team",
-      category: t("blog.categories.tutorial"),
-      image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67",
-      relatedPosts: ["trends", "case"]
-    }
+        `,
         date: "2024-01-15",
         author: "EGEOD Team",
         category: t("blog.categories.technology"),
