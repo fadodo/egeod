@@ -88,7 +88,7 @@ const BlogPost = () => {
 
           L'intégration de ces technologies transforme rapidement nos métiers et crée de nouvelles opportunités pour les organisations et les territoires.
         `,
-        date: "2024-01-15",
+        date: "2025-04-15",
         author: "EGEOD Team",
         category: t("blog.categories.technology"),
         image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
@@ -102,7 +102,7 @@ const BlogPost = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         `,
-        date: "2024-01-10",
+        date: "2025-04-15",
         author: "EGEOD Team",
         category: t("blog.categories.caseStudy"),
         image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
@@ -162,7 +162,7 @@ const BlogPost = () => {
           
           Cette approche montre comment l'analyse spatiale peut avoir un impact direct sur l'efficacité opérationnelle et environnementale.
         `,
-        date: "2024-01-05",
+        date: "2024-04-05",
         author: "EGEOD Team",
         category: t("blog.categories.tutorial"),
         image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67",
