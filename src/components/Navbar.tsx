@@ -43,33 +43,38 @@ export const Navbar = () => {
         </Button>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger className="bg-transparent">
+        <NavigationMenuTrigger className="bg-transparent hover:bg-primary/10 transition-colors">
           {t("nav.news")}
         </NavigationMenuTrigger>
         <NavigationMenuContent>
-          <div className="grid gap-3 p-4 w-[400px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <Link to="/blog" className="block p-2 hover:bg-accent rounded-md transition-colors">
-              {t("nav.blog")}
+          <div className="grid gap-3 p-6 w-[450px] glass-card shadow-xl border-white/20">
+            <Link to="/blog" className="group block p-3 hover:bg-primary/10 rounded-lg transition-all duration-300 border border-transparent hover:border-primary/20">
+              <div className="font-medium group-hover:text-primary transition-colors">{t("nav.blog")}</div>
+              <p className="text-sm text-muted-foreground mt-1">Actualités et analyses géospatiales</p>
             </Link>
-            <Link to="/events" className="block p-2 hover:bg-accent rounded-md transition-colors">
-              {t("nav.events")}
+            <Link to="/events" className="group block p-3 hover:bg-secondary/10 rounded-lg transition-all duration-300 border border-transparent hover:border-secondary/20">
+              <div className="font-medium group-hover:text-secondary transition-colors">{t("nav.events")}</div>
+              <p className="text-sm text-muted-foreground mt-1">Conférences et webinaires</p>
             </Link>
-            <Link to="/resources" className="block p-2 hover:bg-accent rounded-md transition-colors">
-              {t("nav.resources")}
+            <Link to="/resources" className="group block p-3 hover:bg-accent/10 rounded-lg transition-all duration-300 border border-transparent hover:border-accent/20">
+              <div className="font-medium group-hover:text-accent transition-colors">{t("nav.resources")}</div>
+              <p className="text-sm text-muted-foreground mt-1">Guides et documentations</p>
             </Link>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <Button asChild variant="default">
-          <Link to="/contact">{t("nav.contactUs")}</Link>
+        <Button asChild variant="default" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+          <Link to="/contact" className="font-medium">
+            {t("nav.contactUs")}
+          </Link>
         </Button>
       </NavigationMenuItem>
     </>
   );
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+    <nav className="fixed top-0 w-full z-50 glass border-b border-white/10 shadow-lg">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <BrandLogo />
 
