@@ -132,6 +132,7 @@ const About = () => {
               </p>
               <p className="text-lg text-muted-foreground">
                 Grâce à notre expertise et à nos innovations, nous œuvrons pour un avenir où la technologie spatiale et l’observation de la Terre sont des leviers incontournables de la décision stratégique et de la préservation de notre planète.
+              </p>
             </CardContent>
           </Card>
         </section>
