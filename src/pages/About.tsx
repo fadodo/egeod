@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Fifi ADODO",
     role: "CEO & Teledetection and Data Analyst",
-    skills: ["Analyse d'images satellite", "SIG", "Python", "Deep Learning","Gestion de projet"],
+    skills: ["Analyse de Données d'Observation de la Terre", "SIG", "Python", "Machine Learnnnnnnnnnning","Gestion de projet"],
     image: "/public/avatarFA.png",
   },
 ];
@@ -53,12 +53,13 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-8">Notre Histoire</h2>
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <p className="text-lg text-muted-foreground">
-              EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et le potentiel qu'offrent les big data et les données géospatiales pour transformer le monde.
-              L'entreprise a été fondée avec une vision claire : mettre à disposition des outils et des solutions innovantes capables de relever les défis environnementaux, économiques et sociaux. 
-              Notre parcours a commencé par la conviction que l'observation de la Terre et l'analyse des données géospatiales pouvaient offrir des réponses précises et impactantes dans un monde de plus en plus connecté et complexe.
+              EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et de la conviction que les big data et les données géospatiales ont le pouvoir de transformer durablement notre monde.
+              Dès sa création, l’entreprise s’est donnée une mission claire : concevoir des outils et des solutions innovantes pour relever les grands défis environnementaux, économiques et sociétaux de notre époque.
+
+              Notre aventure a débuté avec une certitude : l’observation de la Terre et l’analyse intelligente des données sont des leviers essentiels pour comprendre un monde en constante évolution et y apporter des réponses concrètes et impactantes.
             </p>
             <p className="text-lg text-muted-foreground">
-              Depuis notre création, EGEOD se forge une réputation d'excellence grâce à une expertise technique pointue et une écoute attentive des besoins de ses clients.
+              Depuis, EGEOD s’impose comme un acteur de confiance, reconnu pour son expertise technique et sa proximité avec ses partenaires.
             </p>
           </div>
         </section>
@@ -68,7 +69,8 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-8">Notre Équipe</h2>
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <p className="text-lg text-muted-foreground">
-              Chez EGEOD, notre force réside dans notre équipe multidisciplinaire, composée d'experts passionnés par la data et l'innovation animés par un objectif commun : transformer les données utilisateurs et les données géospatiales en outils stratégiques au service de nos clients.
+              La véritable force d’EGEOD, c’est son équipe multidisciplinaire : des passionnés de data, de géosciences et d’innovation, unis par une ambition commune – transformer les données brutes en leviers stratégiques pour nos partenaires.
+              Chaque projet est porté par la complémentarité des profils et l’envie d’explorer de nouvelles perspectives, toujours avec la même exigence : offrir des solutions à la fois performantes, durables et adaptées aux enjeux réels du terrain.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
