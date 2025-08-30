@@ -127,11 +127,11 @@ const About = () => {
             <CardContent className="pt-6 text-center space-y-4">
               <Globe2 className="w-16 h-16 mx-auto text-primary mb-4" />
               <p className="text-lg text-muted-foreground">
-                Chez EGEOD, nous croyons en un monde où les données géospatiales sont au service du développement durable et de l'intelligence territoriale. Notre vision est de démocratiser l'accès à ces données et de les transformer en solutions concrètes pour répondre aux défis environnementaux et sociétaux de demain.
+                Chez EGEOD, nous croyons en un monde où les données géospatiales deviennent un moteur de développement durable et d’intelligence territoriale.
+                Notre ambition est de démocratiser l’accès à ces données et de les transformer en solutions concrètes, capables d’apporter des réponses claires aux grands défis environnementaux et sociétaux de demain.
               </p>
               <p className="text-lg text-muted-foreground">
-                À travers notre expertise et nos innovations, nous contribuons à construire un avenir où la technologie spatiale et l'observation de la Terre sont des leviers essentiels pour la prise de décision et la préservation de notre planète.
-              </p>
+                Grâce à notre expertise et à nos innovations, nous œuvrons pour un avenir où la technologie spatiale et l’observation de la Terre sont des leviers incontournables de la décision stratégique et de la préservation de notre planète.
             </CardContent>
           </Card>
         </section>
