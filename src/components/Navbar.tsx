@@ -36,6 +36,13 @@ export const Navbar = () => {
         </Link>
       </NavigationMenuItem>
       <NavigationMenuItem>
+        <Button asChild variant="outline" className="bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <a href="https://safecoast.netlify.app" target="_blank" rel="noopener noreferrer">
+            {t("nav.safecoast")}
+          </a>
+        </Button>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
         <NavigationMenuTrigger className="bg-transparent">
           {t("nav.news")}
         </NavigationMenuTrigger>
