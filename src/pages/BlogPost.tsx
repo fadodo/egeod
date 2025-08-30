@@ -180,7 +180,24 @@ const BlogPost = () => {
     return null;
   }
 
-  // ... keep existing code (formatContent function)
+  // Format content function to handle markdown-like content
+  const formatContent = (content: string) => {
+    return content.split('\n').map((line, index) => {
+      if (line.startsWith('## ')) {
+        return <h2 key={index} className="text-2xl font-semibold mt-8 mb-4 text-gray-900">{line.replace('## ', '')}</h2>;
+      }
+      if (line.startsWith('### ')) {
+        return <h3 key={index} className="text-xl font-semibold mt-6 mb-3 text-gray-900">{line.replace('### ', '')}</h3>;
+      }
+      if (line.startsWith('- ')) {
+        return <li key={index} className="ml-4 mb-2">{line.replace('- ', '')}</li>;
+      }
+      if (line.trim() === '') {
+        return <br key={index} />;
+      }
+      return <p key={index} className="mb-4">{line}</p>;
+    });
+  };
 
   // Get the related posts for the navigation
   const allPosts = {
@@ -189,7 +206,11 @@ const BlogPost = () => {
     "tutorial": t("blog.posts.tutorial.title")
   };
 
-  // ... keep existing code (determine next and previous post logic)
+  // Determine next and previous posts
+  const postKeys = Object.keys(allPosts);
+  const currentIndex = postKeys.indexOf(id || '');
+  const prevPost = currentIndex > 0 ? postKeys[currentIndex - 1] : null;
+  const nextPost = currentIndex < postKeys.length - 1 ? postKeys[currentIndex + 1] : null;
 
   return (
     <div className="min-h-screen bg-gray-50">
