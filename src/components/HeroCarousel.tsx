@@ -27,7 +27,7 @@ const slides: Slide[] = [
     caption: 'Navigation maritime'
   },
   {
-    type: 'video',
+    type: 'image',
     src: '/hurricane.jpg', // This could be replaced with an actual video file
     caption: 'Suivi des phénomènes météorologiques'
   },
