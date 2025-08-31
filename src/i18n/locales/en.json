@@ -13,13 +13,15 @@
   },
   "home": {
     "hero": {
-      "title": "Excellence in Geospatial Domain",
-      "subtitle": "Innovative solutions in geomatics and remote sensing",
+      "badge": "Earth Observation Data Expert",
+      "title": "Your data, our expertise",
+      "subtitle": "Transform your data into strategic advantage. From predictive analytics to geospatial solutions, we support you in your data-driven transformation.",
       "contact": "Contact Us",
       "cta": "Discover our services"
     },
     "services": {
       "title": "Our Services",
+      "subtitle": "Discover our expert solutions in geomatics and earth observation",
       "acquisition": {
         "title": "Data Acquisition",
         "description": "Satellite, drone and field data collection"
@@ -39,6 +41,7 @@
     },
     "values": {
       "title": "Our Values",
+      "subtitle": "The values that guide our expertise and commitment",
       "innovation": {
         "title": "Innovation",
         "description": "We constantly push the boundaries of geospatial technology"

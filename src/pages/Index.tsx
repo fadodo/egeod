@@ -67,7 +67,7 @@ const Index = () => {
               className="mb-8"
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium mb-6">
-                🌍 Expert en Données d'Observation de la Terre
+                🌍 {t("home.hero.badge")}
               </div>
             </motion.div>
             <motion.h1 

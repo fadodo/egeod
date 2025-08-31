@@ -13,6 +13,7 @@
   },
   "home": {
     "hero": {
+      "badge": "Expert en Données d'Observation de la Terre",
       "title": "Vos données, notre expertise",
       "subtitle": "Transformez vos données en avantage stratégique. De l'analyse prédictive aux solutions géospatiales, nous vous accompagnons dans votre transformation data-driven.",
       "contact": "Contactez-nous",
@@ -20,6 +21,7 @@
     },
     "services": {
       "title": "Nos Services",
+      "subtitle": "Découvrez nos solutions expertes en géomatique et observation terrestre",
       "acquisition": {
         "title": "Acquisition de données",
         "description": "Collecte de données satellite, drone et terrain"
@@ -39,6 +41,7 @@
     },
     "values": {
       "title": "Nos Valeurs",
+      "subtitle": "Les valeurs qui guident notre expertise et notre engagement",
       "innovation": {
         "title": "Innovation",
         "description": "Nous repoussons constamment les limites de la technologie géospatiale"

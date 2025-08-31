@@ -50,15 +50,15 @@ export const Navbar = () => {
           <div className="grid gap-3 p-6 w-[450px] glass-card shadow-xl border-white/20">
             <Link to="/blog" className="group block p-3 hover:bg-primary/10 rounded-lg transition-all duration-300 border border-transparent hover:border-primary/20">
               <div className="font-medium group-hover:text-primary transition-colors">{t("nav.blog")}</div>
-              <p className="text-sm text-muted-foreground mt-1">Actualités et analyses géospatiales</p>
+              <p className="text-sm text-muted-foreground mt-1">{t("news.blog.description")}</p>
             </Link>
             <Link to="/events" className="group block p-3 hover:bg-secondary/10 rounded-lg transition-all duration-300 border border-transparent hover:border-secondary/20">
               <div className="font-medium group-hover:text-secondary transition-colors">{t("nav.events")}</div>
-              <p className="text-sm text-muted-foreground mt-1">Conférences et webinaires</p>
+              <p className="text-sm text-muted-foreground mt-1">{t("news.events.description")}</p>
             </Link>
             <Link to="/resources" className="group block p-3 hover:bg-accent/10 rounded-lg transition-all duration-300 border border-transparent hover:border-accent/20">
               <div className="font-medium group-hover:text-accent transition-colors">{t("nav.resources")}</div>
-              <p className="text-sm text-muted-foreground mt-1">Guides et documentations</p>
+              <p className="text-sm text-muted-foreground mt-1">{t("news.resources.description")}</p>
             </Link>
           </div>
         </NavigationMenuContent>
