@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { useTranslation } from "react-i18next";
 
 const teamMembers = [
   {
@@ -38,11 +39,13 @@ const values = [
 ];
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <SEO 
-        title="À Propos - Notre Histoire et Équipe"
-        description="Découvrez l'histoire d'EGEOD, notre équipe d'experts en géomatique et nos valeurs. Fondée en 2025, nous transformons les données géospatiales en solutions concrètes."
+        title={t("about.title")}
+        description={t("about.description")}
         keywords="équipe EGEOD, histoire entreprise, valeurs, experts géomatique, Fifi ADODO"
       />
       <Navbar />
@@ -103,7 +106,7 @@ const About = () => {
 
         {/* Valeurs */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Nos Valeurs</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">{t("about.values.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value) => (
               <Card 
@@ -112,8 +115,8 @@ const About = () => {
               >
                 <CardContent className="pt-6">
                   <value.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <h3 className="text-xl font-semibold mb-2">{t(`about.values.${value.title.toLowerCase()}.title`)}</h3>
+                  <p className="text-muted-foreground">{t(`about.values.${value.title.toLowerCase()}.description`)}</p>
                 </CardContent>
               </Card>
             ))}

@@ -62,37 +62,104 @@
   },
   "about": {
     "title": "Our Story",
-    "description": "Founded in 2025, EGEOD was born from the vision of passionate experts",
+    "description": "EGEOD (Expert of Geospatial and Earth Observation Data) was born in 2025 from a passion for cutting-edge technologies and the conviction that big data and geospatial data have the power to sustainably transform our world.",
+    "mission": "From its creation, the company has set itself a clear mission: to design innovative tools and solutions to meet the major environmental, economic and societal challenges of our time.",
+    "journey": "Our adventure began with a certainty: Earth observation and intelligent data analysis are essential levers for understanding a constantly evolving world and providing concrete and impactful responses.",
+    "recognition": "Since then, EGEOD has established itself as a trusted player, recognized for its technical expertise and proximity to its partners.",
     "team": {
       "title": "Our Team",
-      "description": "A team of passionate experts"
+      "description": "The true strength of EGEOD lies in its multidisciplinary team: data, geoscience and innovation enthusiasts, united by a common ambition – transforming raw data into strategic levers for our partners.",
+      "commitment": "Each project is driven by the complementarity of profiles and the desire to explore new perspectives, always with the same requirement: to offer solutions that are both efficient, sustainable and adapted to real field challenges."
     },
     "values": {
       "title": "Our Values",
-      "innovation": "Innovation",
-      "quality": "Quality",
-      "proximity": "Proximity",
-      "listening": "Listening"
+      "innovation": {
+        "title": "Innovation",
+        "description": "We constantly explore new technologies and methodologies."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We aim for excellence in every project and deliverable."
+      },
+      "engagement": {
+        "title": "Engagement",
+        "description": "We are devoted to the success of our clients."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We work closely with our clients and partners."
+      }
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "At EGEOD, we believe in a world where geospatial data becomes a driver of sustainable development and territorial intelligence. Our ambition is to democratize access to this data and transform it into concrete solutions, capable of providing clear answers to the major environmental and societal challenges of tomorrow.",
+      "future": "Thanks to our expertise and innovations, we work for a future where space technology and Earth observation are essential levers for strategic decision-making and the preservation of our planet."
     }
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Comprehensive solutions for your geospatial needs",
-    "data": {
-      "title": "Data Acquisition",
-      "description": "Satellite, drone and field data collection"
+    "subtitle": "Comprehensive solutions for geospatial data acquisition, processing and analysis",
+    "mainServices": {
+      "acquisition": {
+        "title": "Data Acquisition",
+        "description": "Satellite, drone and field data collection tailored to your specific needs.",
+        "details": [
+          "High-resolution satellite imagery",
+          "Drone acquisitions",
+          "Field surveys",
+          "Multi-temporal data"
+        ]
+      },
+      "processing": {
+        "title": "Processing and Analysis",
+        "description": "In-depth analysis with advanced GIS and remote sensing tools.",
+        "details": [
+          "Spectral analysis",
+          "Image classification",
+          "Change detection",
+          "Spatial modeling"
+        ]
+      },
+      "mapping": {
+        "title": "Mapping",
+        "description": "Creation of custom maps and interactive visualizations.",
+        "details": [
+          "Thematic mapping",
+          "3D visualization",
+          "Web mapping",
+          "Custom atlases"
+        ]
+      },
+      "consulting": {
+        "title": "Expert Consulting",
+        "description": "Personalized support for your geospatial projects.",
+        "details": [
+          "Audit and diagnosis",
+          "Custom training",
+          "Technical support",
+          "Technology watch"
+        ]
+      }
     },
-    "processing": {
-      "title": "Processing",
-      "description": "Advanced analysis and processing"
+    "specialized": {
+      "title": "Specialized Services",
+      "dataManagement": {
+        "title": "Data Management",
+        "description": "Organization and structuring of your geospatial data."
+      },
+      "research": {
+        "title": "R&D",
+        "description": "Innovation and development of custom solutions."
+      },
+      "international": {
+        "title": "International Expertise",
+        "description": "Intervention on global scale projects."
+      }
     },
-    "mapping": {
-      "title": "Mapping",
-      "description": "Interactive map creation"
-    },
-    "consulting": {
-      "title": "Consulting",
-      "description": "Expertise and support"
+    "cta": {
+      "title": "Ready to start your project?",
+      "description": "Contact our experts to discuss your needs and discover how we can help you.",
+      "button": "Contact Us"
     }
   },
   "expertise": {
@@ -266,5 +333,28 @@
       "title": "GIS Technical Documentation",
       "description": "Detailed documentation on geographic information systems"
     }
+  },
+  "footer": {
+    "company": {
+      "description": "Expert of Geospatial and Earth Observation Data. We transform geospatial data into innovative solutions."
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Toulouse, France",
+      "region": "Occitanie"
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "tools": {
+      "title": "Tools",
+      "safecoast": {
+        "title": "SafeCoast",
+        "description": "Flood alert system"
+      }
+    },
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "scrollTop": "Back to top"
   }
 }

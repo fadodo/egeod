@@ -28,7 +28,7 @@ export const Footer = () => {
             <div>
               <h3 className="text-2xl font-heading font-bold gradient-text mb-4">EGEOD</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Expert of Geospatial and Earth Observation Data. Nous transformons les données géospatiales en solutions innovantes.
+                {t("footer.company.description")}
               </p>
             </div>
             <div className="flex space-x-4">
@@ -51,13 +51,13 @@ export const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-lg font-heading font-semibold mb-6">Contact</h3>
+            <h3 className="text-lg font-heading font-semibold mb-6">{t("footer.contact.title")}</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3 group">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 group-hover:scale-110 transition-transform" />
                 <div>
-                  <p className="font-medium">Toulouse, France</p>
-                  <p className="text-sm text-muted-foreground">Occitanie</p>
+                  <p className="font-medium">{t("footer.contact.address")}</p>
+                  <p className="text-sm text-muted-foreground">{t("footer.contact.region")}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 group">
@@ -82,15 +82,15 @@ export const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-lg font-heading font-semibold mb-6">Navigation</h3>
+            <h3 className="text-lg font-heading font-semibold mb-6">{t("footer.navigation.title")}</h3>
             <nav className="space-y-3">
               {[
-                { to: "/about", label: "Qui sommes-nous" },
-                { to: "/services", label: "Services" },
-                { to: "/expertise", label: "Expertise" },
-                { to: "/blog", label: "Blog" },
-                { to: "/events", label: "Événements" },
-                { to: "/contact", label: "Contact" }
+                { to: "/about", label: t("nav.about") },
+                { to: "/services", label: t("nav.services") },
+                { to: "/expertise", label: t("nav.expertise") },
+                { to: "/blog", label: t("nav.blog") },
+                { to: "/events", label: t("nav.events") },
+                { to: "/contact", label: t("nav.contact") }
               ].map((link) => (
                 <Link 
                   key={link.to}
@@ -113,7 +113,7 @@ export const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-lg font-heading font-semibold mb-6">Outils</h3>
+            <h3 className="text-lg font-heading font-semibold mb-6">{t("footer.tools.title")}</h3>
             <div className="space-y-4">
               <a 
                 href="https://safecoast.netlify.app" 
@@ -126,8 +126,8 @@ export const Footer = () => {
                     <Globe className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium group-hover:text-primary transition-colors">SafeCoast</h4>
-                    <p className="text-sm text-muted-foreground">Système d'alerte inondations</p>
+                    <h4 className="font-medium group-hover:text-primary transition-colors">{t("footer.tools.safecoast.title")}</h4>
+                    <p className="text-sm text-muted-foreground">{t("footer.tools.safecoast.description")}</p>
                   </div>
                   <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors ml-auto" />
                 </div>
@@ -145,8 +145,8 @@ export const Footer = () => {
           className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-muted-foreground text-center md:text-left">
-            &copy; {new Date().getFullYear()} EGEOD. Tous droits réservés. | 
-            <Link to="/privacy" className="hover:text-primary transition-colors ml-1">Politique de confidentialité</Link>
+            &copy; {new Date().getFullYear()} EGEOD. {t("footer.copyright")} | 
+            <Link to="/privacy" className="hover:text-primary transition-colors ml-1">{t("footer.privacy")}</Link>
           </p>
           
           <Button
@@ -156,7 +156,7 @@ export const Footer = () => {
             className="hover:bg-primary/10 group"
           >
             <ArrowUp className="h-4 w-4 group-hover:-translate-y-1 transition-transform" />
-            <span className="ml-2">Haut de page</span>
+            <span className="ml-2">{t("footer.scrollTop")}</span>
           </Button>
         </motion.div>
       </div>

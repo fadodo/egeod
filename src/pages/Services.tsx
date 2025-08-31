@@ -4,85 +4,62 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Satellite, LineChart, Map, Globe2, ArrowRight, Database, Microscope, Users2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const services = [
-  {
-    icon: Satellite,
-    title: "Acquisition de données",
-    description: "Collecte de données satellite, drone et terrain adaptée à vos besoins spécifiques.",
-    details: [
-      "Imagerie satellite haute résolution",
-      "Acquisitions par drone",
-      "Relevés terrain",
-      "Données multi-temporelles"
-    ]
-  },
-  {
-    icon: LineChart,
-    title: "Traitement et analyse",
-    description: "Analyse approfondie avec des outils SIG et de télédétection avancés.",
-    details: [
-      "Analyse spectrale",
-      "Classification d'images",
-      "Détection de changements",
-      "Modélisation spatiale"
-    ]
-  },
-  {
-    icon: Map,
-    title: "Cartographie",
-    description: "Création de cartes personnalisées et visualisations interactives.",
-    details: [
-      "Cartographie thématique",
-      "Visualisation 3D",
-      "Webmapping",
-      "Atlas personnalisés"
-    ]
-  },
-  {
-    icon: Users2,
-    title: "Conseils experts",
-    description: "Accompagnement personnalisé dans vos projets géospatiaux.",
-    details: [
-      "Audit et diagnostic",
-      "Formation sur mesure",
-      "Support technique",
-      "Veille technologique"
-    ]
-  }
-];
-
-const specializedServices = [
-  {
-    icon: Database,
-    title: "Gestion de données",
-    description: "Organisation et structuration de vos données géospatiales."
-  },
-  {
-    icon: Microscope,
-    title: "R&D",
-    description: "Innovation et développement de solutions sur mesure."
-  },
-  {
-    icon: Globe2,
-    title: "Expertise internationale",
-    description: "Intervention sur des projets à l'échelle mondiale."
-  }
-];
+import { useTranslation } from "react-i18next";
+import { SEO } from "@/components/SEO";
 
 const Services = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: Satellite,
+      key: "acquisition"
+    },
+    {
+      icon: LineChart,
+      key: "processing"
+    },
+    {
+      icon: Map,
+      key: "mapping"
+    },
+    {
+      icon: Users2,
+      key: "consulting"
+    }
+  ];
+
+  const specializedServices = [
+    {
+      icon: Database,
+      key: "dataManagement"
+    },
+    {
+      icon: Microscope,
+      key: "research"
+    },
+    {
+      icon: Globe2,
+      key: "international"
+    }
+  ];
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title={t("services.title")}
+        description={t("services.subtitle")}
+        keywords="services géomatique, acquisition données satellite, traitement SIG, cartographie, conseil géospatial"
+      />
       <Navbar />
       
       {/* Hero Section */}
       <section className="pt-24 pb-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-            Nos Services
+            {t("services.title")}
           </h1>
           <p className="text-xl text-center text-muted-foreground max-w-3xl mx-auto mb-8">
-            Des solutions complètes pour l'acquisition, le traitement et l'analyse de données géospatiales
+            {t("services.subtitle")}
           </p>
         </div>
       </section>
@@ -92,20 +69,20 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <Card key={service.title} className="group hover:shadow-lg transition-shadow">
+              <Card key={service.key} className="group hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <service.icon className="h-8 w-8 text-primary" />
-                    <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    <CardTitle className="text-2xl">{t(`services.mainServices.${service.key}.title`)}</CardTitle>
                   </div>
                   <CardDescription className="text-lg mt-2">
-                    {service.description}
+                    {t(`services.mainServices.${service.key}.description`)}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.details.map((detail) => (
-                      <li key={detail} className="flex items-center gap-2">
+                    {(t(`services.mainServices.${service.key}.details`, { returnObjects: true }) as string[]).map((detail: string, index: number) => (
+                      <li key={index} className="flex items-center gap-2">
                         <ArrowRight className="h-4 w-4 text-primary" />
                         <span>{detail}</span>
                       </li>
@@ -121,18 +98,18 @@ const Services = () => {
       {/* Services spécialisés */}
       <section className="py-12 bg-accent/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Services spécialisés</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t("services.specialized.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {specializedServices.map((service) => (
-              <Card key={service.title} className="text-center group hover:shadow-lg transition-shadow">
+              <Card key={service.key} className="text-center group hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex flex-col items-center gap-4">
                     <service.icon className="h-12 w-12 text-primary" />
-                    <CardTitle>{service.title}</CardTitle>
+                    <CardTitle>{t(`services.specialized.${service.key}.title`)}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <p className="text-muted-foreground">{t(`services.specialized.${service.key}.description`)}</p>
                 </CardContent>
               </Card>
             ))}
@@ -143,13 +120,13 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-b from-background to-accent/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Prêt à démarrer votre projet ?</h2>
+          <h2 className="text-3xl font-bold mb-6">{t("services.cta.title")}</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contactez nos experts pour discuter de vos besoins et découvrir comment nous pouvons vous aider.
+            {t("services.cta.description")}
           </p>
           <Button asChild size="lg">
             <Link to="/contact">
-              Contactez-nous
+              {t("services.cta.button")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

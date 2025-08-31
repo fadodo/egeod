@@ -62,37 +62,104 @@
   },
   "about": {
     "title": "Notre Histoire",
-    "description": "Fondée en 2025, EGEOD est née de la vision d'experts passionnés",
+    "description": "EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et de la conviction que les big data et les données géospatiales ont le pouvoir de transformer durablement notre monde.",
+    "mission": "Dès sa création, l'entreprise s'est donnée une mission claire : concevoir des outils et des solutions innovantes pour relever les grands défis environnementaux, économiques et sociétaux de notre époque.",
+    "journey": "Notre aventure a débuté avec une certitude : l'observation de la Terre et l'analyse intelligente des données sont des leviers essentiels pour comprendre un monde en constante évolution et y apporter des réponses concrètes et impactantes.",
+    "recognition": "Depuis, EGEOD s'impose comme un acteur de confiance, reconnu pour son expertise technique et sa proximité avec ses partenaires.",
     "team": {
       "title": "Notre Équipe",
-      "description": "Une équipe d'experts passionnés"
+      "description": "La véritable force d'EGEOD, c'est son équipe multidisciplinaire : des passionnés de data, de géosciences et d'innovation, unis par une ambition commune – transformer les données brutes en leviers stratégiques pour nos partenaires.",
+      "commitment": "Chaque projet est porté par la complémentarité des profils et l'envie d'explorer de nouvelles perspectives, toujours avec la même exigence : offrir des solutions à la fois performantes, durables et adaptées aux enjeux réels du terrain."
     },
     "values": {
       "title": "Nos Valeurs",
-      "innovation": "Innovation",
-      "quality": "Qualité",
-      "proximity": "Proximité",
-      "listening": "Écoute"
+      "innovation": {
+        "title": "Innovation",
+        "description": "Nous explorons constamment de nouvelles technologies et méthodologies."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Nous visons l'excellence dans chaque projet et livrable."
+      },
+      "engagement": {
+        "title": "Engagement",
+        "description": "Nous sommes dévoués à la réussite de nos clients."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Nous travaillons en étroite collaboration avec nos clients et partenaires."
+      }
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "description": "Chez EGEOD, nous croyons en un monde où les données géospatiales deviennent un moteur de développement durable et d'intelligence territoriale. Notre ambition est de démocratiser l'accès à ces données et de les transformer en solutions concrètes, capables d'apporter des réponses claires aux grands défis environnementaux et sociétaux de demain.",
+      "future": "Grâce à notre expertise et à nos innovations, nous œuvrons pour un avenir où la technologie spatiale et l'observation de la Terre sont des leviers incontournables de la décision stratégique et de la préservation de notre planète."
     }
   },
   "services": {
     "title": "Nos Services",
-    "subtitle": "Des solutions complètes pour vos besoins géospatiaux",
-    "data": {
-      "title": "Acquisition de données",
-      "description": "Collecte de données satellite, drone et terrain"
+    "subtitle": "Des solutions complètes pour l'acquisition, le traitement et l'analyse de données géospatiales",
+    "mainServices": {
+      "acquisition": {
+        "title": "Acquisition de données",
+        "description": "Collecte de données satellite, drone et terrain adaptée à vos besoins spécifiques.",
+        "details": [
+          "Imagerie satellite haute résolution",
+          "Acquisitions par drone",
+          "Relevés terrain",
+          "Données multi-temporelles"
+        ]
+      },
+      "processing": {
+        "title": "Traitement et analyse",
+        "description": "Analyse approfondie avec des outils SIG et de télédétection avancés.",
+        "details": [
+          "Analyse spectrale",
+          "Classification d'images",
+          "Détection de changements",
+          "Modélisation spatiale"
+        ]
+      },
+      "mapping": {
+        "title": "Cartographie",
+        "description": "Création de cartes personnalisées et visualisations interactives.",
+        "details": [
+          "Cartographie thématique",
+          "Visualisation 3D",
+          "Webmapping",
+          "Atlas personnalisés"
+        ]
+      },
+      "consulting": {
+        "title": "Conseils experts",
+        "description": "Accompagnement personnalisé dans vos projets géospatiaux.",
+        "details": [
+          "Audit et diagnostic",
+          "Formation sur mesure",
+          "Support technique",
+          "Veille technologique"
+        ]
+      }
     },
-    "processing": {
-      "title": "Traitement",
-      "description": "Analyse et traitement avancé"
+    "specialized": {
+      "title": "Services spécialisés",
+      "dataManagement": {
+        "title": "Gestion de données",
+        "description": "Organisation et structuration de vos données géospatiales."
+      },
+      "research": {
+        "title": "R&D",
+        "description": "Innovation et développement de solutions sur mesure."
+      },
+      "international": {
+        "title": "Expertise internationale",
+        "description": "Intervention sur des projets à l'échelle mondiale."
+      }
     },
-    "mapping": {
-      "title": "Cartographie",
-      "description": "Création de cartes interactives"
-    },
-    "consulting": {
-      "title": "Conseil",
-      "description": "Expertise et accompagnement"
+    "cta": {
+      "title": "Prêt à démarrer votre projet ?",
+      "description": "Contactez nos experts pour discuter de vos besoins et découvrir comment nous pouvons vous aider.",
+      "button": "Contactez-nous"
     }
   },
   "expertise": {
@@ -266,5 +333,28 @@
       "title": "Documentation technique SIG",
       "description": "Documentation détaillée sur les systèmes d'information géographique"
     }
+  },
+  "footer": {
+    "company": {
+      "description": "Expert of Geospatial and Earth Observation Data. Nous transformons les données géospatiales en solutions innovantes."
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Toulouse, France",
+      "region": "Occitanie"
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "tools": {
+      "title": "Outils",
+      "safecoast": {
+        "title": "SafeCoast",
+        "description": "Système d'alerte inondations"
+      }
+    },
+    "copyright": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "scrollTop": "Haut de page"
   }
 }
