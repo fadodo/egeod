@@ -1,4 +1,4 @@
-import { Award, Lightbulb, Heart, Users, Globe2, Linkedin, Mail } from "lucide-react";
+import { Award, Lightbulb, Heart, Users, Globe2, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Navbar } from "@/components/Navbar";
@@ -15,6 +15,7 @@ const About = () => {
       role: t("about.team.member.role"),
       skills: t("about.team.member.skills", { returnObjects: true }) as string[],
       image: "/public/avatarFA.png",
+      website: "http://fadodo.github.io",
     },
   ];
 
@@ -85,7 +86,20 @@ const About = () => {
                     <AvatarImage src={member.image} alt={member.name} />
                     <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                   </Avatar>
-                  <CardTitle>{member.name}</CardTitle>
+                  <CardTitle className="flex items-center justify-center gap-2">
+                    {member.name}
+                    {member.website && (
+                      <a 
+                        href={member.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors"
+                        aria-label={`Visit ${member.name}'s website`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </CardTitle>
                   <p className="text-primary font-medium">{member.role}</p>
                 </CardHeader>
                 <CardContent>
