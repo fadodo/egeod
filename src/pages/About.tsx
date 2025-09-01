@@ -11,7 +11,7 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Fifi ADODO",
+      name: "Fifi I. ADODO",
       role: t("about.team.member.role"),
       skills: t("about.team.member.skills", { returnObjects: true }) as string[],
       image: "/public/avatarFA.png",
