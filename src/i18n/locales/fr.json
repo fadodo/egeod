@@ -9,13 +9,13 @@
     "resources": "Ressources gratuites",
     "contact": "Contact",
     "contactUs": "Contactez-nous",
-    "safecoast": "🌊 Démo SafeCoast"
+    "safecoast": "🌊 Démo Safecoast"
   },
   "home": {
     "hero": {
       "badge": "Données de la Terre. Solutions pour le climat",
       "title": "Analyse prédictive. Décisions durables. Impact réel.",
-      "subtitle": "Nous transformons less données en leviers stratégiques pour agir face aux défis climatiques et environnementaux.",
+      "subtitle": "Nous transformons les données en leviers stratégiques pour agir face aux défis climatiques et environnementaux.",
       "contact": "Contactez-nous",
       "cta": "Découvrir nos services"
     },
