@@ -69,7 +69,11 @@
     "team": {
       "title": "Notre Équipe",
       "description": "La véritable force d'EGEOD, c'est son équipe multidisciplinaire : des passionnés de data, de géosciences et d'innovation, unis par une ambition commune – transformer les données brutes en leviers stratégiques pour nos partenaires.",
-      "commitment": "Chaque projet est porté par la complémentarité des profils et l'envie d'explorer de nouvelles perspectives, toujours avec la même exigence : offrir des solutions à la fois performantes, durables et adaptées aux enjeux réels du terrain."
+      "commitment": "Chaque projet est porté par la complémentarité des profils et l'envie d'explorer de nouvelles perspectives, toujours avec la même exigence : offrir des solutions à la fois performantes, durables et adaptées aux enjeux réels du terrain.",
+      "member": {
+        "role": "PDG & Analyste Télédétection et Données",
+        "skills": ["Analyse de Données d'Observation de la Terre", "SIG", "Python", "Machine Learning", "Gestion de projet"]
+      }
     },
     "values": {
       "title": "Nos Valeurs",

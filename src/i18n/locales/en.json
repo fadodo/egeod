@@ -69,7 +69,11 @@
     "team": {
       "title": "Our Team",
       "description": "The true strength of EGEOD lies in its multidisciplinary team: data, geoscience and innovation enthusiasts, united by a common ambition – transforming raw data into strategic levers for our partners.",
-      "commitment": "Each project is driven by the complementarity of profiles and the desire to explore new perspectives, always with the same requirement: to offer solutions that are both efficient, sustainable and adapted to real field challenges."
+      "commitment": "Each project is driven by the complementarity of profiles and the desire to explore new perspectives, always with the same requirement: to offer solutions that are both efficient, sustainable and adapted to real field challenges.",
+      "member": {
+        "role": "CEO & Remote Sensing and Data Analyst",
+        "skills": ["Earth Observation Data Analysis", "GIS", "Python", "Machine Learning", "Project Management"]
+      }
     },
     "values": {
       "title": "Our Values",

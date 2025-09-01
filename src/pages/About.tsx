@@ -6,40 +6,36 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useTranslation } from "react-i18next";
 
-const teamMembers = [
-  {
-    name: "Fifi ADODO",
-    role: "CEO & Teledetection and Data Analyst",
-    skills: ["Analyse de Données d'Observation de la Terre", "SIG", "Python", "Machine Learnnnnnnnnnning","Gestion de projet"],
-    image: "/public/avatarFA.png",
-  },
-];
-
-const values = [
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "Nous explorons constamment de nouvelles technologies et méthodologies."
-  },
-  {
-    icon: Award,
-    title: "Excellence",
-    description: "Nous visons l'excellence dans chaque projet et livrable."
-  },
-  {
-    icon: Heart,
-    title: "Engagement",
-    description: "Nous sommes dévoués à la réussite de nos clients."
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description: "Nous travaillons en étroite collaboration avec nos clients et partenaires."
-  }
-];
-
 const About = () => {
   const { t } = useTranslation();
+
+  const teamMembers = [
+    {
+      name: "Fifi ADODO",
+      role: t("about.team.member.role"),
+      skills: t("about.team.member.skills", { returnObjects: true }) as string[],
+      image: "/public/avatarFA.png",
+    },
+  ];
+
+  const values = [
+    {
+      icon: Lightbulb,
+      title: "innovation",
+    },
+    {
+      icon: Award,
+      title: "excellence",
+    },
+    {
+      icon: Heart,
+      title: "engagement",
+    },
+    {
+      icon: Users,
+      title: "collaboration",
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -53,27 +49,32 @@ const About = () => {
       <main className="container mx-auto px-4 py-16 space-y-20">
         {/* Histoire */}
         <section className="space-y-6 animate-fade-in">
-          <h2 className="text-3xl font-bold text-center mb-8">Notre Histoire</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">{t("about.title")}</h2>
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <p className="text-lg text-muted-foreground">
-              EGEOD (Expert of Geospatial and Earth Observation Data) est née en 2025 de la passion pour les technologies de pointe et de la conviction que les big data et les données géospatiales ont le pouvoir de transformer durablement notre monde.
-              Dès sa création, l’entreprise s’est donnée une mission claire : concevoir des outils et des solutions innovantes pour relever les grands défis environnementaux, économiques et sociétaux de notre époque.
-
-              Notre aventure a débuté avec une certitude : l’observation de la Terre et l’analyse intelligente des données sont des leviers essentiels pour comprendre un monde en constante évolution et y apporter des réponses concrètes et impactantes.
+              {t("about.description")}
             </p>
             <p className="text-lg text-muted-foreground">
-              Depuis, EGEOD s’impose comme un acteur de confiance, reconnu pour son expertise technique et sa proximité avec ses partenaires.
+              {t("about.mission")}
+            </p>
+            <p className="text-lg text-muted-foreground">
+              {t("about.journey")}
+            </p>
+            <p className="text-lg text-muted-foreground">
+              {t("about.recognition")}
             </p>
           </div>
         </section>
 
         {/* Équipe */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Notre Équipe</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">{t("about.team.title")}</h2>
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <p className="text-lg text-muted-foreground">
-              La véritable force d’EGEOD, c’est son équipe multidisciplinaire : des passionnés de data, de géosciences et d’innovation, unis par une ambition commune – transformer les données brutes en leviers stratégiques pour nos partenaires.
-              Chaque projet est porté par la complémentarité des profils et l’envie d’explorer de nouvelles perspectives, toujours avec la même exigence : offrir des solutions à la fois performantes, durables et adaptées aux enjeux réels du terrain.
+              {t("about.team.description")}
+            </p>
+            <p className="text-lg text-muted-foreground">
+              {t("about.team.commitment")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,8 +116,8 @@ const About = () => {
               >
                 <CardContent className="pt-6">
                   <value.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-xl font-semibold mb-2">{t(`about.values.${value.title.toLowerCase()}.title`)}</h3>
-                  <p className="text-muted-foreground">{t(`about.values.${value.title.toLowerCase()}.description`)}</p>
+                  <h3 className="text-xl font-semibold mb-2">{t(`about.values.${value.title}.title`)}</h3>
+                  <p className="text-muted-foreground">{t(`about.values.${value.title}.description`)}</p>
                 </CardContent>
               </Card>
             ))}
@@ -125,16 +126,15 @@ const About = () => {
 
         {/* Vision */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Notre Vision</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">{t("about.vision.title")}</h2>
           <Card className="max-w-4xl mx-auto">
             <CardContent className="pt-6 text-center space-y-4">
               <Globe2 className="w-16 h-16 mx-auto text-primary mb-4" />
               <p className="text-lg text-muted-foreground">
-                Chez EGEOD, nous croyons en un monde où les données géospatiales deviennent un moteur de développement durable et d’intelligence territoriale.
-                Notre ambition est de démocratiser l’accès à ces données et de les transformer en solutions concrètes, capables d’apporter des réponses claires aux grands défis environnementaux et sociétaux de demain.
+                {t("about.vision.description")}
               </p>
               <p className="text-lg text-muted-foreground">
-                Grâce à notre expertise et à nos innovations, nous œuvrons pour un avenir où la technologie spatiale et l’observation de la Terre sont des leviers incontournables de la décision stratégique et de la préservation de notre planète.
+                {t("about.vision.future")}
               </p>
             </CardContent>
           </Card>
