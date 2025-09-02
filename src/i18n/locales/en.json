@@ -303,27 +303,17 @@
     }
   },
   "events": {
-    "title": "Our Events",
+    "title": "Events & Training",
     "description": "Join our events and training sessions to develop your skills",
     "online": "Online",
     "register": "Register",
     "maxParticipants": "{{count}} max participants",
-    "types": {
-      "webinar": "Webinar",
-      "workshop": "Workshop",
-      "conference": "Conference"
-    },
-    "webinar": {
-      "title": "Webinar: Introduction to Remote Sensing",
-      "description": "Discover the fundamentals of remote sensing and its applications"
-    },
-    "workshop": {
-      "title": "Workshop: Mapping with QGIS",
-      "description": "Practical training on using QGIS for mapping"
-    },
-    "conference": {
-      "title": "Conference: Geomatics and Innovation",
-      "description": "A day dedicated to innovations in the field of geomatics"
+    "comingSoon": {
+      "title": "Exciting Events Coming Soon!",
+      "description": "We're working on organizing amazing workshops, webinars, and training sessions on earth observation, flood mapping, and geospatial data analysis. Stay tuned for announcements about our upcoming events.",
+      "stayTuned": "More details coming soon",
+      "notify": "Get Notified",
+      "footer": "Follow us on social media or contact us to be the first to know about our upcoming events."
     }
   },
   "resources": {
