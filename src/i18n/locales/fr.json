@@ -269,26 +269,36 @@
     }
   },
   "blog": {
-    "title": "Notre Blog",
-    "description": "Découvrez nos derniers articles, actualités et analyses",
+    "title": "Projets et Recherche",
+    "description": "Explorez nos projets de recherche de pointe en observation terrestre, cartographie des inondations et analyse de données géospatiales.",
     "readMore": "Lire la suite",
+    "viewProject": "Voir le Projet",
     "categories": {
-      "technology": "Technologie",
-      "caseStudy": "Étude de cas",
-      "tutorial": "Tutoriel"
+      "remoteSensing": "Télédétection",
+      "geoAnalysis": "Analyse Géospatiale",
+      "dataAnalysis": "Analyse de Données",
+      "machineLearning": "Apprentissage Automatique"
     },
     "posts": {
-      "trends": {
-        "title": "Les tendances géospatiales en 2024",
-        "description": "Découvrez les dernières innovations et tendances dans le domaine de la géomatique"
+      "floodMapper": {
+        "title": "Package Flood Mapper",
+        "description": "Un outil basé sur Python conçu pour la cartographie rapide et flexible des zones inondées utilisant Google Earth Engine, exploitant l'imagerie SAR Sentinel-1 et optique Sentinel-2."
       },
-      "case": {
-        "title": "Étude de cas : Cartographie urbaine",
-        "description": "Comment nous avons aidé une ville à optimiser sa planification urbaine"
+      "floodAnalysis": {
+        "title": "Cartographier l'Invisible : Analyse d'Impact des Inondations sur Lomé (Mai 2024)",
+        "description": "Utilisation de l'imagerie radar à synthèse d'ouverture de Sentinel-1 pour cartographier et évaluer l'étendue des catastrophes d'inondation à Lomé, fournissant des perspectives basées sur les données pour la résilience urbaine."
       },
-      "tutorial": {
-        "title": "Guide pratique : Analyse de données spatiales",
-        "description": "Apprenez à analyser efficacement vos données géospatiales"
+      "booksAnalysis": {
+        "title": "Analyse des Évaluations de Critiques de Livres",
+        "description": "Explorer ce qui détermine les notes des critiques de livres en utilisant le NLP, l'analyse de sentiment et la modélisation d'inférence causale pour analyser des milliers de critiques de lecteurs."
+      },
+      "landcoverSupervised": {
+        "title": "Classification Supervisée de la Couverture Terrestre d'Imagerie Sentinel-2",
+        "description": "Comparaison des algorithmes Random Forest et Support Vector Machine pour la classification de la couverture terrestre à partir d'imagerie Sentinel-2 sur la région de Corse utilisant Google Earth Engine."
+      },
+      "landcoverUnsupervised": {
+        "title": "Classification Non-Supervisée d'Imagerie Sentinel-2",
+        "description": "Classification de la couverture terrestre utilisant des méthodes de clustering non-supervisées (algorithmes X-Means et LVQ) avec Google Earth Engine et le package geemap."
       }
     }
   },

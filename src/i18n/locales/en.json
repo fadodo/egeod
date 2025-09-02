@@ -269,26 +269,36 @@
     }
   },
   "blog": {
-    "title": "Our Blog",
-    "description": "Discover our latest articles, news and analyses",
-    "readMore": "Read more",
+    "title": "Projects & Research",
+    "description": "Explore our cutting-edge research projects in earth observation, flood mapping, and geospatial data analysis.",
+    "readMore": "Read More",
+    "viewProject": "View Project",
     "categories": {
-      "technology": "Technology",
-      "caseStudy": "Case Study",
-      "tutorial": "Tutorial"
+      "remoteSensing": "Remote Sensing",
+      "geoAnalysis": "Geospatial Analysis",
+      "dataAnalysis": "Data Analysis",
+      "machineLearning": "Machine Learning"
     },
     "posts": {
-      "trends": {
-        "title": "Geospatial Trends in 2024",
-        "description": "Discover the latest innovations and trends in geomatics"
+      "floodMapper": {
+        "title": "Flood Mapper Package",
+        "description": "A Python-based tool designed for rapid and flexible mapping of flooded areas using Google Earth Engine, leveraging Sentinel-1 SAR and Sentinel-2 optical imagery."
       },
-      "case": {
-        "title": "Case Study: Urban Mapping",
-        "description": "How we helped a city optimize its urban planning"
+      "floodAnalysis": {
+        "title": "Mapping the Invisible: Flood Impact Analysis over Lomé (May 2024)",
+        "description": "Leveraging Synthetic Aperture Radar imagery from Sentinel-1 to map and assess the extent of flooding disaster in Lomé, providing data-driven insights for urban resilience."
       },
-      "tutorial": {
-        "title": "Practical Guide: Spatial Data Analysis",
-        "description": "Learn how to effectively analyze your geospatial data"
+      "booksAnalysis": {
+        "title": "Books Reviewers Rating Analysis",
+        "description": "Exploring what drives book review ratings using NLP, sentiment analysis, and causal inference modeling to analyze thousands of reader reviews."
+      },
+      "landcoverSupervised": {
+        "title": "Supervised Landcover Classification of Sentinel-2 Imagery",
+        "description": "Comparison of Random Forest and Support Vector Machine algorithms for land cover classification from Sentinel-2 imagery over Corsica region using Google Earth Engine."
+      },
+      "landcoverUnsupervised": {
+        "title": "Unsupervised Sentinel-2 Imagery Classification",
+        "description": "Land cover classification using unsupervised clustering methods (X-Means and LVQ algorithms) with Google Earth Engine and geemap package."
       }
     }
   },

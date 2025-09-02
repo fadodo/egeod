@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Calendar, User } from "lucide-react";
+import { BookOpen, Calendar, User, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -12,31 +12,54 @@ const Blog = () => {
 
   const blogPosts = [
     {
-      id: "trends",
-      title: t("blog.posts.trends.title"),
-      description: t("blog.posts.trends.description"),
-      date: "2024-01-15",
-      author: "EGEOD Team",
-      category: t("blog.categories.technology"),
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      id: "flood-mapper",
+      title: t("blog.posts.floodMapper.title"),
+      description: t("blog.posts.floodMapper.description"),
+      date: "2025-07-16",
+      author: "Fifi ADODO",
+      category: t("blog.categories.remoteSensing"),
+      image: "/projects/flood-mapper.webp",
+      githubUrl: "https://github.com/fadodo/flood_mapper"
     },
     {
-      id: "case",
-      title: t("blog.posts.case.title"),
-      description: t("blog.posts.case.description"),
-      date: "2024-01-10",
-      author: "EGEOD Team",
-      category: t("blog.categories.caseStudy"),
-      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833"
+      id: "flood-analysis",
+      title: t("blog.posts.floodAnalysis.title"),
+      description: t("blog.posts.floodAnalysis.description"),
+      date: "2025-05-30",
+      author: "Fifi ADODO",
+      category: t("blog.categories.geoAnalysis"),
+      image: "/projects/flood-analysis.webp",
+      githubUrl: "https://github.com/fadodo/Flood_mapping"
     },
     {
-      id: "tutorial",
-      title: t("blog.posts.tutorial.title"),
-      description: t("blog.posts.tutorial.description"),
-      date: "2024-01-05",
-      author: "EGEOD Team",
-      category: t("blog.categories.tutorial"),
-      image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67"
+      id: "books-analysis",
+      title: t("blog.posts.booksAnalysis.title"),
+      description: t("blog.posts.booksAnalysis.description"),
+      date: "2025-05-26",
+      author: "Fifi ADODO",
+      category: t("blog.categories.dataAnalysis"),
+      image: "/projects/books-analysis.webp",
+      githubUrl: "https://github.com/fadodo/Books_reviewers_review_Analysis"
+    },
+    {
+      id: "landcover-supervised",
+      title: t("blog.posts.landcoverSupervised.title"),
+      description: t("blog.posts.landcoverSupervised.description"),
+      date: "2025-05-10",
+      author: "Fifi ADODO",
+      category: t("blog.categories.machineLearning"),
+      image: "/projects/landcover-supervised.webp",
+      githubUrl: "https://github.com/fadodo/Supervised_landcover_classification"
+    },
+    {
+      id: "landcover-unsupervised",
+      title: t("blog.posts.landcoverUnsupervised.title"),
+      description: t("blog.posts.landcoverUnsupervised.description"),
+      date: "2025-05-03",
+      author: "Fifi ADODO",
+      category: t("blog.categories.machineLearning"),
+      image: "/projects/landcover-unsupervised.webp",
+      githubUrl: "https://github.com/fadodo/unsupervised_sentinel2__imagery_classification"
     }
   ];
 
@@ -101,9 +124,9 @@ const Blog = () => {
                       className="gap-2 hover:bg-primary/10"
                       asChild
                     >
-                      <Link to={`/blog/${post.id}`}>
-                        {t("blog.readMore")} <BookOpen className="h-4 w-4" />
-                      </Link>
+                      <a href={post.githubUrl} target="_blank" rel="noopener noreferrer">
+                        {t("blog.viewProject")} <ExternalLink className="h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
