@@ -327,25 +327,31 @@
     }
   },
   "resources": {
-    "title": "Free Resources",
-    "description": "Download our resources to improve your skills",
+    "title": "Free Resources & Tutorials",
+    "description": "Access our tutorials, tools, and interactive resources for earth observation and geospatial analysis",
     "download": "Download",
+    "viewResource": "View Resource",
     "types": {
+      "tutorial": "Tutorial",
       "guide": "Guide",
-      "template": "Template",
-      "technical": "Technical Documentation"
+      "tool": "Tool",
+      "dashboard": "Dashboard"
     },
-    "guide": {
-      "title": "Best Practices Guide in Geomatics",
-      "description": "A comprehensive guide to master the fundamentals of geomatics"
+    "floodMapperGuide": {
+      "title": "Flood Mapper Quick Start Guide",
+      "description": "A comprehensive guide to setting up and using the flood_mapper package for rapid flood mapping using Google Earth Engine (GEE)"
     },
-    "template": {
-      "title": "Thematic Map Templates",
-      "description": "Ready-to-use templates for your mapping projects"
+    "academicWebsite": {
+      "title": "Build Your Academic Website with Hugo Blox",
+      "description": "A step-by-step guide to creating your own personal academic website without coding using GitHub Pages and Hugo framework"
     },
-    "technical": {
-      "title": "GIS Technical Documentation",
-      "description": "Detailed documentation on geographic information systems"
+    "floodMapperPackage": {
+      "title": "Flood Mapper Python Package",
+      "description": "Python-based tool for rapid and flexible mapping of flooded areas using Google Earth Engine, Sentinel-1 SAR and Sentinel-2 imagery"
+    },
+    "temperatureDashboard": {
+      "title": "Interactive World Temperature Dashboard",
+      "description": "Looker Studio dashboard showing spatial distribution of global surface temperature from 1940 to 2024 with interactive controls"
     }
   },
   "footer": {

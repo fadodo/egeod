@@ -327,25 +327,31 @@
     }
   },
   "resources": {
-    "title": "Ressources Gratuites",
-    "description": "Téléchargez nos ressources pour améliorer vos compétences",
+    "title": "Ressources Gratuites et Tutoriels",
+    "description": "Accédez à nos tutoriels, outils et ressources interactives pour l'observation terrestre et l'analyse géospatiale",
     "download": "Télécharger",
+    "viewResource": "Voir la Ressource",
     "types": {
+      "tutorial": "Tutoriel",
       "guide": "Guide",
-      "template": "Modèle",
-      "technical": "Documentation technique"
+      "tool": "Outil",
+      "dashboard": "Tableau de Bord"
     },
-    "guide": {
-      "title": "Guide des bonnes pratiques en géomatique",
-      "description": "Un guide complet pour maîtriser les fondamentaux de la géomatique"
+    "floodMapperGuide": {
+      "title": "Guide de Démarrage Rapide Flood Mapper",
+      "description": "Un guide complet pour configurer et utiliser le package flood_mapper pour la cartographie rapide des inondations avec Google Earth Engine (GEE)"
     },
-    "template": {
-      "title": "Modèles de cartes thématiques",
-      "description": "Des modèles prêts à l'emploi pour vos projets cartographiques"
+    "academicWebsite": {
+      "title": "Créer Votre Site Web Académique avec Hugo Blox",
+      "description": "Un guide étape par étape pour créer votre propre site web académique personnel sans codage en utilisant GitHub Pages et le framework Hugo"
     },
-    "technical": {
-      "title": "Documentation technique SIG",
-      "description": "Documentation détaillée sur les systèmes d'information géographique"
+    "floodMapperPackage": {
+      "title": "Package Python Flood Mapper",
+      "description": "Outil basé sur Python pour la cartographie rapide et flexible des zones inondées utilisant Google Earth Engine, l'imagerie SAR Sentinel-1 et Sentinel-2"
+    },
+    "temperatureDashboard": {
+      "title": "Tableau de Bord Interactif des Températures Mondiales",
+      "description": "Tableau de bord Looker Studio montrant la distribution spatiale de la température de surface mondiale de 1940 à 2024 avec contrôles interactifs"
     }
   },
   "footer": {

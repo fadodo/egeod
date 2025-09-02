@@ -2,44 +2,55 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileText, FileType } from "lucide-react";
+import { Download, FileText, FileType, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import floodMapperTutorial from "@/assets/flood-mapper-tutorial.jpg";
 
 const Resources = () => {
   const { t } = useTranslation();
 
   const resources = [
     {
-      id: "guide",
-      title: t("resources.guide.title"),
-      description: t("resources.guide.description"),
+      id: "flood-mapper-guide",
+      title: t("resources.floodMapperGuide.title"),
+      description: t("resources.floodMapperGuide.description"),
+      type: t("resources.types.tutorial"),
+      format: "Tutorial",
+      url: "https://fadodo.github.io/event/flood_mapper_documentation/",
+      icon: FileText,
+      image: floodMapperTutorial
+    },
+    {
+      id: "academic-website",
+      title: t("resources.academicWebsite.title"),
+      description: t("resources.academicWebsite.description"),
       type: t("resources.types.guide"),
-      format: "PDF",
-      size: "2.5 MB",
+      format: "Guide",
+      url: "https://fadodo.github.io/event/academic_cv_website/",
       icon: FileText,
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      image: "/tutorials/academic-website.webp"
     },
     {
-      id: "template",
-      title: t("resources.template.title"),
-      description: t("resources.template.description"),
-      type: t("resources.types.template"),
-      format: "XLSX",
-      size: "1.2 MB",
+      id: "flood-mapper-package",
+      title: t("resources.floodMapperPackage.title"),
+      description: t("resources.floodMapperPackage.description"),
+      type: t("resources.types.tool"),
+      format: "Python",
+      url: "https://github.com/fadodo/flood_mapper",
       icon: FileText,
-      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833"
+      image: "/projects/flood-mapper.webp"
     },
     {
-      id: "technical",
-      title: t("resources.technical.title"),
-      description: t("resources.technical.description"),
-      type: t("resources.types.technical"),
-      format: "PDF",
-      size: "3.1 MB",
+      id: "temperature-dashboard",
+      title: t("resources.temperatureDashboard.title"),
+      description: t("resources.temperatureDashboard.description"),
+      type: t("resources.types.dashboard"),
+      format: "Interactive",
+      url: "https://lookerstudio.google.com/reporting/6df4d148-e15f-4f14-a09b-1b2749857956",
       icon: FileText,
-      image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67"
+      image: "/projects/temperature-dashboard.webp"
     }
   ];
 
@@ -95,13 +106,13 @@ const Resources = () => {
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between text-sm text-muted-foreground">
                       <span>{resource.type}</span>
-                      <span>{resource.size}</span>
+                      <span>{resource.format}</span>
                     </div>
                     <Button className="w-full gap-2" asChild>
-                      <Link to={`/resources/${resource.id}`}>
-                        <Download className="h-4 w-4" />
-                        {t("resources.download")}
-                      </Link>
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                        {t("resources.viewResource")}
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
