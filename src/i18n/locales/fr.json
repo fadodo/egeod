@@ -9,7 +9,7 @@
     "resources": "Ressources gratuites",
     "contact": "Contact",
     "contactUs": "Contactez-nous",
-    "safecoast": "🌊 Démo Safecoast"
+    "projectsTutorials": "Projets & Tutoriels"
   },
   "home": {
     "hero": {
@@ -209,15 +209,15 @@
   },
   "news": {
     "title": "Actualités et Ressources",
-    "blog": {
-      "title": "Blog",
-      "description": "Découvrez nos derniers articles et analyses",
-      "items": {
-        "trends": "Tendances géospatiales",
-        "cases": "Études de cas",
-        "tutorials": "Tutoriels et guides"
-      }
-    },
+      "projectsTutorials": {
+        "title": "Projets et Tutoriels",
+        "description": "Projets de recherche et tutoriels complets",
+        "items": {
+          "projects": "Projets de recherche",
+          "tutorials": "Tutoriels étape par étape",
+          "tools": "Outils interactifs"
+        }
+      },
     "events": {
       "title": "Événements",
       "description": "Participez à nos événements et formations",
@@ -234,8 +234,15 @@
         "guides": "Guides pratiques",
         "templates": "Modèles",
         "tools": "Outils"
+      },
+      "projectsTutorials": {
+        "description": "Projets de recherche et tutoriels complets"
       }
     }
+  },
+  "projectTutorials": {
+    "title": "Projets et Tutoriels",
+    "description": "Explorez mes projets de recherche et tutoriels complets couvrant la télédétection, l'analyse SIG et les applications d'apprentissage automatique."
   },
   "contact": {
     "title": "Contactez-nous",

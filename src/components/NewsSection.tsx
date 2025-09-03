@@ -9,13 +9,13 @@ export const NewsSection = () => {
   const newsCategories = [
     {
       icon: Book,
-      title: t("news.blog.title"),
-      description: t("news.blog.description"),
-      link: "/blog",
+      title: t("news.projectsTutorials.title"),
+      description: t("news.projectsTutorials.description"),
+      link: "/projects-tutorials",
       items: [
-        t("news.blog.items.trends"),
-        t("news.blog.items.cases"),
-        t("news.blog.items.tutorials")
+        t("news.projectsTutorials.items.projects"),
+        t("news.projectsTutorials.items.tutorials"),
+        t("news.projectsTutorials.items.tools")
       ]
     },
     {
@@ -27,17 +27,6 @@ export const NewsSection = () => {
         t("news.events.items.webinars"),
         t("news.events.items.workshops"),
         t("news.events.items.conferences")
-      ]
-    },
-    {
-      icon: Download,
-      title: t("news.resources.title"),
-      description: t("news.resources.description"),
-      link: "/resources",
-      items: [
-        t("news.resources.items.guides"),
-        t("news.resources.items.templates"),
-        t("news.resources.items.tools")
       ]
     }
   ];

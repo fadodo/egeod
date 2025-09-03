@@ -9,7 +9,7 @@
     "resources": "Free Resources",
     "contact": "Contact",
     "contactUs": "Contact Us",
-    "safecoast": "🌊 SafeCoast Demo"
+    "projectsTutorials": "Projects & Tutorials"
   },
   "home": {
     "hero": {
@@ -209,15 +209,15 @@
   },
   "news": {
     "title": "News and Resources",
-    "blog": {
-      "title": "Blog",
-      "description": "Discover our latest articles and analyses",
-      "items": {
-        "trends": "Geospatial trends",
-        "cases": "Case studies",
-        "tutorials": "Tutorials and guides"
-      }
-    },
+      "projectsTutorials": {
+        "title": "Projects & Tutorials",
+        "description": "Research projects and comprehensive tutorials",
+        "items": {
+          "projects": "Research projects",
+          "tutorials": "Step-by-step tutorials",
+          "tools": "Interactive tools"
+        }
+      },
     "events": {
       "title": "Events",
       "description": "Join our events and training sessions",
@@ -234,8 +234,15 @@
         "guides": "Practical guides",
         "templates": "Templates",
         "tools": "Tools"
+      },
+      "projectsTutorials": {
+        "description": "Research projects and comprehensive tutorials"
       }
     }
+  },
+  "projectTutorials": {
+    "title": "Projects & Tutorials",
+    "description": "Explore my research projects and comprehensive tutorials covering remote sensing, GIS analysis, and machine learning applications."
   },
   "contact": {
     "title": "Contact Us",
