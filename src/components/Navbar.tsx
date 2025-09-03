@@ -52,10 +52,6 @@ export const Navbar = () => {
               <div className="font-medium group-hover:text-primary transition-colors">{t("nav.projectsTutorials")}</div>
               <p className="text-sm text-muted-foreground mt-1">{t("news.projectsTutorials.description")}</p>
             </Link>
-            <Link to="/events" className="group block p-3 hover:bg-secondary/10 rounded-lg transition-all duration-300 border border-transparent hover:border-secondary/20">
-              <div className="font-medium group-hover:text-secondary transition-colors">{t("nav.events")}</div>
-              <p className="text-sm text-muted-foreground mt-1">{t("news.events.description")}</p>
-            </Link>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>

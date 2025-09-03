@@ -176,7 +176,7 @@ const BlogPost = () => {
   const post = getBlogPost();
 
   if (!post) {
-    navigate("/blog");
+    navigate("/projects-tutorials");
     return null;
   }
 
@@ -218,7 +218,7 @@ const BlogPost = () => {
       <main className="container mx-auto px-4 pt-24 pb-16">
         <Button 
           variant="ghost" 
-          onClick={() => navigate("/blog")}
+          onClick={() => navigate("/projects-tutorials")}
           className="mb-8 hover:bg-primary/10 flex items-center"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />

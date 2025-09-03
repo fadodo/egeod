@@ -310,17 +310,11 @@
     }
   },
   "events": {
-    "title": "Événements et Formation",
-    "description": "Participez à nos événements et formations pour développer vos compétences",
-    "online": "En ligne",
-    "register": "S'inscrire",
-    "maxParticipants": "{{count}} participants max",
+    "title": "Événements",
+    "description": "Événements et conférences",
     "comingSoon": {
-      "title": "Événements Passionnants à Venir !",
-      "description": "Nous travaillons sur l'organisation d'ateliers, de webinaires et de sessions de formation extraordinaires sur l'observation terrestre, la cartographie des inondations et l'analyse de données géospatiales. Restez à l'écoute pour les annonces de nos prochains événements.",
-      "stayTuned": "Plus de détails bientôt",
-      "notify": "Être Notifié",
-      "footer": "Suivez-nous sur les réseaux sociaux ou contactez-nous pour être le premier informé de nos prochains événements."
+      "title": "Bientôt disponible",
+      "description": "Des événements et ateliers sont actuellement en préparation. Restez à l'écoute pour les mises à jour !"
     }
   },
   "resources": {

@@ -310,17 +310,11 @@
     }
   },
   "events": {
-    "title": "Events & Training",
-    "description": "Join our events and training sessions to develop your skills",
-    "online": "Online",
-    "register": "Register",
-    "maxParticipants": "{{count}} max participants",
+    "title": "Events",
+    "description": "Events and conferences",
     "comingSoon": {
-      "title": "Exciting Events Coming Soon!",
-      "description": "We're working on organizing amazing workshops, webinars, and training sessions on earth observation, flood mapping, and geospatial data analysis. Stay tuned for announcements about our upcoming events.",
-      "stayTuned": "More details coming soon",
-      "notify": "Get Notified",
-      "footer": "Follow us on social media or contact us to be the first to know about our upcoming events."
+      "title": "Coming Soon",
+      "description": "Events and workshops are currently being planned. Stay tuned for updates!"
     }
   },
   "resources": {

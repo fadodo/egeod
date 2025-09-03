@@ -88,7 +88,7 @@ export const Footer = () => {
                 { to: "/about", label: t("nav.about") },
                 { to: "/services", label: t("nav.services") },
                 { to: "/expertise", label: t("nav.expertise") },
-                { to: "/blog", label: t("nav.blog") },
+                { to: "/projects-tutorials", label: t("nav.projectsTutorials") },
                 { to: "/events", label: t("nav.events") },
                 { to: "/contact", label: t("nav.contact") }
               ].map((link) => (
