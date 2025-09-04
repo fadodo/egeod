@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Shield } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -37,7 +37,8 @@ export const Navbar = () => {
       </NavigationMenuItem>
       <NavigationMenuItem>
         <Button asChild variant="outline" className="bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-          <a href="https://safecoast.netlify.app" target="_blank" rel="noopener noreferrer">
+          <a href="https://safecoast.netlify.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <Shield className="h-4 w-4" />
             {t("nav.safecoast")}
           </a>
         </Button>
