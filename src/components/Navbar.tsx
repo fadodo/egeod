@@ -1,4 +1,4 @@
-import { Menu, Shield } from "lucide-react";
+import { Menu, Waves } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -38,7 +38,7 @@ export const Navbar = () => {
       <NavigationMenuItem>
         <Button asChild variant="outline" className="bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
           <a href="https://safecoast.netlify.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-            <Shield className="h-4 w-4" />
+            <Waves className="h-4 w-4" />
             {t("nav.safecoast")}
           </a>
         </Button>
@@ -53,6 +53,10 @@ export const Navbar = () => {
               <div className="font-medium group-hover:text-primary transition-colors">{t("nav.projectsTutorials")}</div>
               <p className="text-sm text-muted-foreground mt-1">{t("news.projectsTutorials.description")}</p>
             </Link>
+            <div className="group block p-3 hover:bg-primary/10 rounded-lg transition-all duration-300 border border-transparent hover:border-primary/20 opacity-60">
+              <div className="font-medium group-hover:text-primary transition-colors">{t("nav.events")}</div>
+              <p className="text-sm text-muted-foreground mt-1">{t("events.comingSoon.description")}</p>
+            </div>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
